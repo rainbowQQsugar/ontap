@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/tiles_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sab_lightest_gray"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/section_margin_bottom"
+        android:paddingLeft="@dimen/section_margin_horizontal"
+        android:paddingRight="@dimen/section_margin_horizontal">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-8dp"
+            android:layout_marginRight="-8dp"
+            android:orientation="vertical"
+            app:alignContent="flex_start"
+            app:alignItems="flex_start"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                android:id="@+id/title_label"
+                style="@style/Text.H3.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/section_title_margin"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="@dimen/section_margin_top"
+                android:text="@string/visits_dashboard" />
+
+            <FrameLayout
+                android:id="@+id/itos_result_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/itos_result"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/itos_result" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/open_surveys_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/open_surveys"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/survey_tile_title" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/open_tasks_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/open_tasks"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/tareas_abiertas" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/active_promotions_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/active_promotions"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/promociones" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/active_negotiations_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/active_negotiations"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/negociaciones_activas" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/customer_assets_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/customer_assets"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/activos_por_cliente" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/market_programs_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/market_programs"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/programas_de_mercado" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/event_planning_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/event_planning"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/event_planning_tile" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/open_cases_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/open_cases"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardTitle="@string/casos_abiertas" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/spr_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/spr"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:layout_marginTop="8dp"
+                    app:cardTitle="@string/spr_list" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/trade_program_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/trade_program"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:layout_marginTop="8dp"
+                    app:cardTitle="@string/trade_program_title" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/distribution_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/distribution"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:layout_marginTop="8dp"
+                    app:cardTitle="@string/distribution_list_title" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/technicians_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/technicians"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:layout_marginTop="8dp"
+                    app:cardTitle="@string/technicians_list_title" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/asset_poc_holder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_flexBasisPercent="50%">
+
+                <com.abinbev.dsa.ui.view.CasoView
+                    android:id="@+id/asset_poc"
+                    style="@style/CasoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:layout_marginTop="8dp"
+                    app:cardTitle="@string/asset_poc_list_title"/>
+
+            </FrameLayout>
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </FrameLayout>
+
+</merge>

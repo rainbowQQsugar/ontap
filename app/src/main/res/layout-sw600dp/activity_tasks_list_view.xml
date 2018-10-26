@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_with_logo"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.H1.Condensed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/page_inset_vertical_large"
+        android:text="@string/tasks"
+        android:textAllCaps="true"/>
+
+    <LinearLayout
+        android:id="@+id/spinnerContainer"
+        android:layout_width="420dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_below="@id/title"
+        android:layout_marginTop="24dp">
+
+        <Spinner
+            style="@style/spinnerStyle.Left"
+            android:id="@+id/subjectSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="1"
+            android:textAllCaps="true"/>
+
+        <Spinner
+            style="@style/spinnerStyle.Right"
+            android:id="@+id/stateSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/column_header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/spinnerContainer"
+        android:background="@color/sab_lightest_gray"
+        android:paddingLeft="@dimen/page_inset_horizontal"
+        android:paddingRight="@dimen/page_inset_horizontal"
+        android:orientation="horizontal">
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/subject"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/issue"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/dueDate"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/fecha_de_vencimiento"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/state"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/estado"
+            android:background="@null"
+            android:textAllCaps="true"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/tasksListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/column_header"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/divider_size"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/newTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/space1"
+        android:src="@drawable/ic_action_add"/>
+
+    <View
+        android:id="@+id/popup_menu_anchor"
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:layout_toStartOf="@id/newTask"
+        android:visibility="invisible" />
+</RelativeLayout>

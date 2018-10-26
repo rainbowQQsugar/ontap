@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/header_serialized"
+        style="@style/Text.H2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space2"
+        android:layout_marginBottom="@dimen/space2"
+        android:text="@string/serialized"
+        android:textAllCaps="true"
+        android:visibility="gone"/>
+    
+    <LinearLayout
+        android:id="@+id/title_serialized"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/space"
+        android:background="@color/sab_lighter_gray"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/title_serial"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/space"
+            android:text="@string/serial_number"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:id="@+id/title_quantity"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/quantity"
+            android:textAllCaps="true"  />
+
+        <TextView
+            android:id="@+id/title_quantity_reqd"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/required_quanitity"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:id="@+id/title_marca"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/space"
+            android:text="@string/marca"
+            android:textAllCaps="true"/>
+
+        <TextView
+            android:id="@+id/title_state"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/space"
+            android:text="@string/estado"
+            android:textAllCaps="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/serialized_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/header_unserialized"
+        style="@style/Text.H2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space2"
+        android:layout_marginBottom="@dimen/space2"
+        android:text="@string/no_serialized"
+        android:textAllCaps="true"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/title_unserialized"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/space"
+        android:background="@color/sab_lighter_gray"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/space"
+            android:text="@string/asset_code"
+            android:textAllCaps="true"/>
+
+        <TextView
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/quantity"
+            android:textAllCaps="true"  />
+
+        <TextView
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/required_quanitity"
+            android:textAllCaps="true"/>
+
+        <TextView
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/space"
+            android:text="@string/marca"
+            android:textAllCaps="true"/>
+
+        <TextView
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/space"
+            android:text="@string/estado"
+            android:textAllCaps="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/unserialized_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+</LinearLayout>

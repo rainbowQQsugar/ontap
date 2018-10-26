@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_drawer_item"
+            android:title="@string/menu_home"
+            android:checkable="true"
+            android:icon="@drawable/ic_home"/>
+
+        <item
+            android:id="@+id/playlist_drawer_item"
+            android:title="@string/menu_playlist"
+            android:checkable="true"
+            android:icon="@drawable/ic_action_star"/>
+
+        <item
+            android:id="@+id/spotlight_drawer_item"
+            android:title="@string/menu_spotlight"
+            android:checkable="true"
+            android:icon="@drawable/ic_action_spotlight"/>
+
+        <item
+            android:id="@+id/settings_drawer_item"
+            android:title="@string/menu_settings"
+            android:checkable="true"
+            android:icon="@drawable/ic_action_settings"/>
+    </group>
+
+</menu>

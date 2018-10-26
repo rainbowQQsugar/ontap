@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_with_logo"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sab_lightest_gray"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/user_info_container"
+                android:layout_width="237dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/user_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="19dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="7dp"
+                        android:layout_marginTop="19dp"
+                        android:src="@drawable/ic_empty_avatar_50dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/user_name_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/user_icon"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/user_name"
+                            style="@style/Text.H5.Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/sab_dark_gray"
+                            tools:text="Tiago Carreira"/>
+
+                        <TextView
+                            android:id="@+id/user_sale_days_count"
+                            style="@style/Text.H7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/sab_dark_gray"
+                            tools:text="15 de 20 dias de venta"/>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_below="@+id/user_progress_container"
+                    android:id="@+id/ll_view_all"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/space1"
+                    android:paddingRight="@dimen/space3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginRight="@dimen/field_margin_half"
+                        android:layout_weight="1"
+                        android:id="@+id/up_to_now"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textColor="@color/abi_black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/view_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/user_progress_container"
+                        android:text="@string/more"
+                        android:textColor="@color/abi_blue"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divider_size"
+                    android:background="@color/divider_color"/>
+
+                <com.abinbev.dsa.ui.view.CheckInButton
+                    android:id="@+id/check_in_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.abinbev.dsa.ui.view.UserPerformanceIndicatorsView
+                    android:id="@+id/performance_indicators_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clipToPadding="false"
+                android:elevation="6dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="28dp"
+                    android:paddingTop="23dp">
+
+                    <LinearLayout
+                        android:id="@+id/user_progress_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="34dp"
+                        android:layout_marginLeft="@dimen/page_inset_horizontal"
+                        android:layout_marginRight="@dimen/page_inset_horizontal"
+                        android:layout_marginTop="13dp"
+                        android:clickable="true"
+                        android:gravity="top"
+                        android:orientation="vertical"/>
+
+                    <com.abinbev.dsa.ui.customviews.ExpandedGridView
+                        android:id="@+id/user_progress_grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="34dp"
+                        android:layout_marginLeft="@dimen/page_inset_horizontal"
+                        android:layout_marginRight="@dimen/page_inset_horizontal"
+                        android:layout_marginTop="13dp"
+                        android:columnWidth="84dp"
+                        android:horizontalSpacing="10dp"
+                        android:numColumns="auto_fit"
+                        android:stretchMode="spacingWidth"
+                        android:verticalSpacing="@dimen/section_title_margin"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,178 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'io.fabric.tools:gradle:1.+'
+        classpath rootProject.ext.libraries.retrolambda
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    jcenter()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+}
+
+
+
+def versionMajor = 2
+def versionMinor = 1
+def versionPatch = 0
+def versionBuild = 28
+def versionPatchBuild = versionPatch * 100 + versionBuild
+
+def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+def buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.abinbev.dsa"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatchBuild}"
+        buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
+        buildConfigField "String", "BUILD_TIME", "\"${buildTime}\""
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+        resConfigs "en", "zh"
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    aaptOptions {
+        noCompress 'txt'
+        useNewCruncher false
+        ignoreAssetsPattern "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+    lintOptions {
+        quiet true
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'asm-license.txt'
+        exclude 'LICENSE'
+        exclude 'LICENSE.txt'
+        exclude 'NOTICE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    signingConfigs {
+        release {
+            storeFile file('../keystore/abinbev_droid.jks')
+            storePassword "abinbevdroid101"
+            keyAlias "droid"
+            keyPassword "abinbevdroid101"
+        }
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            signingConfig signingConfigs.debug
+            buildConfigField "boolean", "CHINA_BUILD", "true"
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "CHINA_BUILD", "true"
+            ext.betaDistributionGroupAliases = 'china-testers'
+            ext.betaDistributionReleaseNotes = 'China BDR R3 build.'
+        }
+    }
+    dexOptions {
+        jumboMode true
+        javaMaxHeapSize "2g"
+        preDexLibraries true
+    }
+
+    splits {
+
+        // Configures multiple APKs based on ABI.
+        abi {
+
+            // Enables building multiple APKs per ABI.
+            enable true
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86, armeabi-v7a, and mips.
+
+            // Resets the list of ABIs that Gradle should create APKs for to none.
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            include "armeabi-v7a"
+
+            // Specifies that we do not want to also generate a universal APK that includes all ABIs.
+            universalApk false
+        }
+    }
+
+    useLibrary 'org.apache.http.legacy'
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':dsa-app-lib')
+    provided project(':adapterodactil')
+    annotationProcessor project(':adapterodactil')
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
+        transitive = true;
+    }
+    compile rootProject.ext.supportLibraries.appCompat
+    compile rootProject.ext.supportLibraries.cardView
+    compile rootProject.ext.supportLibraries.androidSupportv13
+    compile rootProject.ext.supportLibraries.recyclerView
+    compile rootProject.ext.supportLibraries.supportDesign
+    compile rootProject.ext.supportLibraries.percent
+    compile rootProject.ext.libraries.timber
+    compile rootProject.ext.libraries.otto
+    compile rootProject.ext.libraries.dagger
+    compile rootProject.ext.libraries.gson
+    compile rootProject.ext.libraries.okhttp
+    compile rootProject.ext.libraries.picasso
+    compile rootProject.ext.libraries.glide
+    compile rootProject.ext.libraries.picassoOkHttp3
+    annotationProcessor rootProject.ext.libraries.daggerCompiler
+    compile rootProject.ext.libraries.butterknife
+    annotationProcessor rootProject.ext.libraries.butterknife
+    debugCompile rootProject.ext.libraries.leakCanary
+    releaseCompile rootProject.ext.libraries.leakCanaryRelease
+    androidTestCompile rootProject.ext.testLibraries.testSupportRunner
+    androidTestCompile rootProject.ext.testLibraries.assertJAndroid
+    androidTestCompile rootProject.ext.testLibraries.mockito
+    androidTestCompile rootProject.ext.testLibraries.dexmakerMockito
+    compile('org.apache.commons:commons-jexl3:3.0') {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    compile 'org.apache.commons:commons-text:1.0'
+    compile 'org.apmem.tools:layouts:1.10@aar'
+    compile 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.0'
+    compile 'com.google.android:flexbox:0.2.3'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'me.dm7.barcodescanner:zxing:1.8.4'
+    def appCenterSdkVersion = '1.1.0'
+    compile "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    compile "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_with_logo"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.H1.Condensed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/page_inset_vertical_large"
+        android:text="@string/cuentas"
+        android:textAllCaps="true"/>
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="24dp"
+        android:cursorVisible="false"
+        android:drawableEnd="@drawable/ic_search_blue_24dp"
+        android:drawablePadding="8dp"
+        android:hint="@string/add_event_hint"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:paddingRight="4dp"/>
+
+    <LinearLayout
+        android:id="@+id/column_header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/searchEditText"
+        android:background="@color/sab_lightest_gray"
+        android:paddingLeft="@dimen/page_inset_horizontal"
+        android:paddingRight="@dimen/page_inset_horizontal"
+        android:orientation="horizontal">
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/account_name"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/account_name"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/code"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/address"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/address"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/status"
+            android:background="@null"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/barrio"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/owner"
+            android:textAllCaps="true"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/account_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/column_header"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/divider_size"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_poc_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/space1"
+        android:src="@drawable/ic_action_add"/>
+</RelativeLayout>

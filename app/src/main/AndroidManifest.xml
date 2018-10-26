@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.abinbev.dsa"
+    android:installLocation="internalOnly">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-feature android:name="android.hardware.wifi" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- Required to register a SyncStatusObserver to display a "syncing..." progress indicator. -->
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+
+    <application
+        android:name=".ABInBevApp"
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:manageSpaceActivity="com.salesforce.androidsdk.ui.ManageSpaceActivity"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup, android:icon">
+
+        <!-- Service required for authentication -->
+        <service
+            android:name="com.salesforce.androidsdk.auth.AuthenticatorService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+
+        <!-- Launcher screen -->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="nosensor"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.ChatterWebViewActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.VisitPlanActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:label="@string/title_event_list"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateUnchanged|adjustResize" />
+
+        <provider
+            android:name="com.salesforce.androidsyncengine.datamanager.StubProvider"
+            android:authorities="@string/content_authority"
+            android:exported="false"
+            android:syncable="true"
+            tools:replace="android:authorities" />
+        <!--
+        This service implements our SyncAdapter. It needs to be exported, so that the system
+        sync framework can access it.
+        -->
+        <service
+            android:name="com.salesforce.androidsyncengine.datamanager.SyncService"
+            android:exported="true">
+
+            <!--
+            This intent filter is required. It allows the system to launch our sync service
+            as needed.
+            -->
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <!-- This points to a required XML file which describes our SyncAdapter. -->
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadapter" />
+        </service>
+
+        <receiver android:name="com.salesforce.androidsyncengine.receivers.DownloadIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.SyncCompletedReceiver">
+            <intent-filter>
+                <action android:name="com.salesforce.androidsyncengine.SYNC_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.TokenRevokedReceiver">
+            <intent-filter>
+                <action android:name="access_token_revoked" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.TriggerReceiver">
+            <intent-filter>
+                <action android:name="com.abinbev.dsa.receiver.TriggerReceiver" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.salesforce.androidsyncengine.services.DownloadIntentService"
+            android:exported="false" />
+        <service
+            android:name=".service.AttachmentUploadService"
+            android:exported="false" />
+        <service
+            android:name=".service.LogoutService"
+            android:exported="false" />
+
+        <service android:name="com.amap.api.location.APSService"></service>
+
+        <provider
+            android:name="com.salesforce.androidsyncengine.provider.SyncFileProvider"
+            android:authorities="@string/provider"
+            android:exported="true" />
+
+        <!-- temporary API_KEY -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="cc6f3996ea6e1601571ad722ec10f466adf82c3d" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="48fb698981c38012f490b57f4c9e29f8" />
+
+        <activity
+            android:name=".activity.AccountOverviewActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AccountDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PedidoListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NegotiationListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AddProductActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.SyncErrorListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SyncPendingListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AssetsListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AssetsInPocListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AccountD1ListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PictureAuditActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SurveysListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UserSurveysListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.QuizListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CasoViewActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AccountCasesListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UserCasesListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PromotionsListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PromotionDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ProductNegotiationDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContractItemsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContractsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AssetCaseDetailActivity"
+            android:label="@string/title_activity_asset_case_detail"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.AssetCaseEditActivity"
+            android:label="@string/title_activity_asset_case_detail"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.CasoEditActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.TasksListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.UserTasksListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.TaskDetailActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.ContactDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.AttachmentsListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.ContactsListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.AssetViewActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.AssetAddActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.QRCodeScanActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.MarketProgramsListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.NewNoteActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.AccountListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.ProspectListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.NotesListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.DiagnosisActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.BasicDataDynamicLayoutActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.AccountOverviewActivity" />
+        </activity>
+        <activity
+            android:name=".activity.PocAttachmentsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.AccountOverviewActivity" />
+        </activity>
+        <activity
+            android:name=".activity.AdditionalDataDynamicLayoutActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.AccountOverviewActivity" />
+        </activity>
+        <activity
+            android:name=".activity.SurveyTestActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.AccountEventPlanningActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UserEventPlanningActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.VolumeDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.UserVolumeDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.CoverageDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.UserDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <provider
+            android:name=".provider.AttachmentFileProvider"
+            android:authorities="@string/abi_provider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <!-- DSA Activities -->
+        <activity
+            android:name="com.salesforce.dsa.app.ui.activity.DigitalSalesAid"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/dsa_app_name"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.salesforce.dsa.app.ui.activity.WebViewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.salesforce.dsa.app.ui.activity.CheckinSelectContactActivity"
+            android:theme="@style/FloatingActivityTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.salesforce.dsa.app.ui.activity.CheckoutReviewActivity"
+            android:theme="@style/FloatingActivityTheme" />
+        <activity
+            android:name="com.salesforce.dsa.app.ui.activity.ContentHistoryActivity"
+            android:theme="@style/FloatingActivityTheme" />
+        <activity android:name="com.salesforce.dsa.app.ui.activity.SearchResultsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".activity.ProspectDetailActivity" />
+        <activity android:name=".activity.PedidoDetailActivity" />
+        <activity android:name=".activity.MarketProgramDetailActivity" />
+        <activity android:name=".activity.EventDetailActivity" />
+        <activity android:name=".activity.EventEditActivity" />
+        <activity android:name=".activity.EventAddActivity" />
+        <activity
+            android:name=".activity.InitialQueueActionDialogActivity"
+            android:theme="@style/FloatingActivityTheme">
+
+        </activity>
+        <activity
+            android:name=".activity.CheckInWithPictureActivity"
+            android:theme="@style/FloatingActivityTheme" />
+        <activity
+            android:name=".activity.TimelineActivity"
+            android:configChanges="screenSize|keyboardHidden" />
+        <activity
+            android:name=".activity.SprListActivity"
+            android:configChanges="screenSize|keyboardHidden" />
+        <activity
+            android:name=".activity.KpiDetailsActivity"
+            android:configChanges="screenSize|keyboardHidden" />
+        <activity
+            android:name=".activity.TradeProgramActivity"
+            android:configChanges="screenSize|keyboardHidden" />
+        <activity
+            android:name=".activity.TradeProgramDetailActivity"
+            android:configChanges="screenSize|keyboardHidden" />
+        <activity
+            android:name=".activity.DistributionListActivity"
+            android:configChanges="screenSize|keyboardHidden" />
+        <activity
+            android:name=".activity.SelectProductForDistributionListActivity"
+            android:configChanges="screenSize|keyboardHidden" />
+        <activity
+            android:name=".activity.AddProductToDistributionListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.DistributionActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.RejectedAccountChangesActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WifiScanResultListActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.NotifyMessageActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:parentActivityName=".activity.UserDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateHidden"></activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.abinbev.dsa.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <activity
+            android:name=".activity.ProspectKPIDetailActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.B2BOrderWebViewActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyordersActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.IndividualKpiActivity"
+            android:configChanges="screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

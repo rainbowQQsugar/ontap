@@ -1,0 +1,142 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/item_record_type_title"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:padding="@dimen/space_small"
+                android:text="@string/market_program_item_record_type"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_record_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/space10"
+                android:layout_toEndOf="@+id/item_record_type_title"
+                android:gravity="end"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="Item Record Type" />
+
+            <TextView
+                android:id="@+id/item_type_title"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_small"
+                android:layout_below="@id/item_record_type"
+                android:text="@string/market_program_item_type"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/space10"
+                android:layout_toEndOf="@+id/item_type_title"
+                android:layout_below="@id/item_record_type"
+                android:gravity="end"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="Item Type" />
+
+
+            <TextView
+                android:id="@+id/item_period_title"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_type"
+                android:padding="@dimen/space_small"
+                android:text="@string/market_program_item_period"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_period"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/item_type"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/item_type"
+                android:gravity="end"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="Semester"/>
+
+            <TextView
+                android:id="@+id/item_date_title"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_period"
+                android:padding="@dimen/space_small"
+                android:text="@string/market_program_item_date"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/item_period"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/item_period_title"
+                android:gravity="right"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="21/12/16" />
+
+
+            <TextView
+                android:id="@+id/item_value_title"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_date"
+                android:padding="@dimen/space_small"
+                android:text="@string/market_program_item_value"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/item_date"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/item_date"
+                android:gravity="right"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="23/3/2016" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

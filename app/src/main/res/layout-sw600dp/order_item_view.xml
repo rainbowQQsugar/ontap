@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/space2"
+    android:layout_marginStart="@dimen/space2"
+    android:layout_marginBottom="@dimen/space_small"
+    android:paddingTop="@dimen/space_small"
+    android:paddingBottom="@dimen/space_small"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/Text.H3.Bold"
+        android:id="@+id/product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space"
+        android:layout_weight="1.3"
+        tools:text="Budweiser" />
+
+    <TextView
+        android:id="@+id/product_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space"
+        android:layout_weight="1"
+        tools:text="0098192" />
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:orientation="horizontal">-->
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space"
+            android:layout_weight=".5"
+            android:textAlignment="gravity"
+            tools:text="12 CA" />
+
+        <ImageView
+            android:id="@+id/order_action"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="?selectableItemBackgroundBorderless"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_remove_box" />
+    <!--</LinearLayout>-->
+
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:id="@+id/grp1">
+        <item
+            android:id="@+id/user_details"
+            android:title="@string/user_details"
+            android:icon="@drawable/ic_equalizer_blue_24dp" />
+
+        <item
+            android:id="@+id/visit_list"
+            android:title="@string/lista_de_vistas"
+            android:icon="@drawable/ic_location" />
+
+        <item
+            android:id="@+id/survey_test"
+            android:title="@string/survey_test_activity"
+            android:icon="@drawable/ic_chatter_small"
+            android:visible="false"/>
+
+        <item
+            android:id="@+id/prospects_list"
+            android:title="@string/prospectos"
+            android:icon="@drawable/ic_prospects" />
+
+        <item
+            android:id="@+id/account_list"
+            android:title="@string/cuentas"
+            android:icon="@drawable/ic_account_circle" />
+
+        <item
+            android:id="@+id/quiz_list"
+            android:title="@string/quizzes"
+            android:icon="@drawable/ic_info" />
+
+        <item
+            android:id="@+id/case_list"
+            android:title="@string/casos"
+            android:icon="@drawable/ic_casos"
+            android:visible="false"/>
+
+        <item
+            android:id="@+id/dsa"
+            android:title="@string/ayuda_ventas_y_capacitaci_n"
+            android:icon="@drawable/ic_dsa"
+            android:visible="true"/>
+
+        <item
+            android:id="@+id/chatter"
+            android:title="@string/chatter"
+            android:icon="@drawable/ic_chatter_small" />
+
+        <item
+            android:id="@+id/calculator"
+            android:title="@string/menu_calculator"
+            android:icon="@drawable/ic_caclulator"/>
+
+    </group>
+    <group android:id="@+id/grp2">
+
+        <item
+            android:id="@+id/system_info"
+            android:title="@string/informaci_n_del_sistema"
+            android:icon="@drawable/ic_info" />
+
+        <item
+            android:id="@+id/full_sync"
+            android:title="@string/full_sync"
+            android:icon="@drawable/ic_sync"/>
+
+        <item
+            android:id="@+id/pending_sync"
+            android:title="@string/sincronizaci_n"
+            app:actionLayout="@layout/pending_sync_count"
+            app:showAsAction="always"
+            android:icon="@drawable/ic_sync_error" />
+
+        <item
+            android:id="@+id/logout"
+            android:title="@string/abi_logout"
+            android:checkable="true"
+            android:icon="@drawable/ic_logout" />
+    </group>
+
+</menu>

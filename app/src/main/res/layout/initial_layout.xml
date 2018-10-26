@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        app:theme="@style/AppTheme.ToolbarOverlay" />
+
+    <FrameLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="false">
+
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/background_image_contentDescription"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_default_landscape" />
+
+        <!-- Start Button View Container -->
+
+        <FrameLayout
+            android:id="@+id/button_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true" />
+
+        <!-- Start Visual View Container -->
+
+        <FrameLayout
+            android:id="@+id/visual_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/category_background_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/background_image_contentDescription"
+                android:scaleType="centerCrop" />
+
+            <View
+                android:id="@+id/category_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:id="@+id/visual_view_container2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="10">
+
+                <RelativeLayout
+                    android:id="@+id/visual_menu_container"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4" />
+
+                <RelativeLayout
+                    android:id="@+id/visual_content_container"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6">
+
+                    <TextView
+                        android:id="@+id/content_subtitle"
+                        style="@android:style/TextAppearance.Medium"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:alpha="100"
+                        android:gravity="left"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="50dp"
+                        android:textColor="#003f7f"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/content_title"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/content_subtitle"
+                        android:alpha="100"
+                        android:duplicateParentState="true"
+                        android:gravity="left"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="-50dp"
+                        android:textColor="#003f7f"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/content_description"
+                        style="@android:style/TextAppearance.Small"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/content_title"
+                        android:alpha="100"
+                        android:gravity="left"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:textColor="#003f7f" />
+
+                    <ListView
+                        android:id="@+id/content_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/content_title"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@android:color/transparent"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="15dp"
+                        android:listSelector="@android:color/holo_blue_light" />
+                </RelativeLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- End Visual View Container -->
+
+        <ImageView
+            android:id="@+id/redBorder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/border_image_contentDescription"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

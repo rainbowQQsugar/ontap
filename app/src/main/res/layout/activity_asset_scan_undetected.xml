@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp"
+        android:text="@string/asset_status_reason"
+        android:textSize="15sp" />
+
+    <Spinner
+        android:id="@+id/reasonsSp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@color/sab_dark_gray" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp"
+        android:paddingTop="15dp"
+        android:text="@string/comments"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/commentEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

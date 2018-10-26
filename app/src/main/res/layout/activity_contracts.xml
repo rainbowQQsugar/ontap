@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_with_logo"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.H1.Condensed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/page_inset_vertical_large"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/page_inset_vertical_large"
+        android:text="@string/pbo_contract"
+        android:textAllCaps="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:background="@color/divider_color"/>
+
+
+<!--    <ScrollView
+        android:id="@+id/scrollview_contract_names"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linear_contract_names"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">-->
+            <TextView
+                android:layout_margin="@dimen/page_inset_horizontal"
+                style="@style/Text.H1.Condensed"
+                android:textSize="16sp"
+                android:id="@+id/contract_names"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+<!--        </LinearLayout>
+
+    </ScrollView>-->
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sab_lightest_gray"
+        android:clipToPadding="false"
+        android:divider="@color/transparent_color"
+        android:dividerHeight="0dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:scrollbars="vertical"/>
+
+</LinearLayout>

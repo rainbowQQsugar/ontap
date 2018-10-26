@@ -1,0 +1,145 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clipToPadding="false"
+    android:paddingBottom="4dp"
+    android:paddingLeft="@dimen/section_margin_horizontal"
+    android:paddingRight="@dimen/section_margin_horizontal"
+    android:paddingTop="4dp">
+
+    <android.support.v7.widget.CardView
+        style="@style/CardViewTile"
+        android:layout_width="match_parent"
+        app:contentPaddingTop="10dp"
+        app:contentPaddingBottom="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-4dp"
+        android:layout_marginRight="-4dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/número_de_pedido"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/pedido_number"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:textColor="@color/abi_blue2"
+                    tools:text="120asdf0asdf" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_source_label"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/pedido_source"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    tools:text="SFDC Order" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_status_label"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/pedido_status"
+                    style="@style/Text.H7.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    tools:text="Abierto" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tipo"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/pedido_type"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    tools:text="Really long type of record" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fecha_de_inicio"
+                    android:textAllCaps="true" />
+
+
+                <TextView
+                    android:id="@+id/pedido_created_date"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    tools:text="23/3/2016" />
+            </TableRow>
+
+            <TableRow
+                android:visibility="gone"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valor"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/total"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    tools:text="9,000" />
+            </TableRow>
+        </TableLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

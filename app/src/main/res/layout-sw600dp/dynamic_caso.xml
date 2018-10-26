@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/DetailsToolbarStyle" />
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/caso_edit"
+            style="@style/Widget.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/space"
+            android:text="@string/caso_edit"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/complete_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space">
+
+                <TextView
+                    android:id="@+id/header"
+                    style="@style/Text.H5.CondensedBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:paddingTop="@dimen/space2"
+                    android:paddingBottom="@dimen/space2"
+                    android:layout_marginBottom="@dimen/space2"
+                    android:background="@color/sab_lightest_gray"
+                    android:text="@string/comentario"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/empty_comments"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:layout_marginBottom="@dimen/space2"
+                    android:text="@string/no_hay_comentarios"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/comment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:orientation="vertical" />
+
+                <EditText
+                    android:id="@+id/comment_input"
+                    style="@style/Widget.EditText.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:layout_marginBottom="@dimen/space2"
+                    android:hint="@string/add_comment"
+                    android:maxLines="4"
+                    android:minLines="3"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/save_comment"
+                    style="@style/Text.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:enabled="false"
+                    android:text="@string/guardar_comentario"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/related_cases_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space3">
+
+                    <TextView
+                        android:id="@+id/attachment_header"
+                        style="@style/Text.H5.CondensedBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/space"
+                        android:paddingRight="@dimen/space"
+                        android:paddingTop="@dimen/space2"
+                        android:paddingBottom="@dimen/space2"
+                        android:text="@string/archivos"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/add_attachment"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:paddingLeft="@dimen/space"
+                        android:paddingRight="@dimen/space"
+                        android:contentDescription="@string/archivos"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_add_box_sab_blue"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/empty_attachments"
+                    style="@style/Text.H4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:layout_marginBottom="@dimen/space2"
+                    android:text="@string/sin_adjunto_archivos"
+                    android:textStyle="italic"
+                    android:textColor="@color/gray"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/attachment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

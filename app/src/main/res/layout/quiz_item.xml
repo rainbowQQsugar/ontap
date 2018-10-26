@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        card_view:cardCornerRadius="2dp"
+        card_view:contentPadding="10dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/surveyNumberTitle"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:padding="@dimen/space_small"
+                android:text="@string/survey_number"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/quiz_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/space12"
+                android:layout_toEndOf="@+id/surveyNumberTitle"
+                android:gravity="end"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="120asdf0asdf \n So and So's Quiz" />
+
+            <TextView
+                android:id="@+id/quiz_state_title"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quiz_name"
+                android:padding="@dimen/space_small"
+                android:text="@string/survey_state"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/quiz_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/quiz_name"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/quiz_name"
+                android:gravity="end"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="Abierto" />
+
+            <TextView
+                android:id="@+id/quiz_total_score_title"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quiz_state_title"
+                android:padding="@dimen/space_small"
+                android:text="@string/total_score"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/quiz_total_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/survey_state"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/quiz_state_title"
+                android:gravity="end"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="21/12/16" />
+
+
+            <TextView
+                android:id="@+id/survey_creation_date_title"
+                style="@style/Text.H6.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quiz_total_score_title"
+                android:padding="@dimen/space_small"
+                android:text="@string/survey_create_date"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/quiz_creation_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/survey_due_date"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/quiz_total_score"
+                android:gravity="end"
+                android:padding="@dimen/space_small"
+                android:textAlignment="gravity"
+                tools:text="23/3/2016" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

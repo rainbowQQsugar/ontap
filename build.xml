@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project name='android build number fix' default='help'>
+
+	<property name="antlib" value="antlib" />
+	
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="${antlib}/ant-contrib-1.0b3.jar" />
+		</classpath>
+	</taskdef>
+	
+	<property name="build.gradle.path" value="app/build.gradle" />
+	
+	<property name="betaDistributionReleaseNotesFilePath" value="" />
+	<property name="betaDistributionGroupAliases" value="internal-testers" />
+	<property name="buildToolsVersion" value="22.0.1" />
+	
+	<target name='help' description="help">
+		<echo><![CDATA[
+To change the build notes, send 
+ant updateFabricSettings -DfilePath='' -DgroupAliases=''
+
+To change the build notes, send 
+ant updateAppVersion -DversionCode='${versionCode}' -DversionName='${versionName}'
+
+]]></echo>
+	</target>
+	
+	<target name='updateFabricSettings'>
+		<echo><![CDATA[
+To change the build notes, send 
+ant updateFabricSettings -DfilePath='${filePath}' -DgroupAliases='${groupAliases}'
+]]></echo>
+		
+		<!-- reset the file -->
+		<exec executable="git" dir=".">
+			<arg line="checkout '${build.gradle.path}' " />
+		</exec>
+		
+		<replaceregexp encoding='UTF-8' file='app/build.gradle'
+			match="\bbuildToolsVersion\s*\'[^\']+\'"
+			replace="buildToolsVersion '${buildToolsVersion}'"
+			flags="im"
+		/>
+		<replaceregexp encoding='UTF-8' file='app/build.gradle'
+			match="\bext.betaDistributionReleaseNotesFilePath=\'[^\']*\'"
+			replace="ext.betaDistributionReleaseNotesFilePath=\'${filePath}\'"
+			flags="im"
+		/>
+		<replaceregexp encoding='UTF-8' file='app/build.gradle'
+			match="\bext.betaDistributionGroupAliases=\'[^\']*\'"
+			replace="ext.betaDistributionGroupAliases=\'${groupAliases}\'"
+			flags="im"
+		/>
+		
+	</target>
+	
+	<target name="updateAppVersion">
+		<echo><![CDATA[
+To change the build notes, send 
+ant updateAppVersion -DversionCode='${versionCode}' -DversionName='${versionName}'
+]]></echo>
+		
+		<replaceregexp encoding='UTF-8' file='app/build.gradle'
+			match="versionBuild =\s*\d+"
+			replace="versionBuild = ${versionCode}"
+			flags="im"
+		/>
+	</target>
+
+</project>

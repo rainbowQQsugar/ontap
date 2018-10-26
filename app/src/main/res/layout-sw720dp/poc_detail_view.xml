@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarStyle.Light"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        app:theme="@style/AppTheme.ToolbarOverlay.Light">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_abi_logo" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.abinbev.dsa.ui.view.Account360Header
+                android:id="@+id/account_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="21" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="22"
+                android:background="@color/sab_lightest_gray"
+                android:paddingLeft="22dp"
+                android:paddingRight="22dp">
+
+                <com.abinbev.dsa.ui.view.ProspectCreation
+                    android:id="@+id/prospect_creation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="21"
+                android:background="@color/sab_white">
+
+
+                <com.abinbev.dsa.ui.view.NotesView
+                    android:id="@+id/notes_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/ToolbarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/AppTheme.ToolbarOverlay"
+                app:subtitleTextAppearance="@style/Text.SubTitle"
+                app:titleTextAppearance="@style/Text.Title"
+                />
+
+            <TextView
+                android:id="@+id/add_btn"
+                style="@style/Text.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space2"
+                android:layout_gravity="end"
+                android:text="@string/add_to_negotiation" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Text.H4"
+                android:padding="@dimen/space3"
+                android:gravity="center"
+                android:background="@color/sab_lightest_gray"
+                android:text="@string/promotions_header"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space"
+                android:layout_marginLeft="@dimen/space2"
+                android:layout_marginRight="@dimen/space2"
+                android:layout_marginTop="@dimen/space3"
+                android:layout_marginBottom="@dimen/space_small"
+                android:background="@color/sab_lighter_gray">
+
+                <android.support.v4.widget.Space
+                    android:layout_width="56dp"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.H7.Bold"
+                    android:textAllCaps="true"
+                    android:text="@string/number"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.H7.Bold"
+                    android:textAllCaps="true"
+                    android:text="@string/code"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2.5"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.H7.Bold"
+                    android:textAllCaps="true"
+                    android:text="@string/fecha_de_vencimiento"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/promotions_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sab_white"
+        android:paddingLeft="@dimen/space2"
+        android:paddingRight="@dimen/space2"
+        android:paddingBottom="@dimen/space2"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</android.support.design.widget.CoordinatorLayout>

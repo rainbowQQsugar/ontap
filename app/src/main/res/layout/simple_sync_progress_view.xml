@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black80">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/abi_logo_sync" />
+
+        <TextView
+            android:id="@+id/simple_sync_progress_data"
+            style="@style/Text.H6.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/space2"
+            android:textColor="@color/sab_white"
+            tools:text="Loading..." />
+
+        <ImageView
+            android:id="@+id/imageView"
+            style="?indeterminateDSAProgressStyle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/space2"
+            android:background="@drawable/beer" />
+
+        <!--<TextView
+            android:id="@+id/simple_sync_progress_object"
+            style="@style/Text.H6.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/sab_white"
+            tools:text="Loading..." />-->
+
+        <!-- <ProgressBar
+             android:id="@+id/simple_sync_progress_progress"
+             style="?indeterminateDSAProgressStyle"
+             android:layout_margin="@dimen/space2"
+             android:layout_width="32dp"
+             android:layout_height="32dp"
+             android:layout_gravity="center" />-->
+
+        <TextView
+            android:id="@+id/simple_sync_progress_warning"
+            style="@style/Text.H8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/esto_puede_tomar_unos_minutos"
+            android:textColor="@color/sab_white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space6"
+        android:src="@drawable/sfdc_logo_sync" />
+
+</RelativeLayout>

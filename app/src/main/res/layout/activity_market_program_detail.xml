@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.abinbev.dsa.activity.MarketProgramDetailActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/DetailsToolbarStyle"/>
+
+    <ScrollView
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space7"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space2"
+                android:background="@color/sab_lightest_gray"
+                style="@style/Text.H3.Bold"
+                android:text="@string/on_loan_materials"/>
+
+            <TableLayout
+                android:id="@+id/loan_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space2"
+                android:paddingEnd="@dimen/space"
+                android:paddingBottom="@dimen/space2"
+                android:paddingTop="@dimen/space2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space7"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/space2"
+                android:background="@color/sab_lightest_gray"
+                style="@style/Text.H3.Bold"
+                android:text="@string/counterpart"/>
+
+            <TableLayout
+                android:id="@+id/sales_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="?android:dividerHorizontal"
+                android:showDividers="middle|end">
+
+                <TableRow
+                android:paddingEnd="@dimen/space"
+                android:paddingStart="@dimen/space">
+
+                    <TextView
+                        style="@style/Text.SalesItemsHeader"
+                        android:layout_width="@dimen/separator"
+                        android:layout_weight="1"
+                        android:padding="@dimen/space" />
+
+                    <TextView
+                        style="@style/Text.SalesItemsHeader"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/space"
+                        android:text="@string/market_program_month_title" />
+
+                    <TextView
+                        style="@style/Text.SalesItemsHeader"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="@dimen/space"
+                        android:text="@string/market_program_quarter_title" />
+                </TableRow>
+
+                <TableRow android:layout_height="1px" android:background="#BDBDBD"
+                    android:layout_width="match_parent">
+                    <View android:layout_span="2" android:layout_height="@dimen/separator"
+                        android:layout_width="fill_parent" >
+                    </View>
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:gravity="center"
+        android:text="@string/no_market_program_items"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

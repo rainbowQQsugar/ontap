@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/event_add_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:paddingBottom="@dimen/field_margin_half"
+        android:paddingLeft="@dimen/page_inset_horizontal"
+        android:paddingRight="@dimen/page_inset_horizontal"
+        android:paddingTop="@dimen/page_inset_horizontal"
+        android:src="@drawable/ic_close_black"/>
+
+    <TextView
+        android:id="@+id/txtAddEventLabel"
+        style="@style/Text.H6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/field_label_margin"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:layout_marginTop="32dp"
+        android:background="@null"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/add_event_label"
+        android:textAllCaps="true"/>
+
+    <EditText
+        android:id="@+id/editAddSearch"
+        style="@style/Widget.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtAddEventLabel"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:drawableEnd="@drawable/ic_search"
+        android:drawablePadding="36dp"
+        android:hint="@string/add_event_hint"
+        android:imeOptions="actionDone"
+        android:inputType="text">
+
+        <requestFocus/>
+    </EditText>
+
+    <ProgressBar
+        android:id="@+id/progressAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editAddSearch"
+        android:layout_alignRight="@+id/editAddSearch"
+        android:layout_alignTop="@+id/editAddSearch"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="4dp"
+        android:visibility="gone"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:layout_below="@id/editAddSearch"
+        android:background="@drawable/divider_horizontal"/>
+
+</RelativeLayout>

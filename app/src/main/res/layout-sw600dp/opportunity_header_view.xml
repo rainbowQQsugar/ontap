@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator"
+        android:background="@color/sab_lightest_gray"/>
+
+    <TextView
+        style="@style/Text.H1.BoldCondensed"
+        android:id="@+id/section_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Title"
+        android:layout_marginStart="@dimen/space2"
+        android:layout_marginBottom="@dimen/space2"
+        android:layout_marginTop="@dimen/space4"
+        android:textAllCaps="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/space"
+        android:background="@color/sab_lightest_gray">
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/opportunity_Name"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/space"
+            android:text="@string/opportunityName"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/opportunity_Ideal"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/opportunityIdeal"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/opportunity_Real"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/opportunityReal"
+            android:textAllCaps="true"  />
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/opportunity_Opportunity"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:padding="@dimen/space"
+            android:text="@string/opportunityOpportunity"
+            android:textAllCaps="true"/>
+    </LinearLayout>
+</LinearLayout>

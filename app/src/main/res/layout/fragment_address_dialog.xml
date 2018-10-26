@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="?attr/dialogPreferredPadding"
+            android:layout_marginRight="?attr/dialogPreferredPadding"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.DynamicField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/address_dialog_country"
+                android:visibility="gone"
+                android:text="@string/address_dialog_country"/>
+
+            <EditText
+                android:id="@id/address_dialog_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space1"
+                android:layout_marginTop="@dimen/space"
+                android:background="@drawable/qty_bg"
+                android:visibility="gone"
+                android:inputType="text"
+                android:padding="@dimen/space1"/>
+
+            <TextView
+                style="@style/Text.DynamicField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/address_dialog_postal_code"
+                android:visibility="gone"
+                android:text="@string/address_dialog_postal_code"/>
+
+            <EditText
+                android:id="@id/address_dialog_postal_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space1"
+                android:layout_marginTop="@dimen/space"
+                android:background="@drawable/qty_bg"
+                android:visibility="gone"
+                android:inputType="text"
+                android:padding="@dimen/space1"/>
+
+            <TextView
+                style="@style/Text.DynamicField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/address_dialog_state"
+                android:visibility="gone"
+                android:text="@string/address_dialog_state"/>
+
+            <EditText
+                android:id="@id/address_dialog_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space1"
+                android:layout_marginTop="@dimen/space"
+                android:background="@drawable/qty_bg"
+                android:visibility="gone"
+                android:inputType="text"
+                android:padding="@dimen/space1"/>
+
+            <TextView
+                style="@style/Text.DynamicField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/address_dialog_city"
+                android:text="@string/address_dialog_city"/>
+
+            <EditText
+                android:id="@id/address_dialog_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space1"
+                android:layout_marginTop="@dimen/space"
+                android:background="@drawable/qty_bg"
+                android:inputType="text"
+                android:padding="@dimen/space1"/>
+
+            <TextView
+                style="@style/Text.DynamicField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/address_dialog_street"
+                android:text="@string/address_dialog_street"/>
+
+            <EditText
+                android:id="@id/address_dialog_street"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space1"
+                android:layout_marginTop="@dimen/space"
+                android:background="@drawable/qty_bg"
+                android:inputType="text"
+                android:maxLines="2"
+                android:padding="@dimen/space1"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="4dp">
+
+        <Button
+            android:id="@+id/address_dialog_cancel"
+            style="?attr/buttonBarNegativeButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelar"/>
+
+        <Button
+            android:id="@+id/address_dialog_save"
+            style="?attr/buttonBarPositiveButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/apply"/>
+
+    </LinearLayout>
+
+</LinearLayout>

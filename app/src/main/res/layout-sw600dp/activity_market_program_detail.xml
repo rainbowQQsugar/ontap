@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sab_lightest_gray"
+    tools:context=".activity.PedidoDetailOldActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/DetailsToolbarStyle"/>
+
+    <LinearLayout
+        android:id="@+id/headers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginEnd="@dimen/space2"
+        android:layout_marginStart="@dimen/space2"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal"
+        android:background="@color/sab_light_gray">
+
+        <TextView
+            android:id="@+id/txtHeaderLeftLeft"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/market_program_item_record_type"
+            android:textAllCaps="true"  />
+
+        <TextView
+            android:id="@+id/txtHeaderLeft"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/market_program_item_type"
+            android:textAllCaps="true"  />
+        <TextView
+            android:id="@+id/txtHeaderMiddleLeft"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/market_program_item_period"
+            android:textAllCaps="true"  />
+        <TextView
+            android:id="@+id/txtHeaderMiddleRight"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/market_program_item_date"
+            android:textAllCaps="true"  />
+        <TextView
+            android:id="@+id/txtHeaderRight"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/market_program_item_value"
+            android:textAllCaps="true"  />
+        </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/line_items"
+        android:layout_below="@+id/headers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/sab_lightest_gray"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="true"
+        android:dividerHeight="2dp" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_market_program_items"
+        android:visibility="gone"/>
+
+</RelativeLayout>

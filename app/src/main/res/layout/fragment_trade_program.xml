@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/trade_program_recycler"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/title_divider"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:background="@color/sab_lightest_gray"
+    android:clipToPadding="false"
+    android:divider="@color/transparent_color"
+    android:dividerHeight="0dp"
+    android:paddingBottom="80dp"
+    android:paddingTop="10dp"
+    android:scrollbarStyle="outsideOverlay"
+    android:scrollbars="vertical" />

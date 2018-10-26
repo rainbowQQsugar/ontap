@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.abinbev.dsa.ui.view.PerformanceIndicatorsView
+        android:id="@+id/performance_indicators_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sab_lightest_gray"
+        app:sectionTitle="@string/visits_dashboard"/>
+
+    <com.abinbev.dsa.ui.view.VolumeView
+        android:id="@+id/volume_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/kpi_volume_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:background="@color/divider_color"/>
+
+    <com.abinbev.dsa.ui.view.CoverageView
+        android:id="@+id/coverage_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.abinbev.dsa.ui.view.PedidosView
+        android:id="@+id/orders_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.abinbev.dsa.ui.view.AttachmentsView
+        android:id="@+id/attachments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sab_lightest_gray"/>
+
+</LinearLayout>

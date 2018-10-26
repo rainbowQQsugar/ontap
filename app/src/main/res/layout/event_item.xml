@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.abinbev.dsa.ui.view.CustomSwipeRevealLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:dragEdge="right"
+    app:mode="same_level">
+
+    <LinearLayout
+        android:id="@+id/button_holder"
+        android:layout_width="156dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/action_call"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="@color/list_button_green"
+            android:src="@drawable/ic_action_call"/>
+
+        <ImageButton
+            android:id="@+id/action_directions"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:background="@color/list_button_blue"
+            android:src="@drawable/ic_action_directions"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/content_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/item_margin_vertical"
+        android:paddingEnd="@dimen/item_margin_horizontal"
+        android:paddingStart="@dimen/item_margin_horizontal"
+        android:paddingTop="@dimen/item_margin_vertical">
+
+        <TextView
+            android:id="@+id/txtName"
+            style="@style/Text.H4.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            tools:text="Carrefour Angel Gall"/>
+
+        <TextView
+            android:id="@+id/txtAddress"
+            style="@style/Text.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/txtName"
+            android:background="@null"
+            android:textColor="@color/sab_gray"
+            tools:text="Av. Ángel Gallardo 30, 1405 Villa Crespo,  Capital Federal"/>
+
+        <TextView
+            android:id="@+id/distanceLabel"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/txtAddress"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="6dp"
+            android:paddingRight="5dp"
+            android:background="@null"
+            android:text="@string/distance"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_gray"/>
+
+        <TextView
+            android:id="@+id/distanceTxt"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/distanceLabel"
+            android:layout_below="@id/txtAddress"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="6dp"
+            android:background="@null"
+            android:text=""
+            android:textColor="@color/sab_dark_gray"/>
+
+        <TextView
+            android:id="@+id/txtDateLabel"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/distanceLabel"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="6dp"
+            android:background="@null"
+            android:paddingRight="5dp"
+            android:text="@string/last_visit_label"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_gray"/>
+
+        <TextView
+            android:id="@+id/txtDate"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/txtDateLabel"
+            android:layout_toRightOf="@id/txtDateLabel"
+            android:background="@null"
+            android:textColor="@color/sab_dark_gray"
+            tools:text="10/10/2017"/>
+
+        <TextView
+            android:id="@+id/txtEndDateLabel"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/distanceLabel"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@id/txtDate"
+            android:background="@null"
+            android:text="@string/end_date_label"
+            android:paddingRight="5dp"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_gray"/>
+
+        <TextView
+            android:id="@+id/txtEndDate"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/txtDateLabel"
+            android:layout_toRightOf="@id/txtEndDateLabel"
+            android:background="@null"
+            android:textColor="@color/sab_dark_gray"
+            tools:text="10/10/2017"/>
+
+        <TextView
+            android:id="@+id/visitsCountLabel"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/txtEndDateLabel"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="6dp"
+            android:paddingRight="5dp"
+            android:background="@null"
+            android:text="@string/number_of_visits"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_gray"/>
+
+        <TextView
+            android:id="@+id/visitsCountTxt"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/visitsCountLabel"
+            android:layout_below="@id/txtEndDateLabel"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="6dp"
+            android:background="@null"
+            android:text=""
+            android:textColor="@color/sab_dark_gray"/>
+
+
+    </RelativeLayout>
+
+</com.abinbev.dsa.ui.view.CustomSwipeRevealLayout>

@@ -1,0 +1,15 @@
+{
+  "configuration": {
+    "manifestVersion":"1.2",
+    "enableLogging":true,
+    "allowBackup": true,
+    "backgroundSync": {
+      "wifi": true,
+      "edge": false,
+      "3G": false,
+      "4G": true,
+      "lte": true
+    },
+    "syncFrequency": 10
+  }
+}

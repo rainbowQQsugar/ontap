@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
+
+    <ImageView
+        android:id="@+id/attachment_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_attachment"/>
+
+    <ImageView
+        android:id="@+id/download_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_download_grey"/>
+
+    <TextView
+        android:id="@+id/file_name"
+        style="@style/Text.H4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/download_icon"
+        android:layout_toRightOf="@id/attachment_icon"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/abi_blue2"
+        tools:text="botica-campeche-contrato.pdf"/>
+
+    <TextView
+        android:id="@+id/modification_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/file_name"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/download_icon"
+        android:layout_toRightOf="@id/attachment_icon"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/sab_gray"
+        tools:text="Modificado 10/10/2017"/>
+
+</RelativeLayout>

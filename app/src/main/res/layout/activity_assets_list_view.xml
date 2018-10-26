@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_with_logo" />
+
+        <LinearLayout
+            android:id="@+id/action_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/actionCancel"
+                style="@style/Text.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|right"
+                android:gravity="right"
+                android:paddingBottom="@dimen/space2"
+                android:paddingEnd="@dimen/space"
+                android:paddingStart="@dimen/space"
+                android:paddingTop="@dimen/space2"
+                android:text="@string/cancelar"
+                android:textColor="@color/sab_blue"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/actionSubmit"
+                style="@style/Text.Action"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|right"
+                android:gravity="right"
+                android:paddingBottom="@dimen/space2"
+                android:paddingEnd="@dimen/space"
+                android:paddingStart="@dimen/space"
+                android:paddingTop="@dimen/space2"
+                android:text="@string/create_case"
+                android:textColor="@color/sab_blue"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/instructions"
+            style="@style/Text.H3.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:paddingBottom="@dimen/space2"
+            android:paddingEnd="@dimen/space"
+            android:paddingStart="@dimen/space"
+            android:text="@string/create_asset_case_instructions"
+            android:textStyle="italic"
+            android:visibility="gone"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Text.H1.Condensed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/page_inset_vertical_large"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/page_inset_vertical_large"
+            android:text="@string/assets"
+            android:textAllCaps="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_size"
+            android:background="@color/divider_color" />
+
+
+        <ListView
+            android:id="@+id/assets_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/sab_lightest_gray"
+            android:clipToPadding="false"
+            android:divider="@color/transparent_color"
+            android:dividerHeight="0dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
+
+        <LinearLayout
+            android:id="@+id/buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/assets_tracking_wifi_scan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/abi_green"
+                android:text="@string/assets_wifi_scan" />
+
+            <Button
+                android:id="@+id/assets_tracking_add_new"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@color/abi_green"
+                android:text="@string/asset_list_activity_add_device" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/new_caso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/space1"
+        android:src="@drawable/ic_action_add"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/popup_menu_anchor"
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:layout_toStartOf="@id/new_caso"
+        android:visibility="invisible" />
+
+</RelativeLayout>

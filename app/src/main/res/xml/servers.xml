@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<servers>
+    <server
+        name="Production"
+        url="https://login.salesforce.com"/>
+    <server
+        name="Sandbox"
+        url="https://test.salesforce.com"/>
+    <server
+        name="China Sandbox"
+        url="https://abiapac--full.cs57.my.salesforce.com"/>
+</servers>

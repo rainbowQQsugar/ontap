@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/category_main"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/category_view_main_background">
+
+    <com.salesforce.dsa.app.ui.customview.VerticalTextView
+        android:id="@+id/categoryTitle"
+        android:padding="@dimen/space2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="top|left"
+        android:textColor="@color/category_name_color"
+        android:textSize="@dimen/text_size_large"
+        android:visibility="gone"
+        android:textStyle="bold"/>
+
+    <ListView
+        android:id="@+id/categoryList"
+        android:layout_width="@dimen/visual_browser_listview_width"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/category_view_list_background"
+        android:listSelector="@android:color/holo_blue_light"/>
+
+    <!--     <View android:layout_width="2dp"
+            android:layout_height="fill_parent"
+            android:background="@drawable/vertical_divider_background"/> -->
+
+</RelativeLayout>

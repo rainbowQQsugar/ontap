@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/primary_dark"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:padding="@dimen/space_small"
+    android:orientation="horizontal">
+
+    <TextView
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:text="@string/type"
+        android:textColor="@color/header_light"
+        android:textSize="@dimen/spotlight_header_text_size"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:text="@string/description"
+        android:textColor="@color/header_light"
+        android:textSize="@dimen/spotlight_header_text_size"/>
+
+    <TextView
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:text="@string/location"
+        android:textColor="@color/header_light"
+        android:textSize="@dimen/spotlight_header_text_size"/>
+
+    <TextView
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:text="@string/date_added"
+        android:textColor="@color/header_light"
+        android:textSize="@dimen/spotlight_header_text_size"/>
+</LinearLayout>

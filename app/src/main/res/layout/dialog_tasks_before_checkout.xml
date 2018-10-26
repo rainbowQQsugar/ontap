@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/space2">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.H2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space2"
+        android:text="@string/dialog_tasks_before_checkout_title"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/title"/>
+
+    <Button
+        android:id="@+id/confirm_button"
+        style="?borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/recycler_view"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/page_inset_vertical_large"
+        android:background="@color/abi_blue"
+        android:textAppearance="@style/Text.H3"
+        android:textColor="@color/sab_white"
+        android:text="@string/dialog_tasks_before_checkout_button_title"/>
+
+</RelativeLayout>

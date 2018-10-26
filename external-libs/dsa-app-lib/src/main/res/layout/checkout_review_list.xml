@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:text="@string/review_materials"
+        style="@android:style/TextAppearance.Large"
+        android:textColor="@color/accent"/>
+
+    <View
+        android:id="@+id/titleDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/title"
+        android:background="@color/accent"/>
+
+    <EditText
+        android:id="@+id/checkoutNotes"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/titleDivider"
+        android:layout_margin="10dp"
+        android:inputType="textMultiLine"
+        android:textColor="@android:color/black"
+        android:gravity="top|left"/>
+
+    <ListView
+        android:id="@+id/documentsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkoutNotes"
+        android:layout_margin="10dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/documentsList"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:background="@color/accent"
+        android:paddingRight="50dp"
+        android:paddingLeft="50dp"
+        android:text="@string/done_button_title"
+        android:onClick="onDoneButtonClick"/>
+
+</RelativeLayout>

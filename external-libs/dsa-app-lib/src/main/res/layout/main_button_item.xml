@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/main_button_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/button_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/image_contentDescription"
+        android:duplicateParentState="true"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/button_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:duplicateParentState="true"
+        android:layout_centerInParent="true"
+        android:paddingLeft="@dimen/space2"
+        android:paddingRight="@dimen/space2"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"/>
+</RelativeLayout>

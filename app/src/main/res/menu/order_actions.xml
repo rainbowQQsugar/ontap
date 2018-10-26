@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/order_action_add_products"
+        android:title="@string/order_detail_action_add_products"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/order_action_submit"
+        android:title="@string/order_detail_action_submit"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/order_action_cancel"
+        android:title="@string/order_detail_action_cancel_order"
+        app:showAsAction="always" />
+</menu>

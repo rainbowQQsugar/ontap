@@ -1,0 +1,14 @@
+<resources>
+    <!-- Example customization of dimensions originally defined in res/values/dimens.xml
+         for 7 inch and larger tablets. -->
+    <dimen name="contact_admin_width">500dp</dimen>
+
+    <dimen name="field_margin_35dp">58dp</dimen>
+    <dimen name="field_margin_50dp">83dp</dimen>
+    <dimen name="field_label_margin">11dp</dimen>
+    <dimen name="field_margin_60dp">100dp</dimen>
+
+    <dimen name="text_h5">23sp</dimen>
+    <dimen name="text_h4">26sp</dimen>
+    <dimen name="file_preview_size">116dp</dimen>
+</resources>

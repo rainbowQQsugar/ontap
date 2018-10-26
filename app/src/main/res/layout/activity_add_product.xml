@@ -1,0 +1,154 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sab_lightest_gray"
+    android:orientation="vertical"
+    tools:context=".activity.AddProductActivity"
+    android:id="@+id/root"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/AppTheme.ToolbarOverlay"
+        app:subtitleTextAppearance="@style/Text.SubTitle"
+        app:titleTextAppearance="@style/Text.Title" >
+
+        <com.abinbev.dsa.ui.view.ShoppingCart
+            android:layout_alignParentEnd="true"
+            android:id="@+id/imageShoppingCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space2"
+        android:background="@color/sab_white">
+
+        <EditText
+            android:id="@+id/searchProduct"
+            style="@style/Widget.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_search"
+            android:drawablePadding="36dp"
+            android:hint="@string/search_product_hint"
+            android:textSize="14sp"
+            android:focusable="false"
+            android:inputType="text">
+        </EditText>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/product_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/searchProduct"
+            android:layout_marginStart="@dimen/space2"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_filter_blue" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator"
+        android:background="@color/sab_lightest_gray" />
+
+    <RelativeLayout
+        android:id="@+id/product_filter_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sab_white"
+        android:paddingBottom="@dimen/space4"
+        android:paddingEnd="@dimen/space2"
+        android:paddingStart="@dimen/space2"
+        android:paddingTop="@dimen/space"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close_blue_36dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/close"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space2"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/brand_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/marca"
+                    android:textAllCaps="true" />
+
+                <Spinner
+                    android:id="@+id/brand_spinner"
+                    style="?attr/spinnerDropDownItemStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/categoría"
+                    android:textAllCaps="true" />
+
+                <Spinner
+                    android:id="@+id/category_spinner"
+                    style="?attr/spinnerDropDownItemStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/product_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/space2"
+        android:layout_marginStart="@dimen/space2"
+        android:divider="@color/sab_lightest_gray"
+        android:dividerHeight="2dp" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_products"
+        android:visibility="gone" />
+
+</LinearLayout>

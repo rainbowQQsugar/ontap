@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="logout">注销</string>
+    <string name="refresh">刷新</string>
+
+    <string name="loading">加载中…</string>
+
+    <string name="submit_button">保存</string>
+    <string name="delete_button">删除</string>
+    <string name="duplicate_button">复制</string>
+    <string name="create_account">创建账号并关联此联系人</string>
+    <string name="create_account_and_conatct">创建账号和联系人</string>
+
+    <string name="no_contacts">没有联系人!</string>
+
+    <string name="account">帐户</string>
+    <string name="email">电子邮件</string>
+    <string name="title">职位</string>
+    <string name="phone">电话</string>
+    <string name="localName">本地名称</string>
+
+    <string name="empty_value">-</string>
+
+    <string name="list_header_text">分类</string>
+    <string name="content_header_text">内容</string>
+
+    <string name="response_hint">请输入您的反馈</string>
+
+    <string name="menu_home">主页</string>
+    <string name="menu_refresh">刷新</string>
+    <string name="menu_search">查找</string>
+    <string name="menu_checkin">进店</string>
+    <string name="menu_settings">设置</string>
+    <string name="menu_spotlight">聚焦</string>
+    <string name="menu_menu_browser__view">菜单浏览器</string>
+    <string name="menu_visual_browser_view">可视化浏览器</string>
+    <string name="menu_history">历史</string>
+    <string name="menu_playlist">播放列表</string>
+    <string name="menu_add_additional">添加</string>
+    <string name="full_order_message">一个订单不能超过7行。</string>
+    <string name="minimum_order_message">一个订单至少要有1行。</string>
+    <string name="add_order_item_item_added">添加条目</string>
+
+    <!--General-->
+    <string name="number">名称</string>
+    <string name="tipo">类型</string>
+    <string name="description">描述</string>
+    <string name="startDate">开始日期</string>
+    <string name="endDate">结束日期</string>
+    <string name="obligatory">强制</string>
+    <string name="result">BDR反馈</string>
+    <string name="related_to">相关项</string>
+    <string name="value">值</string>
+    <string name="last_modified_date">最后修改日期</string>
+    <string name="caso">案例</string>
+
+
+    <!-- blank string -->
+
+    <string name="menu_delta_sync">同步更改数据</string>
+    <string name="menu_clear">清除离线存储</string>
+    <string name="menu_clear_errors">清除错误</string>
+    <string name="menu_log_errors">错误日志</string>
+    <string name="menu_purge">清除已删除</string>
+    <string name="menu_clear_log">清除日志</string>
+    <string name="menu_logout">注销</string>
+    <string name="menu_calculator">计算器</string>
+    <string name="menu_auto_sync_off">关闭自动同步</string>
+    <string name="show_content">显示内容</string>
+    <string name="history_title">历史</string>
+
+    <string name="menu_sync_error">同步出错</string>
+
+    <!-- checkin/checkout -->
+    <string name="select_contact">选择联系人</string>
+    <string name="all_contacts">所有联系人</string>
+    <string name="recent_contacts">最近联系人</string>
+    <string name="choose_at_checkout">在离店时选择</string>
+    <string name="mail_to_contact">发邮件给联系人</string>
+    <string name="done_button_title">完成</string>
+    <string name="review_materials">评审材料</string>
+    <string name="locating_current_location">定位当前位置…</string>
+    <string name="search">搜索…</string>
+    <string name="email_subject">AB InBev – 所需文件</string>
+    <string name="email_body">尊敬的用户,\n\n附件是您所需的信息。\n\n祝好.</string>
+
+    <!-- about dsa -->
+    <string name="about_title">关于</string>
+    <string name="create_and_developed">开发者</string>
+    <string name="about_desc">Salesforce Services Digital Sales Aid帮助公司高效地交付具有信服力的销售展示</string>
+
+    <!-- settings -->
+    <string name="utilities">实用工具</string>
+    <string name="sign_out">注销</string>
+    <string name="select_config">选择资料库</string>
+    <string name="synchronization">同步</string>
+    <string name="security">安全</string>
+    <string name="internal_mode">内部模式</string>
+    <string name="support">支持</string>
+    <string name="help">帮助</string>
+    <string name="report">上报问题</string>
+    <string name="about">关于</string>
+    <string name="about_dsa">关于DSA</string>
+    <string name="internal_mode_alert_msg">此处的信息仅供内部员工和授权机构使用且不能在公司以外的地方展示，打印或传播（包括邮件），或者用于销售和促销目的。</string>
+    <string name="caution">注意</string>
+    <string name="enable">启用</string>
+    <string name="cancel">取消</string>
+    <string name="title_activity_playlists">播放列表</string>
+
+    <!--playlists-->
+    <string name="new_playlist_hint">歌单名称</string>
+    <string name="btn_new_playlist">创建播放列表</string>
+    <string name="action_new_playlist">新建播放列表</string>
+    <string name="action_edit_playlists">编辑播放列表</string>
+    <string name="personal_library_header_text">个人曲库</string>
+    <string name="personal_library_italic_text">永久歌单</string>
+    <string name="empty_content_item_title_text">无内容</string>
+    <string name="empty_content_item_message_text">在Salesforce进入曲库标签可以将文件加入到你的个人曲库</string>
+    <string name="create_new_playlist">创建新播放列表</string>
+    <string name="set_playlist">设置播放列表</string>
+    <string name="set">设置</string>
+    <string name="playlist_name_hint">播放列表名称</string>
+    <string name="create">创建</string>
+    <string name="delete">删除</string>
+    <string name="select">选择</string>
+    <string name="select_all">全选</string>
+    <string name="num_selected">%s 已选择</string>
+    <string name="error_create">"创建时出错 "</string>
+    <string name="error_delete">"删除时出错 "</string>
+    <string name="error_update">"更新时出错 "</string>
+    <string name="error_unknown">未知错误</string>
+    <string name="error_empty_playlist_name">歌单名称不能为空</string>
+    <string name="edit_playlist_name">编辑播放列表名称</string>
+    <string name="filter">筛选</string>
+    <string name="dialog_library_copy_title">从曲库中复制</string>
+    <string name="dialog_library_copy_text">你是否希望将此内容复制到播放列表</string>
+    <string name="dialog_copy_button">复制</string>
+    <string name="dialog_cancel_button">取消</string>
+    <string name="dialog_move_title">编辑播放列表</string>
+    <string name="dialog_move_text">您是否要移动或复制该项目至播放列表？</string>
+    <string name="dialog_move_button">移动</string>
+    <string name="edit_action_mode_title">拖动内容以移动或复制。点击列表名称即可编辑</string>
+    <string name="select_action_mode_title">选择要删除的内容</string>
+    <string name="error_delete_library_items">曲库的曲目必须在网页端删除</string>
+    <string name="type">类型</string>
+    <string name="location">位置</string>
+    <string name="date_added">添加日期</string>
+    <string name="green_approval">审批UEN</string>
+    <string name="yellow_approval">审批DRV</string>
+    <string name="red_approval">审批公司</string>
+
+    <!-- Quizzes -->
+    <string name="supervisor_prompt">请选择您想分配一个测验还是做一个新的测验？</string>
+    <string name="take_quiz">做测验</string>
+    <string name="select_user">选择用户</string>
+    <string name="assign_quiz">给用户分配测验</string>
+    <string name="take_quiz_user">给用户做测验</string>
+    <string name="quiz_assigned">测验: %1$s 已分配用户: %2$s</string>
+    <string name="no_results">无结果</string>
+    <string name="enter_three_characters">在搜索中插入三个字符</string>
+    <string name="busca_nombre_o_zona">查找名字</string>
+    <string name="total_score">得分</string>
+    <string name="quizzes">测验</string>
+    <string name="quiz_sync_in_progress">测验需在同步完成后才能开始，请稍等片刻！</string>
+
+    <!-- Alert Dialog Text -->
+    <string name="yes">是</string>
+    <string name="si">是</string>
+    <string name="no">否</string>
+
+    <string name="error_continue_sync">继续同步？</string>
+    <string name="button_continue">继续</string>
+
+    <string name="are_you_sure_to_discard">您确定想放弃这些信息吗？</string>
+    <string name="asset_detection_failed">检测资产失败！请选择未检测到资产的原因。</string>
+    <string name="asset_status_update_failed">无法更新%1$s的状态！请重试</string>
+    <string name="asset_photo_trigger">[%1$s] 检测成功！\n 请拍摄资产照片</string>
+    <string name="asset_photo_failure">给资产设置照片失败，状态更新失败。</string>
+    <string name="warning">警告</string>
+    <string name="take_photo_button">拍照</string>
+    <string name="set_to_lost_button">设置为丢失</string>
+    <string name="set_to_lost_msg">要将这台设备设置为丢失吗？</string>
+    <!--asset add activity error msg-->
+    <string name="asset_add_activity_error_qr_code">请获取二维码。</string>
+    <string name="asset_add_activity_error_asset_name">请填写资产名称。</string>
+    <string name="asset_add_activity_error_asset_type">请选择资产类型。</string>
+    <string name="asset_add_activity_warning">请确认当前所填设备信息无误，提交后将无法修改。</string>
+    <string name="asset_add_activity_title">新增资产</string>
+    <!--visits-->
+    <string name="title_event_list">拜访清单</string>
+    <string name="visits">店访</string>
+    <string name="in_plan_visits">线内售点</string>
+    <string name="out_of_plan_visits">线外售点</string>
+    <string name="completed">完成</string>
+    <string name="add">添加</string>
+    <string name="filter_button">过滤</string>
+    <string name="visit_state_label">拜访状态:</string>
+    <string name="account_details">售点详情</string>
+    <plurals name="duration">
+        <item quantity="one">拜访时间: %d 分钟</item>
+        <item quantity="other">拜访时间: %d 分钟</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">%d 分钟</item>
+        <item quantity="other">%d 分钟</item>
+    </plurals>
+    <string name="filter_results_label">查找结果</string>
+    <string name="btn_remove_filter">清除筛选</string>
+    <string name="add_to_list">添加到列表</string>
+    <string name="error_no_phone_app">没有应用可以发起呼叫。</string>
+    <string name="weekly_visit">周拜访计划</string>
+
+
+    <!--SAB MILLER-->
+    <string name="add_event_label">添加新客户</string>
+    <string name="add_event_hint">查找姓名, ID或街道</string>
+    <string name="search_product_hint">查找产品名或编码</string>
+
+    <!-- Account 360 -->
+    <string name="add_photo">添加照片</string>
+    <string name="primary_contact">主要联系人:</string>
+    <string name="notes">备注</string>
+    <string name="timeline">拜访历史</string>
+    <string name="please_check_in">请进店</string>
+    <string name="please_check_out">请在拜访结束时离店</string>
+    <string name="visits_dashboard">店访仪表盘</string>
+    <string name="check_out_comment">添加评论</string>
+    <string name="please_wait_for_location">请等待GPS定位</string>
+    <string name="error_waiting_for_prospect_conversion_approval">等待潜在售点转换审批</string>
+
+    <!-- Account Details -->
+    <string name="happy_birthday">生日快乐</string>
+    <string name="account_owner">售点所有人</string>
+    <string name="last_visit_label">最后店访:</string>
+    <string name="end_date_label">结束日期:</string>
+    <string name="next_visit_label">下次店访:</string>
+    <string name="more_info">更多信息</string>
+    <string name="more_info_english">更多信息</string>
+    <string name="check_in">进店</string>
+    <string name="check_out">离店</string>
+    <string name="directions">导航</string>
+    <string name="call">呼叫</string>
+    <string name="location_error">没有找到位置</string>
+    <string name="location_error_message">没有找到位置</string>
+    <string name="ok">OK</string>
+    <string name="itos_result">最后售点执行</string>
+    <string name="survey_tile_title">售点执行</string>
+    <string name="tareas_abiertas">我的任务</string>
+    <string name="casos_abiertas">案例</string>
+    <string name="promociones">促销活动</string>
+    <string name="poc_promotions">售点促销</string>
+    <string name="poc_promotion">售点促销</string>
+    <string name="consumer_promotions">消费者促销</string>
+    <string name="activos_por_cliente">资产追踪</string>
+    <string name="negociaciones_activas">谈判</string>
+    <string name="casos">案例</string>
+    <string name="programas_de_mercado">市场计划</string>
+    <string name="ver_todos_pedidos">查看所有订单</string>
+    <string name="ver_todos_archivos">查看所有附件</string>
+    <string name="ver_todos_notes">查看所有笔记</string>
+    <string name="to_visit">每次店访</string>
+    <string name="visited">已拜访</string>
+    <string name="selected">已选择</string>
+    <string name="checked_in">已进店</string>
+    <string name="attachments">附件</string>
+    <string name="no_attachments">无可用的附件</string>
+    <string name="modified">已修改</string>
+    <string name="spr_list">SPR清单</string>
+
+    <!-- Account Details -->
+    <string name="no_record_type_mapping">已选的账户没有可匹配的记录类型</string>
+    <string name="notas">笔记</string>
+    <string name="new_note">新建笔记</string>
+    <string name="no_notas">没有可用的笔记</string>
+    <string name="pedidos">订单</string>
+    <string name="pbo_contract">PBO合同</string>
+    <string name="coverage">覆盖范围</string>
+    <string name="volume">销量</string>
+    <string name="days_of_sale">%1$d 天 在 %2$d 天 销售周期</string>
+    <string name="coverage_progress_title">%1$s - %2$d 从 %3$d 来</string>
+    <string name="no_pedidos">没有可用订单</string>
+    <string name="número_de_pedido">订单编号</string>
+    <string name="estado">状态</string>
+    <string name="fecha">日期</string>
+    <string name="valor">值</string>
+    <string name="fecha_de_creacion">创建日期</string>
+    <string name="negotiations">谈判</string>
+    <string name="new_negotiation">新建谈判</string>
+    <string name="negotiation_type">谈判类型</string>
+    <string name="start">开始</string>
+    <string name="end">结束</string>
+    <string name="observaciones">观察</string>
+    <string name="observation_detail">帮助找到有效的促销编码</string>
+    <string name="fecha_de_vencimiento">截止日期</string>
+    <string name="clasificacíon">分类</string>
+    <string name="pesos_caja">%s 重量/箱</string>
+
+    <!-- Prospect KPI Detail -->
+    <string name="prospect_kpi">潜在售点 KPI</string>
+    <string name="prospect_kpi_all">全部</string>
+    <string name="prospect_kpi_description">该漏斗图展示了您名下的潜在客户从账号创建到转换为正式售点的进度。您也可以根据潜在客户的创建时间来过滤出在指定时间段内创建的潜在售点的转换进度。</string>
+
+    <!-- Prospect Account Dialog -->
+    <string name="dialog_prospect_status">售点状态</string>
+    <string name="dialog_prospect_creation_date">创建日期</string>
+    <string name="dialog_prospect_filter">过滤</string>
+    <string name="dialog_prospect_clear">清除</string>
+    <string name="prospect_all_states">全部状态</string>
+    <string name="prospect_all_creation_date">全部日期</string>
+
+    <!-- Order Details -->
+    <string name="title_activity_pedido_detail">订单</string>
+    <string name="status_text">状态:  </string>
+    <string name="not_editable">此订单正在进行中无法更改</string>
+    <string name="order_id_label">Order ID:</string>
+    <string name="order_status_label">订单状态</string>
+    <string name="order_source_label">订单来源</string>
+
+    <!-- PBO Contract Items -->
+    <string name="contract_item_year_month">月份</string>
+    <string name="contract_item_achieved">已完成</string>
+    <string name="contract_item_volume">销量</string>
+    <string name="contract_item_sku_id">合同SKU编码</string>
+
+    <!-- Picture audit -->
+    <string name="picture_audit_list_title">不合格照片</string>
+    <string name="picture_audit_tile">E+不合格照片</string>
+    <string name="picture_audit_case_name">案例</string>
+    <string name="picture_audit_account_asset_name">资产</string>
+    <string name="picture_audit_survey_name">售点执行</string>
+    <string name="picture_audit_survey_question">问题</string>
+    <string name="picture_audit_account_name">售点</string>
+    <string name="picture_audit_event_name">日程</string>
+    <string name="picture_audit_type_name">类型</string>
+    <string name="picture_audit_file_name">文件名</string>
+    <string name="picture_audit_audit_name">审批编码</string>
+
+    <string name="rejected_file_type_survey_response">售点执行反馈照片</string>
+    <string name="rejected_file_type_case_attachment">案例附件</string>
+    <string name="rejected_file_type_asset_attachment">资产附件</string>
+
+    <string name="rejected_file_type_account_check_in_photo">售点签入照片</string>
+    <string name="rejected_file_type_morning_meeting_check_in_photo">进入晨会照片</string>
+    <string name="rejected_file_type_check_in_photo">进店照片</string>
+    <string name="rejected_file_type_account_check_out_photo">售点签出照片</string>
+    <string name="rejected_file_type_morning_meeting_check_out_photo">离开晨会照片</string>
+    <string name="rejected_file_type_check_out_photo">离店照片</string>
+
+    <string name="rejected_file_type_event_attachment">日程附件</string>
+    <string name="rejected_file_type_account_attachment">售点附件</string>
+    <string name="rejected_file_type_account_photo">售点照片</string>
+
+    <!-- Address dialog -->
+    <string name="address_dialog_country">国家</string>
+    <string name="address_dialog_postal_code">邮政编码</string>
+    <string name="address_dialog_state">州</string>
+    <string name="address_dialog_city">城市</string>
+    <string name="address_dialog_street">街道</string>
+
+    <!-- Distribution Items -->
+    <string name="distribution_category">分类</string>
+    <string name="distribution_brand">品牌</string>
+    <string name="distribution_sku">SKU</string>
+    <string name="distribution_package">包装</string>
+    <string name="distribution_ptr">进货价</string>
+    <string name="distribution_ptc">零售价</string>
+    <string name="distribution_unit">单位</string>
+    <string name="distribution_product">产品</string>
+    <string name="distribution_are_you_sure_you_want_to_delete">您确认要删除此配送单？</string>
+
+    <string-array name="units_of_measure">
+        <item>EA</item>
+        <item>CS</item>
+    </string-array>
+
+    <string name="distance_sort_ascending">显示最近的</string>
+
+    <string-array name="distance_sort">
+        <item>@string/distance_sort_ascending</item>
+        <item>显示最远的</item>
+    </string-array>
+
+
+    <string name="estatus">状态</string>
+    <string name="apply">提交</string>
+    <string name="cant">不能</string>
+    <string name="gives_header">给到 %1$s...</string>
+    <string name="then_receive">然后接收...</string>
+    <string name="total_para_esta_negociaci_n">所有的谈判</string>
+    <string name="gives">gives</string>
+    <string name="gives_sub_label">接收修改</string>
+    <string name="gets_sub_label">潜在售点致力于</string>
+    <string name="gets">gets</string>
+    <string name="no_gives">No Gives</string>
+    <string name="no_gets">No Gets</string>
+    <string name="productos_disponibles">可售产品</string>
+    <string name="producto">产品</string>
+    <string name="código">编码</string>
+    <string name="cantidad">数量</string>
+    <string name="añadir_a_venta">加入订单</string>
+    <string name="nueva_venta">新建订单</string>
+    <string name="no_products">无可售产品</string>
+    <string name="cajas">箱</string>
+    <string name="inversion_total">总投资:</string>
+    <string name="order_detail_action_add_products">添加产品</string>
+    <string name="order_detail_action_cancel_order">删除订单</string>
+    <string name="order_detail_action_submit">提交</string>
+    <string name="order_detail_submitted_info"><b>您的订单已成功创建，订单详情如下：</b></string>
+
+
+    <!-- Asset Case Details -->
+    <string name="title_activity_asset_case_detail">案例</string>
+    <string name="cancelar">取消</string>
+    <string name="create_case">创建案例</string>
+    <string name="create_asset_case_instructions">请选择资产</string>
+
+    <!-- App Support About -->
+    <string name="app_version">App版本</string>
+    <string name="user">用户</string>
+    <string name="android_version">安卓版本</string>
+    <string name="device_name">设备名称</string>
+    <string name="available_storage">可用容量</string>
+    <string name="total_storage">总容量</string>
+    <string name="database_size">数据库大小</string>
+
+    <string name="marca">品牌</string>
+    <string name="categoría">分类</string>
+
+    <!-- Sync Error List -->
+    <string name="sync_error_header">同步错误 (%d)</string>
+    <string name="contact_admin">上报问题</string>
+    <string name="sync_error">错误</string>
+    <string name="no_data">无数据!</string>
+    <string name="contact_admin_email_subject">Salesforce SDK - 同步错误</string>
+    <string name="no_email_clients">"没有已安装的邮箱客户端."</string>
+    <string name="contact_admin_instructions">"此工具允许上报问题以获得移动端解决方案，重新编译设备技术信息。请详细描述进程执行和相关错误。"</string>
+    <string name="contact_admin_title">SalesForce AB InBev 解决方案</string>
+    <string name="contact_admin_subtitle">上报问题</string>
+
+    <!-- Pending Queue List -->
+    <string name="pending_header">数据同步 (%d)</string>
+    <string name="pending">挂起</string>
+    <string name="pending_error">挂起每个错误</string>
+    <string name="pending_description">%1$s 对象: %2$s ID是: %3$s</string>
+
+    <!-- Navigation Menu Items -->
+
+    <string name="menu_system_info">系统信息</string>
+    <string name="menu_synchronization">同步</string>
+    <string name="revisar_pedido">查看订单</string>
+
+    <!-- Dynamic Views -->
+    <string name="not_available">不适用</string>
+    <string name="empty">空</string>
+
+    <!-- Surveys -->
+    <string name="surveys">售点执行</string>
+    <string name="survey_number">名称</string>
+    <string name="survey_state">状态</string>
+    <string name="survey_due_date">截止日期</string>
+    <string name="survey_create_date">创建日期</string>
+    <string name="survey_header_title">售点执行</string>
+    <string name="survey_error_message">售点执行没有相关组合产品！请检查售点执行内容！</string>
+    <string name="survey_sync_in_progress">请在执行或查看社会调查前先等待后台同步完成！</string>
+    <string name="wait_sync_in_progress">后台系统处理中，无法启动此操作，请稍后重试!</string>
+
+    <!-- Assets -->
+    <string name="assets">资产追踪</string>
+    <string name="serialized">序列化</string>
+    <string name="no_serialized">无序列化</string>
+    <string name="asset_name">资产名称</string>
+    <string name="serial_number">序列号</string>
+    <string name="brand">品牌</string>
+    <string name="quantity">数量</string>
+    <string name="asset_code">资产编码</string>
+    <string name="audit_instructions">选择要审核的资产。资产审核后，最后的审核日期将保留并储存。</string>
+    <string name="audit">审核</string>
+    <string name="audit_success">资产审核成功</string>
+    <string name="assets_wifi_scan">扫描WiFi</string>
+    <string name="assets_tracking_lost">设置为丢失</string>
+    <string name="assets_wifi_scan_in_progress">正在扫描...</string>
+    <string name="assets_qrc_scan">扫描二维码</string>
+    <string name="asset_status_reason">原因</string>
+    <string name="asset_wifi_finish_prompt">WIFI检测完成。如有未检测成功的设备，请使用二维码检测。</string>
+    <string name="asset_add_exit_error_msg">该设备二维码与%s重复，请勿添加重复资产！</string>
+    <string name="asset_add_exit_sqr_error_msg">该设备二维码与%s资产重复，是否更新资产信息？</string>
+    <string name="asset_status_reason_qr_lost">二维码故障</string>
+    <string name="asset_status_reason_no_tag">无资产标签</string>
+    <string name="asset_status_reason_other_issue">其他故障</string>
+    <string name="asset_beer_cleaned">已清理</string>
+    <string name="asset_beer_not_cleaned">未清理</string>
+    <string name="asset_installed">安装在售点</string>
+    <string name="asset_in_stock">在库</string>
+    <string name="refridgerator">冰柜</string>
+    <string name="draught_machine">桶啤机</string>
+    <string name="asset_tracking_time">上次资产追踪时间</string>
+    <string name="asset_tracking_success">资产匹配成功</string>
+    <!-- activity_asset_add_view -->
+    <string name="asset_add_activity_qr_code">资产二维码</string>
+    <string name="asset_add_activity_qr_code_button">获取二维码</string>
+    <string name="asset_add_activity_device_name">资产名称</string>
+    <string name="asset_add_activity_input_device_name">请输入资产名称</string>
+    <string name="asset_add_activity_device_category">资产类型</string>
+    <string name="asset_tracking_last_modified">上次资产追踪时间</string>
+    <string name="asset_list_activity_add_device">新增资产</string>
+    <!-- Cases -->
+    <string name="cases">案例</string>
+    <string name="caseCode">编号</string>
+    <string name="caseRecordType">注册类型</string>
+    <string name="caseDate">案例日期</string>
+    <string name="caseState">状态</string>
+    <string name="pendiente">&lt;挂起&gt;</string>
+    <string name="allStates">所有状态</string>
+    <string name="allRecordTypes">所有记录</string>
+    <string name="types_of_cases">案例类型</string>
+    <string name="no_hay_comentarios">无评论</string>
+    <string name="comentario">评论</string>
+    <string name="guardar_comentario">保存评论</string>
+    <string name="case_save_success">案例保存成功</string>
+    <string name="fecha_de_sla1">Sla1 date</string>
+
+    <!-- Opportunity -->
+    <string name="opportunityName">名称</string>
+    <string name="opportunityReal">实际</string>
+    <string name="opportunityIdeal">理想</string>
+    <string name="opportunityOpportunity">机会</string>
+
+    <string name="submit">提交</string>
+    <string name="save_and_send">保存并发送</string>
+    <string name="item_validation_error">不允许在同一个组里添加Give/Get</string>
+    <string name="give_get_quantity_error">至少要有一个Give和Get</string>
+    <string name="escoge_del_listado_completo">选择完整的清单</string>
+    <string name="necesitas_un_give_o_get_adicional">是否需要额外的Give或Get？</string>
+    <string name="additional_gives">ADD GIVES</string>
+    <string name="additional_gets">ADD GETS</string>
+    <string name="additional_gives_gets">ADD GIVES/GETS</string>
+    <string name="promotions_header">这些是可用的促销，请选择你要加入此促销的促销项目。</string>
+    <string name="code">编码</string>
+    <string name="list_empty">空</string>
+    <string name="account_d1_name">D1姓名</string>
+    <string name="account_d1_id">工号</string>
+    <string name="account_d1_tel">电话</string>
+    <string name="promotion_type">促销类型</string>
+    <string name="additional_promo_codes">添加一个促销编码</string>
+
+    <!-- Account List -->
+    <string name="account_name">名称</string>
+    <string name="address">地址</string>
+
+    <!-- Caso View/Edit -->
+    <string name="caso_edit">编辑</string>
+    <string name="caso_save">保存案例</string>
+    <string name="caso_cancel">取消</string>
+    <string name="picklist_none">--无--</string>
+    <string name="title_activity_account">售点</string>
+    <string name="title_activity_caso">案例</string>
+    <string name="title_activity_contact">联系人</string>
+    <string name="title_activity_asset">资产</string>
+    <string name="title_activity_promotion">促销</string>
+    <string name="required_quanitity">要求的数量</string>
+    <string name="no_record_type">没有可用的记录类型</string>
+
+    <!-- Case Validations -->
+
+    <string name="dismiss">驳回</string>
+    <string name="failed_to_save_case">保存案例失败!</string>
+    <string name="no_case_found">没有找到案例!</string>
+    <string name="missing_required_field">请检查必填字段</string>
+    <string name="invalid_case_status_change">此配置文件在当前状态下没有修改案例的权限</string>
+
+    <!-- Tasks -->
+    <string name="tasks">任务</string>
+    <string name="task">任务</string>
+    <string name="new_task">新建任务</string>
+    <string name="issue">主题</string>
+    <string name="allIssues">所有主题</string>
+    <string name="fecha_de_finalizacion">截止日期</string>
+    <string name="no_subject">不允许输入与SUBJECT中不一致的值，请从SUBJECT清单中选择值。</string>
+    <string name="failed_to_save_task">保存任务失败!</string>
+    <string name="archivos">文件</string>
+    <string name="sin_adjunto_archivos">无附件</string>
+    <string name="no_permitted_task_status">不允许登记已取消的任务！</string>
+    <string name="priority_normal">中</string>
+    <string name="priority_high">高</string>
+    <string name="priority_low">低</string>
+    <string name="not_started">未开始</string>
+    <string name="in_progress">进行中</string>
+    <string name="waiting_someone">等待别人回复</string>
+    <string name="deferred">推迟</string>
+    <string name="status_completed">已完成</string>
+    <string name="expired">已过期</string>
+    <string name="to_be_expired">即将过期</string>
+    <string name="status_tip">请输入BDR反馈</string>
+
+    <string name="assign">分配给</string>
+    <string name="commentaries">任务内容</string>
+    <string name="scheduledTask">已排期的任务</string>
+    <string name="state">状态</string>
+    <string name="activityDate">截止日期</string>
+    <string name="priority">优先级</string>
+    <string name="user_details">用户 360</string>
+    <string name="lista_de_vistas">店访列表</string>
+    <string name="prospectos">潜在售点</string>
+    <string name="cuentas">售点搜索</string>
+    <string name="ayuda_ventas_y_capacitaci_n">资料库</string>
+    <string name="chatter">聊天</string>
+    <string name="loading_chatter">聊天加载中…</string>
+    <string name="informaci_n_del_sistema">系统信息</string>
+    <string name="sincronizaci_n">变更挂起</string>
+    <string name="invalid_date">失效日期</string>
+    <string name="date_error_message">选择的日期必须在当前日期之后</string>
+
+    <!-- Contacts -->
+    <string name="contacts">联系人</string>
+    <string name="contact_name_short">姓名</string>
+    <string name="function">功能</string>
+    <string name="birthdate">出生日期</string>
+    <string name="telephone">电话</string>
+    <string name="full_sync">重置数据</string>
+    <!--<string name="only_for_tablets_warning">This app is currently tested only to run on tablets!!</string>-->
+    <string name="pending_approval">审批挂起</string>
+    <string name="add_to_negotiation">加入谈判</string>
+    <string name="esto_puede_tomar_unos_minutos">需要一些时间</string>
+    <string name="clearing_local_cata">清除本地数据</string>
+
+    <!-- Note -->
+    <string name="note_title">标题</string>
+    <string name="note_body">内容</string>
+    <string name="failed_to_save_note">保存失败！</string>
+
+    <!-- Photo Selection -->
+    <string name="choose_image_from">选择照片来自</string>
+    <string name="take_new_photo">拍新照片</string>
+    <string name="choose_existing">在已有照片中选择</string>
+
+    <!-- PBO Contract -->
+    <string name="contract_manager">经理</string>
+    <string name="contract_expiring_contracts">到期的合同:</string>
+
+    <string name="save_note_criteria">保存笔记前必须填写标题和内容。</string>
+
+    <string name="no_available_app">处理此类文件的应用在此设备上不可用！</string>
+    <string name="abi_full_sync_message">你将重置数据且此操作会删除所有本地更改并强制从后台同步数据，你确定要执行此操作？</string>
+    <string name="manifest_update_message">由于新版本的同步清单必须完全同步，你想现在执行它吗？</string>
+    <string name="abi_logout">退出</string>
+    <string name="logging_out">退出</string>
+    <string name="sync_failure_message">同步错误。请检查网络连接并重试。</string>
+    <string name="try_again">重试</string>
+    <string name="banner_message">你在 %1$s 进店. 你想离开吗?</string>
+
+    <string name="basic_data_title_text">所有字段必填</string>
+
+    <!-- Additional Information -->
+    <string name="promotion">促销</string>
+    <string name="product_sellin">新品进场</string>
+    <string name="contract_negotiation">售点合同</string>
+    <string name="trade_program">渠道项目</string>
+    <string name="listing">市场开拓</string>
+    <string name="sales_event">销售活动</string>
+    <string name="prospecto_creacion">潜在售点数据采集</string>
+    <string name="convert_prospect">转换</string>
+    <string name="unqualified_prospect">不符合</string>
+    <string name="error_your_user_has_to_have_manager_assigned">错误：你的用户必须分配一个经理.</string>
+    <string name="datos_basicos">基本数据</string>
+    <string name="datos_adicionales">附加数据</string>
+    <string name="negociaciones">谈判</string>
+    <string name="not_interested_in_negotiation">对谈判无兴趣</string>
+    <string name="promotion_status_in_negotiation">谈判中</string>
+    <string name="footer_poc_attachment_list">请添加如下文件：
+        \n\n用户登记:
+    \n\t\u2022 	官方鉴定
+	\n\t\u2022	地址证明
+	\n\t\u2022	RFC 复印件
+        \n\n 贷款请求 (个人):
+	\n\t\u2022	操作许可
+        \n\n贷款请求 (公司):
+        \n\t\u2022	建制条案
+        \n\t\u2022	法律代表的官方ID
+    \n\t\u2022	担保
+    \n\t\u2022	地址证明
+    \n\t\u2022	操作许可
+    \n\t\u2022	公务签注ID
+    \n\t\u2022	担保人的地址证明</string>
+
+    <!-- Prospect List -->
+    <string name="status">状态</string>
+    <string name="prospect_status">申请状态</string>
+    <string name="clean_status">清理状态</string>
+    <string name="asset_latest_clean_time">最近检测时间</string>
+    <string name="owner">所有者</string>
+    <string name="dia_de_atencion">天(s)</string>
+    <string name="hora_de_atencion">小时(s)</string>
+    <string name="propietario_de_registro">登记所有者</string>
+    <string name="prospect_photo_is_missing">潜在售点照片缺失，你想现在添加吗？</string>
+    <string name="lead_source">售点来源</string>
+    <string name="gps">经纬度</string>
+    <string name="account_photo">门头照</string>
+    <string name="license_photo">营业执照</string>
+
+    <!-- Prospect Status -->
+    <string name="prospect_status_open">开放</string>
+    <string name="prospect_status_contacted">已联系</string>
+    <string name="prospect_status_submitted">申请中</string>
+    <string name="prospect_status_converted">已转化</string>
+    <string name="prospect_status_rejected">已拒绝</string>
+    <string name="prospect_status_unqualified">不符合</string>
+
+    <!-- Market Programs -->
+    <string name="programa_de_mercado">营销方案</string>
+    <string name="fecha_de_inicio">开始日期</string>
+    <string name="fecha_de_fin">截止日期</string>
+
+    <!-- Market Programs Items -->
+    <string name="market_program_item_record_type">记录类型</string>
+    <string name="market_program_item_type">类型</string>
+    <string name="market_program_item_period">周期</string>
+    <string name="market_program_item_value">值</string>
+    <string name="market_program_item_date">日期</string>
+    <string name="no_market_program_items">市场计划没有可用的分值</string>
+    <string name="market_program_month_title">间隔月</string>
+    <string name="market_program_quarter_title">间隔季</string>
+
+    <!-- Prompt to exit survey on back key -->
+    <string name="survey_exit_prompt">数据将会丢失！</string>
+
+    <!-- Market Program Details -->
+    <string name="on_loan_materials">租赁物料</string>
+    <string name="counterpart">副本 (销售实绩)</string>
+
+    <!-- Event Planning -->
+    <string name="event_planning_tile">我的日程</string>
+    <string name="event_planning_header">日程计划</string>
+
+    <!-- Event Editing -->
+    <string name="equipment">设备</string>
+    <string name="event_with_a_band">Event with a band</string>
+    <string name="sales_increment">销量增加</string>
+    <string name="sales_increment_placeholder">10百升/月份</string>
+    <string name="comments">评论</string>
+    <string name="events_ending">的日程</string>
+    <string name="bar_placeholder">输入标题，时间，人物，地点……</string>
+    <string name="save_capital">保存</string>
+    <string name="pick_equipment">选择设备</string>
+    <string name="exceeded_duration">日程持续时间过长.</string>
+    <string name="wrong_event_time">开始时间在结束时间之后.</string>
+    <string name="start_time_is_not_set">未设置开始时间.</string>
+    <string name="end_time_is_not_set">未设置结束时间.</string>
+    <string name="equipment_unavailable">此日程没有设备</string>
+    <string name="event_added">日程已添加。</string>
+    <string name="event_updated">日程已更新</string>
+    <string name="equipment_not_available_for_date">已选的设备在指定的时间内不可用</string>
+
+    <!-- New Additions -->
+    <string name="give_get_search_hint">查找名称或物料编码</string>
+    <string name="scoreview_pesos">0 重量/箱</string>
+    <string name="contact_admin_send">提交</string>
+    <string name="negotitation_save">保存</string>
+    <string name="negotiation_save_create_order">保存创建的订单</string>
+    <string name="give_tab">物料Gives</string>
+    <string name="get_tab">物料Gets</string>
+    <string name="add_get">Add Get</string>
+    <string name="add_give">Add Give</string>
+    <string name="add_comment">添加评论</string>
+    <string name="event_filter">过滤</string>
+
+    <string name="toast_downloading_attachment">下载附件…</string>
+    <string name="toast_attachment_download_failed">下载失败.</string>
+
+    <string name="send_or_delete_queue">还有修改没有传到服务器，您想发送还是删除它们？</string>
+    <string name="send">发送</string>
+
+    <!--Volume details-->
+    <string name="actual_progress">实际</string>
+    <string name="target_progress">目标</string>
+    <string name="current_chart">今年图表</string>
+    <string name="last_year_chart">去年图表</string>
+
+    <!--Coverage details-->
+    <string name="coverage_brand">品牌</string>
+    <string name="coverage_status">状态</string>
+
+    <!--User details-->
+    <string name="my_360">我的360</string>
+    <string name="label_volume">销售指标</string>
+
+    <string name="abi_logout_message">你是否确定要退出？</string>
+    <string name="save">保存</string>
+    <string name="all">所有</string>
+    <!--ONTAP__AccountAssetTracking__c status-->
+    <string name="account_asset_tracking_status_qualified">匹配</string>
+    <string name="account_asset_tracking_status_no_poc">非本店设备</string>
+    <string name="account_asset_tracking_status_undetected">无法识别</string>
+    <string name="account_asset_tracking_status_lost">丢失</string>
+    <!--ONTAP__Account_Asset__c ONTAP__Capacity__c-->
+    <string name="account_asset_capacity_none">--无--</string>
+    <string name="account_asset_capacity_refrigerator">冰柜</string>
+    <string name="account_asset_capacity_barrel_beer">桶啤机</string>
+
+    <!--Check-in dialog-->
+    <string name="too_far_from_target">您现在的位置与设定位置偏差很大，请进行拍照操作。</string>
+    <string name="cannot_detect_your_location">我们找不到你的坐标，请进行拍照并填写理由。</string>
+    <string name="morning_meeting_doesnt_have_location">晨会没有地址坐标信息，请进行拍照收集。</string>
+    <string name="missing_account_location">售点没有地址坐标信息，请进行拍照收集。</string>
+    <string name="input_text">请填写原因</string>
+    <string name="please_check_into_morning_meeting">请执行进入晨会操作。</string>
+    <string name="please_check_out_from_morning_meeting">请执行离开晨会操作。</string>
+    <string name="dialog_tasks_before_checkout_title">请在离店之前执行下列操作</string>
+    <string name="dialog_tasks_before_checkout_button_title">OK</string>
+
+    <string name="morning_meeting_checkin">进入晨会</string>
+    <string name="morning_meeting_checkout">离开晨会</string>
+    <string name="spr_working_hours">工作时间:</string>
+    <string name="spr_contact_phone">联系电话:</string>
+    <string name="spr_temporary_promo">临时促销:</string>
+    <string name="activity_kpi_button_current_month">当前月份</string>
+    <string name="activity_kpi_button_previous_month">上一个月</string>
+    <string name="trade_program_title">渠道项目</string>
+    <string name="technicians_list_title">桶啤技术服务人员</string>
+    <string name="distribution_list_title">铺货数据</string>
+    <string name="trade_program_valid">有效:</string>
+    <string name="trade_program_contract_id">渠道编码:</string>
+    <string name="trade_program_program_item_id">项目编码：</string>
+    <string name="trade_program_description">概述：</string>
+    <string name="trade_program_description_order">概述排序：</string>
+    <string name="trade_program_name">渠道名称：</string>
+    <string name="trade_program_status">状态:</string>
+    <string name="add_to_distribution_list_title">加入铺货列表</string>
+    <string name="product_for_distribution_product_name">产品名称</string>
+    <string name="select_product_for_distribution_list_search_product_hint">通过名称搜索</string>
+    <string name="category_label">分类</string>
+    <string name="brand_label">品牌</string>
+    <string name="sku_label">SKU</string>
+    <string name="select_negotation_type">选择谈判类型</string>
+    <string name="product_brand">产品品牌</string>
+    <string name="product_uom">产品UOM</string>
+    <string name="promotion_category_item_fixed_case">固定箱比率</string>
+    <string name="promotion_category_item_laddered_rebate">阶梯式回扣</string>
+    <string name="promotion_category_item_beer">啤酒</string>
+    <string name="orders">订单</string>
+    <string name="sales_volume">销量</string>
+    <string name="volume_case">销量(箱)</string>
+    <string name="time_range">时间范围</string>
+    <string name="from">开始</string>
+    <string name="to">结束</string>
+    <string name="volume_hl">销量(百升)</string>
+    <string name="order_source">订单来源</string>
+    <string name="show_more_details">更多信息</string>
+    <string name="hide_more_details">隐藏详情</string>
+    <string name="poc_name">售点名称</string>
+    <string name="distance">距离:</string>
+    <string name="kilometers">千米</string>
+    <string name="distance_filter_label">距离 (米)</string>
+    <string name="channel_filter_label">渠道</string>
+    <string name="visit_state_filter_label">拜访状态</string>
+
+    <string name="asset_poc_list_title">资产</string>
+    <string name="negotiation_history">谈判历史</string>
+    <string name="add_note">添加备注</string>
+    <string name="contract_valid_from">有效期从</string>
+    <string name="contract_valid_to">有效期至</string>
+    <string name="number_of_visits">拜访次数</string>
+    <string name="start_time">开始时间</string>
+    <string name="end_time">结束时间</string>
+
+    <string name="set_current_location_as_poc_location">设置当前GPS定位为售点GSP定位。</string>
+
+    <string name="error_latest_data_not_available">此帐户没有任何最新数据更新。</string>
+    <string name="time_zone_warning">您的用户时区设置为：%1$s 但您的手机设置为：%2$s 这可能会导致应用程序的不可预知的行为。请确保您的手机与您的Salesforce用户拥有相同的时区。</string>
+    <string name="account_case_reject_reason">拒绝原因</string>
+    <string name="account_case_rejected_cases">拒绝的售点更改申请</string>
+    <string name="request_account_info_change">请求更改帐户信息</string>
+
+    <string name="all_values">所有</string>
+    <string name="confirm_order_deletion">您确定要删除该订单吗？</string>
+    <string name="order_source_sfdc">WCCS订单(手机端)</string>
+    <string name="order_source_sfdc_no_spaces">SFDC订单</string>
+    <string name="create_new">Create new</string>
+    <string name="notify_new_task">新任务</string>
+    <string name="notify_system_notifycation">系统消息</string>
+    <string name="notify_contract_renewal">合同续约</string>
+    <string name="whether_delete">是否删除%1$s?</string>
+    <string name="no_such_message">暂无此消息</string>
+    <string name="sync_data_success">同步成功，请下载最新版本的应用程序</string>
+    <string name="dialog_version_tip">请安装最新版本App %1$s\n</string>
+    <string name="file_damage">文件有损,重新下载</string>
+    <string name="down_load_fail">下载失败</string>
+    <string name="down_load_success">下载成功</string>
+    <string name="please_net_status">请检查网络</string>
+    <string name="confirm">确认</string>
+    <string name="timer_out">到期日期:</string>
+    <string name="notify_contract_renewal_">合同到期提醒</string>
+    <string name="due_with_days">天内即将到期的合同 : \n</string>
+
+    <string name="downlaod_done">下载完成</string>
+    <string name="download_failed">下载失败,请点击文件重新下载</string>
+    <string name="download_start">开始下载</string>
+    <string name="can_not_open_this_file">无法打开此文件</string>
+    <string name="being_downloading">文件已下载到%1$s</string>
+    <string name="empty_folder">空文件夹</string>
+    <string name="downloaded_file">已下载</string>
+    <string name="undownloaded_file">未下载</string>
+    <string name="network_disconnection">网络未连接</string>
+    <string name="net_tips">您当前处于非wifi环境下，是否继续下载？</string>
+    <string name="categories">目录</string>
+    <string name="no_access">暂无可用文件夹</string>
+    <string name="no_access_title">文件夹设置</string>
+    <string name="related_id">相关记录ID空</string>
+
+    <string name="net_error">订单页面访问失败</string>
+    <string name="skip_tips">你即将进入B2B下单页面,下单后订单数据同步回APP会需要一些时间,请在下单完成后及时复制或截图订单号以方便查询</string>
+    <string name="B2B_order">B2B订单</string>
+
+    <string name="my_visit">我的拜访</string>
+    <string name="my_orders">我的订单</string>
+
+    <string name="individual_kpi">个人KPI</string>
+    <string name="basic_kpi">基本指标</string>
+    <string name="performance_kpi">绩效指标</string>
+    <string name="kpi_name">指标名称</string>
+    <string name="accomplishment">达成值</string>
+    <string name="target">目标值</string>
+    <string name="achieving_rate">达成率</string>
+    <string name="ttl_volume">总销量</string>
+    <string name="key_sku">关键SKU销量</string>
+    <string name="execution">E+审核达标率</string>
+    <string name="distribution">铺货售点数</string>
+    <string name="visit_rate">GPS达标率</string>
+    <string name="B2B_volume_target">B2B销量达成率</string>
+    <string name="ttl_kpi_rate">KPI总达成</string>
+    <string name="bonus_rate">奖金比例</string>
+    <string name="visit_rate_for_month">月拜访</string>
+    <string name="visit_rate_for_week">周拜访</string>
+    <string name="up_to_now">本月截至</string>
+
+    <string name="no_instructions">暂无说明</string>
+    <string name="more">更多</string>
+    <string name="order_source_filter">订单来源</string>
+    <string name="order_status">订单状态</string>
+    <string name="select_sku">点击选择SKU</string>
+    <string name="select_brand">点击选择品牌</string>
+    <string name="hint_leave_store_firstly">欢迎回来，该售点上次拜访未离店，请先离店</string>
+    <string name="competitor_flag_c">竞-</string>
+    <string name="competitor_flag_ABI">本-</string>
+</resources>

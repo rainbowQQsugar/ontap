@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sab_lightest_gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_with_logo" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:background="@color/divider_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Text.H1.Condensed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/page_inset_vertical_large"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/page_inset_vertical_large"
+            android:text="@string/asset_poc_list_title"
+            android:textAllCaps="true" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:background="@color/divider_color"/>
+    <ListView
+        android:id="@+id/assets_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/sab_lightest_gray"
+        android:clipToPadding="false"
+        android:divider="@color/transparent_color"
+        android:dividerHeight="0dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" />
+
+</LinearLayout>

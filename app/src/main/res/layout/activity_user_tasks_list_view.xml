@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_with_logo"/>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Text.H1.Condensed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/page_inset_vertical_large"
+            android:text="@string/tasks"
+            android:textAllCaps="true"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/page_inset_vertical_large"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/field_margin_half">
+
+            <Spinner
+                style="@style/spinnerStyle.Left"
+                android:id="@+id/subjectSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="-1dp"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                tools:listitem="@layout/reason_dropdown"/>
+
+            <Spinner
+                style="@style/spinnerStyle.Right"
+                android:id="@+id/stateSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAllCaps="true"
+                tools:listitem="@layout/reason_dropdown"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_size"
+            android:background="@color/divider_color"/>
+
+        <ListView
+            android:id="@+id/tasksListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/sab_lightest_gray"
+            android:clipToPadding="false"
+            android:divider="@color/transparent_color"
+            android:dividerHeight="0dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_type" translatable="false">com.abinbev.dsa.login</string>
+    <string name="content_authority" translatable="false">com.abinbev.dsa.content</string>
+    <string name="provider" translatable="false">com.salesforce.androidsyncengine.provider</string>
+    <string name="abi_provider" translatable="false">com.abinbev.dsa.provider</string>
+
+    <string name="google_maps_url" translatable="false">http://maps.google.com/maps?daddr%1$s,%2$s</string>
+    <!-- lat/long are inverse from google -->
+    <string name="amap_url" translatable="false">http://uri.amap.com/marker?position=%2$s,%1$s&amp;callnative=1</string>
+</resources>

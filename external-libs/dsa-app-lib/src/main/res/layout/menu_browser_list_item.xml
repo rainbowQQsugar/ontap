@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/menu_browser_list_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/fileTypeIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/image_contentDescription"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/pdf"
+        android:paddingStart="@dimen/space_small"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/black"
+        android:textStyle="normal"
+        android:paddingLeft="@dimen/space2"
+        android:paddingRight="@dimen/space2"
+        android:layout_toRightOf="@id/fileTypeIcon"
+        android:layout_alignWithParentIfMissing="true"/>
+
+</RelativeLayout>

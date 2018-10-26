@@ -1,0 +1,64 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath rootProject.ext.libraries.retrolambda
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 23
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 22
+
+        testApplicationId "com.example.androidsyncenginetest"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField "boolean", "CHINA_BUILD", "true"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        release {
+            minifyEnabled false
+            buildConfigField "boolean", "CHINA_BUILD", "true"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    lintOptions {
+      abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    compile project(':SmartStore')
+
+    compile rootProject.ext.supportLibraries.androidSupportv4
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.2.3'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.2.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.2.3'
+    compile 'net.sf.oval:oval:1.84'
+    compile 'com.google.code.gson:gson:2.4'
+
+    compile 'com.microsoft.azure.android:azure-storage-android:1.0.0@aar'
+
+    compile rootProject.ext.libraries.rxandroid
+    compile rootProject.ext.libraries.rxjava
+
+    androidTestCompile rootProject.ext.supportLibraries.androidSupportv4
+}

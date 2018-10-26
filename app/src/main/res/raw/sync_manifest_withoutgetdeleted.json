@@ -1,0 +1,1213 @@
+{
+  "configuration": {
+    "manifestVersion": "1.5",
+    "nameSpacePrefix": "ONTAP",
+    "enableLogging": true,
+    "allowBackup": true,
+    "syncFrequency": 86400,
+    "purgeFrequency": 86400,
+    "backgroundSync": {
+      "wifi": true,
+      "edge": true,
+      "3G": true,
+      "4G": true,
+      "lte": true
+    }
+  },
+  "objects": [
+    {
+      "objectName": "User",
+      "shouldUseNamespace": true,
+      "shouldCheckForDeleted":false,
+      "fieldsToFetch": [
+        "Id",
+        "LastModifiedDate",
+        "CreatedDate",
+        "Country",
+        "Username",
+        "Name",
+        "FirstName",
+        "LastName",
+        "Email",
+        "ProfileId",
+        "UserRoleId",
+        "UserPermissionsSFContentUser",
+        "Business_Unit__c"
+      ],
+      "purgeEnabled": true,
+      "localFields": [
+        "UserProfileId"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "MobileAppConfig__c",
+      "shouldUseNamespace": true,
+      "shouldCheckForDeleted":false,
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "filter": "(ONTAP__Active__c = true)",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Active__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Category__c",
+      "shouldUseNamespace": true,
+      "shouldCheckForDeleted":false,
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Is_Top_Level__c",
+          "type": "floating"
+        },
+        {
+          "name": "Parent_Category__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CategoryMobileConfig__c",
+      "shouldUseNamespace": true,
+      "shouldCheckForDeleted":false,
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "MobileAppConfigurationId__c",
+          "type": "string"
+        },
+        {
+          "name": "CategoryId__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Cat_Content_Junction__c",
+      "shouldUseNamespace": true,
+      "shouldCheckForDeleted":false,
+      "dependencies": [
+        "Category__c"
+      ],
+      "localFields": [
+        "Internal_Document__c"
+      ],
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Category__c",
+          "type": "string"
+        },
+        {
+          "name": "ContentId__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "ContentDocument",
+      "shouldCheckForDeleted":false,
+      "fieldsToFetch": [
+        "Id"
+      ],
+      "filter": "PublishStatus = 'R'",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "ContentVersion",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fieldsToFetch": [
+        "Id",
+        "ContentDocumentId",
+        "LastModifiedDate",
+        "CreatedDate",
+        "Description",
+        "Title",
+        "PathOnClient",
+        "ContentUrl",
+        "FileType",
+        "FeaturedContentBoost",
+        "TagCsv",
+        "ContentModifiedDate",
+        "contentSize",
+        "VersionNumber",
+        "Document_Type__c",
+        "Category__c",
+        "VersionData",
+        "Internal_Document__c",
+        "PublishStatus",
+        "IsLatest"
+      ],
+      "dependencies": [
+        "Category__c",
+        "MobileAppConfig__c",
+        "Cat_Content_Junction__c"
+      ],
+      "filter": "(IsLatest = true)",
+      "fileInfo": {
+        "binaryField": "VersionData",
+        "nameField": "Title",
+        "typeField": "FileType",
+        "sizeField": "ContentSize"
+      },
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Title",
+          "type": "string"
+        },
+        {
+          "name": "TagCsv",
+          "type": "string"
+        },
+        {
+          "name": "ContentDocumentId",
+          "type": "string"
+        },
+        {
+          "name": "Internal_Document__c",
+          "type": "string"
+        },
+        {
+          "name": "FeaturedContentBoost",
+          "type": "string"
+        },
+        {
+          "name": "PublishStatus",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        },
+        {
+          "name": "IsLatest",
+          "type": "string"
+        }
+      ],
+      "purgeEnabled": true
+    },
+    {
+      "objectName": "Attachment",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "dependencies": [
+        "MobileAppConfig__c",
+        "CategoryMobileConfig__c",
+        "Category__c",
+        "Event",
+        "Account",
+        "SurveyTaker__c",
+        "SurveyQuestionResponse__c"
+      ],
+      "filter": "(ContentType like 'image%')",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "ParentId",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        }
+      ],
+      "fileInfo": {
+        "binaryField": "Body",
+        "nameField": "Name",
+        "typeField": "ContentType",
+        "sizeField": "BodyLength"
+      }
+    },
+    {
+      "objectName": "ContentReview__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "UP",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "DSA_Playlist__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "purgeEnabled": true,
+      "filter": "(OwnerId = '$current_user')",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "IsFeatured__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Playlist_Content_Junction__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "dependencies": [
+        "DSA_Playlist__c"
+      ],
+      "fetchAllFields": true,
+      "purgeEnabled": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Playlist__c",
+          "type": "string"
+        },
+        {
+          "name": "ContentId__c",
+          "type": "string"
+        },
+        {
+          "name": "Order__c",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Contact",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "extraFieldsToFetch": [
+        "Account.Name"
+      ],
+      "localFields": [
+        "hasEmail"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "LastName",
+          "type": "string"
+        },
+        {
+          "name": "FirstName",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "full_text"
+        },
+        {
+          "name": "AccountId",
+          "type": "string"
+        },
+        {
+          "name": "Contact_Function__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Account",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "syncDirection": "BOTH",
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "SAP_Number__c",
+          "type": "string"
+        },
+        {
+          "name": "Street__c",
+          "type": "string"
+        },
+        {
+          "name": "Description",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Task",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "dateQuery": false,
+      "fetchAllFields": true,
+      "syncDirection": "BOTH",
+      "filter": "((CreatedDate = LAST_N_DAYS:5 OR Status IN ('Not Started', 'In Progress')))",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Status",
+          "type": "string"
+        },
+        {
+          "name": "AccountId",
+          "type": "string"
+        },
+        {
+          "name": "ActivityDate",
+          "type": "string"
+        },
+        {
+          "name": "WhatId",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "RecordType",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "SobjectType",
+          "type": "string"
+        },
+        {
+          "name": "IsActive",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Note",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "ParentId",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Event",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "BOTH",
+      "dateQuery": true,
+      "filter": "((OwnerId = '$current_user') AND (StartDateTime >= YESTERDAY AND StartDateTime <= TOMORROW)) AND Event.AccountId != null AND (Event.WhatId in (select Id from Account))",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "AccountId",
+          "type": "string"
+        },
+        {
+          "name": "EndDateTime",
+          "type": "string"
+        },
+        {
+          "name": "StartDateTime",
+          "type": "string"
+        },
+        {
+          "name": "ActivityDate",
+          "type": "string"
+        },
+        {
+          "name": "WhatId",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        },
+        {
+          "name": "Estado_de_visita__c",
+          "type": "string"
+        },
+        {
+          "name": "Control_inicio__c",
+          "type": "string"
+        },
+        {
+          "name": "Control_fin__c",
+          "type": "string"
+        },
+        {
+          "name": "Event_Catalog__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Negotiation__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "filter": "CreatedDate = LAST_N_DAYS:180",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Negotiation_Item__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "filter": "(ONTAP__Negotiation__c IN (select Id from ONTAP__Negotiation__c where CreatedDate = LAST_N_DAYS:180))",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        },
+        {
+          "name": "Material_Give__c",
+          "type": "string"
+        },
+        {
+          "name": "Material_Get__c",
+          "type": "string"
+        },
+        {
+          "name": "Negotiation__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Material_Get__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Material_Give__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "extraFieldsToFetch": [
+        "RecordType.Name"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Survey__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "extraFieldsToFetch": [
+        "RecordType.Name"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Survey_Question__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Survey__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Survey_Question_Dependencies__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Controlling_Question__c",
+          "type": "string"
+        },
+        {
+          "name": "Dependent_Question__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "SurveyTaker__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "extraFieldsToFetch": [
+        "ONTAP__Survey__r.Name"
+      ],
+      "filter": "(((ONTAP__Status__c = 'Abierta' OR LastModifiedDate = THIS_WEEK) AND ONTAP__Type__c != 'Quiz') OR (ONTAP__Status__c = 'Completada' AND ONTAP__Type__c = 'POCE' AND LastModifiedDate >= LAST_N_MONTHS:3) OR (ONTAP__Status__c = 'Completada' AND ONTAP__Type__c = 'Quiz' AND LastModifiedDate >= LAST_N_MONTHS:1 AND (ONTAP__User__c = '$current_user' OR OwnerId = '$current_user')) OR (ONTAP__Status__c = 'Abierta' AND ONTAP__Type__c = 'Quiz' AND (ONTAP__User__c = '$current_user' OR OwnerId = '$current_user')))",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "Type__c",
+          "type": "string"
+        },
+        {
+          "name": "Taken__c",
+          "type": "string"
+        },
+        {
+          "name": "User__c",
+          "type": "string"
+        },
+        {
+          "name": "Contact__c",
+          "type": "string"
+        },
+        {
+          "name": "Survey__c",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "SurveyQuestionResponse__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "filter": "(ONTAP__SurveyTaker__r.ONTAP__Status__c = 'Abierta' OR  CreatedDate >= LAST_N_MONTHS:3)",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Survey_Question__c",
+          "type": "string"
+        },
+        {
+          "name": "SurveyTaker__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Municipio__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Promociones__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "dateQuery": false,
+      "filter": "(ONTAP__Starting_date__c <= TODAY AND ONTAP__Ending_date__c >= TODAY)",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Customer__c",
+          "type": "string"
+        },
+        {
+          "name": "Starting_date__c",
+          "type": "string"
+        },
+        {
+          "name": "Ending_date__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Negotiation_Limit__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Business_Unit__c",
+          "type": "string"
+        },
+        {
+          "name": "Classification__c",
+          "type": "string"
+        },
+        {
+          "name": "Segment__c",
+          "type": "string"
+        },
+        {
+          "name": "Volume_High__c",
+          "type": "integer"
+        },
+        {
+          "name": "Volume_Low__c",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "objectName": "Account_Asset__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "AssetActions__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CountryCode__c",
+          "type": "string"
+        },
+        {
+          "name": "Action__c",
+          "type": "string"
+        },
+        {
+          "name": "Action_Label__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "OnTap_Permission__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Profile_Name__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Profile",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Order__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "filter": "(ONTAP__OrderAccount__c in (select Id from Account))",
+      "extraFieldsToFetch": [
+        "RecordType.Name"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "OrderAccount__c",
+          "type": "string"
+        },
+        {
+          "name": "OrderStatus__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Product__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Order_Item__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CustomerOrder__c",
+          "type": "string"
+        },
+        {
+          "name": "ItemProduct__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Case_Force__c",
+      "shouldCheckForDeleted":false,
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "filter": "(ONTAP__Account__c in (select Id from Account))",
+      "extraFieldsToFetch": [
+        "RecordType.Name"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "RecordType.Name",
+          "type": "string"
+        },
+        {
+          "name": "SLA1__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Case_Force_Comment__c",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "filter": "(IsDeleted = false)",
+      "dependencies": [
+        "Case_Force__c"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "Case_Force__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Market_Program__c",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Market_Program_Item__c",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Market_Program__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Event_Catalog__c",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "Initial_Date__c",
+          "type": "string"
+        },
+        {
+          "name": "End_Date__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Event_Equipment__c",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Business_Unit__c",
+          "type": "string"
+        },
+        {
+          "name": "Sales_Office__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "KPI__c",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "filter": "ONTAP__Kpi_end_date__c >= LAST_N_MONTHS:6 AND ONTAP__Account_id__c IN (SELECT Id FROM Account)",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account_id__c",
+          "type": "string"
+        },
+        {
+          "name": "Categorie__c",
+          "type": "string"
+        },
+        {
+          "name": "Kpi_start_date__c",
+          "type": "string"
+        },
+        {
+          "name": "Kpi_end_date__c",
+          "type": "string"
+        },
+        {
+          "name": "User_id__c",
+          "type": "string"
+        },
+        {
+          "name": "Kpi_parent_id__c",
+          "type": "integer"
+        },
+        {
+          "name": "Kpi_id__c",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "objectName": "Resource__c",
+      "shouldCheckForDeleted":false,
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Country__c",
+          "type": "string"
+        },
+        {
+          "name": "Profile_Name__c",
+          "type": "string"
+        },
+        {
+          "name": "LabelName__c",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

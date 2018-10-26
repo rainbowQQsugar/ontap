@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sab_white"
+    android:orientation="horizontal"
+    android:padding="@dimen/space">
+
+    <ImageView
+        android:id="@+id/remove_attachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_remove_box"/>
+
+    <TextView
+        android:id="@+id/attachment_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="@dimen/space3"
+        android:layout_weight="1"
+        tools:text="photo1.jpg"/>
+
+    <TextView
+        android:id="@+id/attachment_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="10/10/2015"/>
+
+</LinearLayout>

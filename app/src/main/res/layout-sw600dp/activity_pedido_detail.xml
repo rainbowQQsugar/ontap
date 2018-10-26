@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sab_lightest_gray"
+    tools:context=".activity.PedidoDetailOldActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/DetailsToolbarStyle">
+
+        <com.abinbev.dsa.ui.view.ShoppingCart
+            android:id="@+id/shopping_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/order_edit_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/white"
+        android:paddingTop="@dimen/space3"
+        android:paddingBottom="@dimen/space3"
+        style="@style/Text"
+        android:text="@string/not_editable"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/txtStatusLabel"
+        style="@style/Text.H3.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_edit_message"
+        android:layout_toStartOf="@id/pedido_status"
+        android:layout_alignBaseline="@id/pedido_status"
+        android:layout_marginBottom="@dimen/space2"
+        android:layout_marginTop="@dimen/space2"
+        android:gravity="center_vertical|right"
+        android:paddingTop="@dimen/space2"
+        android:paddingLeft="@dimen/space2"
+        android:text="@string/status_text"/>
+
+    <TextView
+        android:id="@+id/pedido_status"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/order_edit_message"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="@dimen/space_small"
+        android:layout_marginTop="@dimen/space2"
+        android:gravity="center_vertical|right"
+        android:paddingEnd="@dimen/space2"
+        tools:text="Abierto"
+        android:paddingBottom="@dimen/space2"/>
+
+    <LinearLayout
+        android:id="@+id/headers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtStatusLabel"
+        android:layout_marginEnd="@dimen/space2"
+        android:layout_marginStart="@dimen/space2"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal"
+        android:background="@color/sab_light_gray">
+        <TextView
+            android:id="@+id/txtHeaderLeft"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:padding="@dimen/space"
+            android:text="@string/producto"
+            android:textAllCaps="true"  />
+        <TextView
+            android:id="@+id/txtHeaderMiddle"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/código"
+            android:textAllCaps="true"  />
+        <TextView
+            android:id="@+id/txtHeaderRight"
+            style="@style/Text.H6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/space"
+            android:text="@string/cantidad"
+            android:textAllCaps="true"  />
+        </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/line_items"
+        android:layout_below="@+id/headers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/sab_lightest_gray"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="true"
+        android:dividerHeight="2dp" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_below="@+id/order_edit_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_products"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/popup_menu_anchor"
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:visibility="invisible"
+        android:layout_toStartOf="@+id/order_actions"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@id/order_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_horiz"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/space2"
+        android:layout_marginBottom="@dimen/space2"/>
+
+</RelativeLayout>

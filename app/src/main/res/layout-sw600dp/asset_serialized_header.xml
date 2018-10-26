@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.H3.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-4dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="@dimen/section_margin_horizontal"
+        android:paddingRight="@dimen/section_margin_horizontal"
+        android:paddingTop="21dp"
+        android:text="@string/serialized"/>
+
+    <LinearLayout
+        android:id="@+id/column_header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/sab_lightest_gray"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/page_inset_horizontal"
+        android:paddingRight="@dimen/page_inset_horizontal">
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/asset_name"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/asset_name"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/order_number"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/description"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/brand"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="left|center_vertical"
+            android:text="@string/brand"
+            android:textAllCaps="true"/>
+
+    </LinearLayout>
+
+</LinearLayout>

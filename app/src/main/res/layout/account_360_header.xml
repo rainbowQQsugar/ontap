@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/image_container"
+        app:layout_aspectRatio="268%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:id="@+id/hero_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_empty_photo" />
+
+        <ImageView
+            android:id="@+id/take_picture_button"
+            android:layout_width="33.6dp"
+            android:layout_height="33.6dp"
+            android:layout_alignBottom="@id/hero_image"
+            android:layout_alignLeft="@id/hero_image"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:src="@drawable/ic_camera_black_36dp" />
+
+        <Button
+            android:id="@+id/take_picture_button_big"
+            style="?borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableTop="@drawable/ic_camera_grey_48dp"
+            android:text="@string/add_photo"
+            android:textAllCaps="false"
+            android:textAppearance="@style/Text.H3.Bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/account_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_container"
+        android:minHeight="56dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/account_name"
+            style="@style/Text.H1.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/page_inset_vertical_small"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="La Botica Campeche" />
+
+        <TextView
+            android:id="@+id/account_number"
+            style="@style/Text.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="#317638" />
+
+        <TextView
+            android:id="@+id/account_error_message"
+            style="@style/Text.H5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/red"
+            tools:text="(conversion problem)" />
+
+        <TextView
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/field_margin_half"
+            android:text="@string/primary_contact"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_gray"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/primary_contact"
+            style="@style/Text.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:visibility="gone"
+            tools:text="Giovanni Bernal Lopez" />
+
+        <TextView
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/field_margin_half"
+            android:text="@string/account_owner"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_gray" />
+
+        <TextView
+            android:id="@+id/account_owner"
+            style="@style/Text.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/page_inset_vertical_large"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            tools:text="Esteban Garcia Rasso" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_size"
+            android:background="@drawable/divider_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:divider="@drawable/divider_vertical"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <Button
+                android:id="@+id/call_button"
+                style="?borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_phone_36dp"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="7dp"
+                android:text="@string/call"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Text.H7"
+                android:textColor="@color/sab_gray" />
+
+            <Button
+                android:id="@+id/directions"
+                style="?borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_directions_36dp"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="7dp"
+                android:text="@string/directions"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Text.H7"
+                android:textColor="@color/sab_gray" />
+
+            <Button
+                android:id="@+id/chatter_button"
+                style="?borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_chatter"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="7dp"
+                android:text="@string/chatter"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Text.H7"
+                android:textColor="@color/sab_gray" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_size"
+            android:background="@drawable/divider_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:divider="@drawable/divider_vertical"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <Button
+                android:id="@+id/timeline_button"
+                style="?borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_timeline_36dp"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="7dp"
+                android:text="@string/timeline"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Text.H7"
+                android:textColor="@color/sab_gray" />
+
+            <Button
+                android:id="@+id/notes_button"
+                style="?borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_poc_notes"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="7dp"
+                android:text="@string/notes"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Text.H7"
+                android:textColor="@color/sab_gray" />
+
+            <Button
+                android:id="@+id/more_info"
+                style="?borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/ic_info"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="7dp"
+                android:text="@string/more_info"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Text.H7"
+                android:textColor="@color/sab_gray" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_size"
+            android:background="@drawable/divider_horizontal" />
+
+        <com.abinbev.dsa.ui.view.CheckInButton
+            android:id="@+id/check_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.percent.PercentRelativeLayout>

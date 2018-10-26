@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/chart_marker_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="-2dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_circle_with_shadow"
+        android:padding="6dp"
+        android:src="@drawable/ic_circle"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@android:id/text1"
+        android:tint="#FF0000"/>
+
+    <TextView
+        android:id="@android:id/text1"
+        style="@style/Text.H7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_chart_marker"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@color/sab_dark_gray"
+        tools:text="50%"/>
+
+
+</RelativeLayout>

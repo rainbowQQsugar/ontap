@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/divider_vertical"
+    android:orientation="horizontal"
+    android:showDividers="middle">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="34"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <com.abinbev.dsa.ui.view.VolumeView
+            android:id="@+id/volume_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/kpi_volume_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/section_margin_horizontal"
+            android:layout_marginRight="@dimen/section_margin_horizontal"
+            android:background="@color/divider_color"/>
+
+        <com.abinbev.dsa.ui.view.CoverageView
+            android:id="@+id/coverage_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/kpi_coverage_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/section_margin_horizontal"
+            android:layout_marginRight="@dimen/section_margin_horizontal"
+            android:background="@color/divider_color"/>
+
+        <com.abinbev.dsa.ui.view.PedidosView
+            android:id="@+id/orders_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/section_margin_horizontal"
+            android:layout_marginRight="@dimen/section_margin_horizontal"
+            android:background="@color/divider_color"/>
+
+        <com.abinbev.dsa.ui.view.AttachmentsView
+            android:id="@+id/attachments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="15"
+        android:background="@color/sab_lightest_gray">
+
+        <com.abinbev.dsa.ui.view.PerformanceIndicatorsView
+            android:id="@+id/performance_indicators_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sectionTitle="@string/visits_dashboard"/>
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/search_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/space2">
+
+    <EditText
+        android:id="@+id/editSearch"
+        style="@style/Widget.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space"
+        android:layout_marginBottom="@dimen/space"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:paddingEnd="36dp"
+        android:hint="@string/busca_nombre_o_zona"
+        android:inputType="text"
+        android:imeOptions="actionDone">
+        <requestFocus />
+        </EditText>
+
+    <ImageView
+        android:id="@+id/imgSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editSearch"
+        android:layout_alignRight="@+id/editSearch"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/space"
+        android:src="@drawable/ic_search" />
+
+
+    <ProgressBar
+        android:id="@+id/progressSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/editSearch"
+        android:layout_alignTop="@+id/editSearch"
+        android:layout_alignBottom="@+id/editSearch"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="28dp"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_below="@+id/editSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

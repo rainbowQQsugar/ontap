@@ -1,0 +1,11 @@
+include ':SmartStore'
+project(':SmartStore').projectDir = new File('external-libs/SmartStore')
+
+include ':SalesforceSDK'
+project(':SalesforceSDK').projectDir = new File('external-libs/SalesforceSDK')
+
+include ':sync-engine-lib'
+project(':sync-engine-lib').projectDir = new File('external-libs/sync-engine-lib')
+
+include ':dsa-core'
+include ':sample-app'

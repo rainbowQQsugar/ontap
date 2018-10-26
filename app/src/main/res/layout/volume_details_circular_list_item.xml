@@ -1,0 +1,69 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selected_background">
+
+    <ProgressBar
+        android:id="@+id/volume_item_progress"
+        style="@style/Progress.Circular_6dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="9dp"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="9dp"
+        android:background="@null"
+        android:indeterminate="false"
+        tools:max="100"
+        tools:progress="90"/>
+
+    <TextView
+        android:id="@+id/volume_item_percent"
+        style="@style/Text.H3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/volume_item_progress"
+        android:layout_alignLeft="@id/volume_item_progress"
+        android:layout_alignRight="@id/volume_item_progress"
+        android:layout_alignTop="@id/volume_item_progress"
+        android:background="@null"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textAllCaps="true"
+        android:textColor="@color/sab_dark_gray"
+        tools:text="99.9%"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/volume_item_progress"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/volume_item_name"
+            style="@style/Text.H7.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/sab_dark_gray"
+            tools:text="Quilmes"/>
+
+        <TextView
+            android:id="@+id/volume_item_values"
+            style="@style/Text.H7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/sab_gray"
+            tools:text="30HL / 40HL"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

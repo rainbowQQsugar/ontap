@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.abinbev.dsa.activity.TaskDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+       >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/DetailsToolbarStyle" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/separator"
+            android:background="@color/sab_lightest_gray" />
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--<Button-->
+            <!--android:id="@+id/task_edit"-->
+            <!--style="@style/Widget.Button.Borderless"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:padding="@dimen/space"-->
+            <!--android:text="@string/caso_edit" />-->
+
+            <Button
+                android:id="@+id/task_save"
+                style="@style/Widget.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/space"
+                android:text="@string/save" />
+
+            <Button
+                android:id="@+id/task_cancel"
+                style="@style/Widget.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/task_save"
+                android:padding="@dimen/space"
+                android:text="@string/cancel" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/separator"
+            android:background="@color/sab_lightest_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/space"
+                    android:layout_marginTop="@dimen/space">
+
+                    <TextView
+                        android:id="@+id/assignDesc"
+                        style="@style/Text.H3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:text="@string/assign"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/assignValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.9"
+                        android:gravity="right"
+                        android:paddingRight="@dimen/space"
+                        tools:text="@string/value" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/space">
+
+                    <TextView
+                        android:id="@+id/subjectDesc"
+                        style="@style/Text.H3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:text="@string/issue"
+                        android:textAlignment="center"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/subject"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.9"
+                        android:gravity="right"
+                        android:paddingRight="@dimen/space"
+                        tools:text="@string/value" />
+                    <!--Spinner
+                        android:id="@+id/subjectSpinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/space"
+                        android:textAllCaps="true"
+                        tools:listitem="@layout/reason_dropdown"/>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space"
+                    android:layout_marginTop="@dimen/space">
+
+                    <TextView
+                        android:id="@+id/commentDesc"
+                        style="@style/Text.H3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:text="@string/commentaries"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/commentValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.9"
+                        android:gravity="right"
+                        android:paddingRight="@dimen/space"
+                        tools:text="@string/value" />
+                </LinearLayout>
+
+                <!--<RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space"
+                    android:layout_marginTop="@dimen/space">
+
+                    <TextView
+                        android:id="@+id/scheduledTaskDesc"
+                        style="@style/Text.H3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:text="@string/scheduledTask"
+                        android:textAllCaps="true" />
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/scheduledTaskValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="@dimen/space" />
+                </RelativeLayout>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space"
+                    android:layout_marginTop="@dimen/space"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/statusDesc"
+                        style="@style/Text.H3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:text="@string/state"
+                        android:textAlignment="center"
+                        android:textAllCaps="true" />
+
+                    <Spinner
+                        android:id="@+id/stateSpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="@dimen/space"
+                        android:layout_weight="0.9"
+                        android:textAllCaps="true"
+                        tools:listitem="@layout/reason_dropdown" />
+                </android.support.v7.widget.LinearLayoutCompat>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space"
+                    android:layout_marginTop="@dimen/space">
+
+                    <TextView
+                        android:id="@+id/priorityDesc"
+                        style="@style/Text.H3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:text="@string/priority"
+                        android:textAlignment="center"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/priority"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.9"
+                        android:gravity="right"
+                        android:paddingRight="@dimen/space"
+                        tools:text="@string/value" />
+
+                    <!--<Spinner
+                        android:id="@+id/prioritySpinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:gravity="right"
+                        android:textAllCaps="true"
+                        tools:listitem="@layout/reason_dropdown" />-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/space"
+                    android:layout_marginTop="@dimen/space">
+
+                    <TextView
+                        android:id="@+id/activityDateDesc"
+                        style="@style/Text.H3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:text="@string/activityDate"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/activityDateValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.9"
+                        android:gravity="right"
+                        android:paddingRight="@dimen/space"
+                        tools:text="@string/value" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/space"
+                    android:layout_marginTop="@dimen/space">
+
+                    <TextView
+                        android:id="@+id/related_to_label"
+                        style="@style/Text.H3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:text="@string/related_to"
+                        android:textAllCaps="true" />
+
+                    <TextView
+                        android:id="@+id/related_to"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.9"
+                        android:gravity="right"
+                        android:paddingRight="@dimen/space"
+                        tools:text="@string/value" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/space"
+                    android:layout_marginTop="@dimen/space">
+
+                    <TextView
+                        android:id="@+id/resultDesc"
+                        style="@style/Text.H3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/space"
+                        android:layout_weight="0.5"
+                        android:text="@string/result"
+                        android:textAllCaps="true" />
+
+                    <EditText
+                        android:id="@+id/resultValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/space"
+                        android:layout_weight="0.9"
+                        android:gravity="left"
+                        android:maxEms="255"
+                        tools:text="@string/value" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

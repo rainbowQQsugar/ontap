@@ -1,0 +1,71 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/space">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+    <TextView
+        style="@style/Text.H7.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        android:textColor="@color/red"
+        android:text="@string/sync_error" />
+
+        <TextView
+            android:id="@+id/object_type"
+            style="@style/Text.H7.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_small"
+            tools:text="Caso_Force__c" />
+
+        <TextView
+            android:id="@+id/dash"
+            style="@style/Text.H7.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dash" />
+
+    <TextView
+        android:id="@+id/object_id"
+        style="@style/Text.H7.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        tools:text="Id" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/error_code"
+        style="@style/Text.H4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        tools:text="Really long type of record" />
+
+    <TextView
+        android:id="@+id/error_message"
+        style="@style/Text.H7.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        tools:text="23/3/2016" />
+
+    <TextView
+        android:id="@+id/json_data"
+        style="@style/Text.H7.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        tools:text="Really long type of record" />
+
+
+</LinearLayout>

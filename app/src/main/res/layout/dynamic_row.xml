@@ -1,0 +1,51 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:orientation="vertical">
+
+    <TextView
+        style="@style/Text.DynamicLabel"
+        android:id="@+id/left_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        android:gravity="left"
+        tools:text="leftLabel"/>
+
+    <TextView
+        style="@style/Text.DynamicField"
+        android:id="@+id/left_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        android:gravity="left"
+        tools:text="leftValue"/>
+
+    <!--<CheckBox-->
+        <!--android:id="@+id/left_value"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="left"-->
+        <!--android:checked="true"/>-->
+
+    <TextView
+        style="@style/Text.DynamicLabel"
+        android:id="@+id/right_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        android:gravity="left"
+        tools:text="rightLabel"/>
+
+    <TextView
+        style="@style/Text.DynamicField"
+        android:id="@+id/right_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_small"
+        android:gravity="left"
+        tools:text="rightValue"/>
+
+</LinearLayout>

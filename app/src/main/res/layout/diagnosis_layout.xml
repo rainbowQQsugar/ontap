@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/AppTheme.ToolbarOverlay"
+        style="@style/ToolbarStyle"
+        app:subtitleTextAppearance="@style/Text.SubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator"
+        android:background="@color/sab_lightest_gray" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator"
+        android:background="@color/sab_lightest_gray" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <EditText
+            android:id="@+id/dataView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:text="Loading ..."
+            android:editable="false"
+            android:textIsSelectable="true"
+            android:textSize="24sp" />
+
+    </ScrollView>
+
+</LinearLayout>

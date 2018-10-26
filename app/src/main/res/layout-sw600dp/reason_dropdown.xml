@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@android:id/text1"
+        style="?android:attr/spinnerItemStyle"
+        android:paddingTop="@dimen/space"
+        android:paddingBottom="@dimen/space"
+        android:paddingStart="@dimen/space1"
+        android:paddingEnd="@dimen/space1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:textAlignment="inherit"/>
+
+</LinearLayout>

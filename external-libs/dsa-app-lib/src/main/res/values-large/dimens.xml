@@ -1,0 +1,7 @@
+<resources>
+
+    <integer name="lines_in_response">3</integer>
+
+    <dimen name="details_view_padding">10dp</dimen>
+
+</resources>

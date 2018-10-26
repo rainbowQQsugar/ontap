@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/visit_list_width"
+    android:layout_height="wrap_content"
+    android:background="@color/sab_white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/space4"
+    android:paddingEnd="@dimen/space2"
+    android:paddingStart="@dimen/space2"
+    android:paddingTop="@dimen/space4">
+
+    <TextView
+        android:id="@+id/txtName"
+        style="@style/Text.H3.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:text="Carlos Alberto Salsateca" />
+
+    <TextView
+        android:id="@+id/txtDuration"
+        style="@style/Text.H8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingTop="@dimen/space1"
+        android:textColor="@color/gray"
+        tools:text="tiempo de visita: 7 min" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space2"
+        android:paddingTop="@dimen/space2"
+        android:src="@drawable/divider_list" />
+
+    <TextView
+        android:id="@+id/txtAccount"
+        style="@style/Text.H4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/space"
+        android:paddingTop="@dimen/space"
+        android:text="@string/account_details" />
+
+    <GridLayout
+        android:id="@+id/address_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgMapMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:src="@drawable/ic_place_black" />
+
+        <TextView
+            android:id="@+id/txtAddress"
+            style="@style/Text.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingBottom="2dp"
+            android:paddingStart="@dimen/space"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            tools:text="Victor Emilio Estrada 630" />
+
+        <LinearLayout
+            android:id="@+id/layout_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginEnd="@dimen/page_inset_horizontal"
+            android:layout_row="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtNeighborhood"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingBottom="2dp"
+                android:paddingEnd="@dimen/space"
+                android:paddingStart="@dimen/space"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                tools:text="Mapisingue" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="@dimen/divider_size"
+                android:layout_height="match_parent"
+                android:background="@drawable/divider_list"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtCity"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingBottom="2dp"
+                android:paddingEnd="@dimen/space"
+                android:paddingStart="@dimen/space"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:visibility="gone"
+                tools:text="Guayaquil" />
+
+        </LinearLayout>
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/txtPhone"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingEnd="@dimen/space"
+        android:drawablePadding="@dimen/space"
+        android:drawableStart="@drawable/ic_phone_black_24dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:text="+593 4-2883190" />
+
+</LinearLayout>

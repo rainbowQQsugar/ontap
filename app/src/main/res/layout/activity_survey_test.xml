@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_with_logo" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator"
+        android:background="@color/sab_lightest_gray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/survey_id_label"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/survey_id"
+                android:text="Survey Taker Id:"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@id/survey_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space1"
+                android:layout_marginTop="@dimen/space"
+                android:background="@drawable/qty_bg"
+                android:padding="@dimen/space1"
+                android:text="a1Gc0000006otI2EAI" />
+
+            <TextView
+            android:id="@+id/account_id_label"
+            style="@style/Text.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/account_id"
+            android:text="Account Id (Optional):" />
+
+            <EditText
+                android:id="@id/account_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space1"
+                android:layout_marginTop="@dimen/space"
+                android:background="@drawable/qty_bg"
+                android:padding="@dimen/space1"
+                android:text="001c0000010iKTvAAM" />
+
+            <TextView
+                android:id="@+id/bundle_label"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/bundle_value"
+                android:text="Enter html bundle zip location:" />
+
+            <EditText
+                android:id="@id/bundle_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space1"
+                android:layout_marginTop="@dimen/space"
+                android:background="@drawable/qty_bg"
+                android:padding="@dimen/space1"
+                android:text="/storage/sdcard/Archive.zip" />
+
+
+            <Button
+                android:id="@+id/btn_local_html_bundle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Launch Local HTML Bundle" />
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/popup_menu_anchor"
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="132dp"
+            android:layout_toStartOf="@+id/new_survey"
+            android:visibility="invisible" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@id/new_survey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/space2"
+            android:layout_marginEnd="@dimen/space2"
+            android:src="@drawable/ic_add_white" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="locating_current_location">Locatiing current location…</string>
+    <string name="error_msg_airplanemode_wifioff">Failing to locating, try to switch off airplane mode or turn on wifi.</string>
+    <string name="error_msg_failure_cell">Invalid base station info, make sure that a SIM card is installed.</string>
+    <string name="error_msg_failure_location_permission">Permission is required to locating, change it in your settings.</string>
+    <string name="error_msg_failure_connection">Internet connection exception, check your network settings.</string>
+    <string name="error_msg_failure_no_enough_statellites">GPS module does not work correctly, more satellites needed.</string>
+    <string name="error_msg_no_cgi_wifi_off">Failing to locating, no SIM card is detected and wifi is turned off.  Please turn on your wifi or install a SIM card.</string>
+
+    <string name="error_msg_failure_auth">Authentication failed for access to AMap api.</string>
+    <string name="error_msg_failure_init">Amp module initialization exception</string>
+    <string name="error_msg_failure_location">Amap failed to locate your position.</string>
+    <string name="error_msg_failure_location_parameter">Parameter error for location request</string>
+    <string name="error_msg_failure_no_wifi_and_ap">Failed to get an available network connection.</string>
+    <string name="error_msg_failure_parse">Failed to parse XML correctly.</string>
+    <string name="error_msg_failure_simulation_location">Location might be emulated by other apps.</string>
+    <string name="error_msg_service_fail">Locating service is not launched correctly, please double check your manifest file.</string>
+    <string name="error_msg_invalid_parameter">Some important parameters are missed.</string>
+
+    <string name="error_msg_unknow">Unknown error occurred, please record your operation and report it to your manager.</string>
+    <string name="error_msg_default">Failed to locate your position, please record your operation and report it to your manager.</string>
+</resources>

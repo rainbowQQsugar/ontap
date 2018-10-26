@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:padding="@dimen/space">
+
+    <TextView
+        android:id="@+id/series"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space"/>
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/space" />
+
+    <EditText
+        android:id="@+id/quantity_reqd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:inputType="none"
+        android:minWidth="48dp"
+        android:imeOptions="actionDone"
+        android:enabled="false"
+        android:layout_weight="1"
+        android:padding="@dimen/space"
+        android:selectAllOnFocus="true"/>
+
+    <TextView
+        android:id="@+id/brand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space" />
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space"/>
+</LinearLayout>

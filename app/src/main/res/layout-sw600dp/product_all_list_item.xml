@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sab_white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/space">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.3"
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/product_name"
+            style="@style/Text.H5.CondensedBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Miller Lite" />
+
+        <TextView
+            android:id="@+id/product_code"
+            style="@style/Text.H8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3423TT" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinnerReason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/space1"
+        android:layout_marginEnd="@dimen/space"
+        android:layout_marginStart="@dimen/space"
+        android:layout_weight="1"
+        android:dropDownWidth="384dp"
+        tools:listitem="@layout/reason_dropdown"/>
+
+    <EditText
+        android:id="@+id/product_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@drawable/product_count_background"
+        android:gravity="center"
+        android:inputType="number"
+        android:minWidth="48dp"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:selectAllOnFocus="true"
+        tools:text="50" />
+
+    <Spinner
+        android:id="@+id/spinnerQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/space1"
+        android:layout_marginStart="@dimen/space"
+        tools:listitem="@layout/reason_dropdown"
+        android:entries="@array/units_of_measure" />
+
+    <ImageView
+        android:id="@+id/order_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="?selectableItemBackgroundBorderless"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/space_small"
+        android:src="@drawable/ic_add_box_outline" />
+</LinearLayout>

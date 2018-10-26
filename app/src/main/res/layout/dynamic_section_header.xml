@@ -1,0 +1,12 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Text.H6"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/space"
+    android:paddingRight="@dimen/space"
+    android:paddingTop="@dimen/space2"
+    android:paddingBottom="@dimen/space2"
+    tools:text="Section Heading"
+    android:gravity="center_vertical"
+    android:background="@color/sab_lightest_gray"/>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/sab_lightest_gray"
+    android:paddingTop="@dimen/space2"
+    android:paddingBottom="@dimen/space2"
+    android:paddingRight="@dimen/space2"
+    android:paddingLeft="@dimen/space"
+    android:layout_marginBottom="@dimen/space_small">
+
+    <ImageView
+        android:id="@+id/action_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space2"
+        android:layout_marginRight="@dimen/space"
+        android:src="@drawable/give_item_btn"/>
+
+    <TextView
+        android:id="@+id/code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/action_btn"
+        style="@style/Text.H8"
+        tools:text="Material Code"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/action_btn"
+        android:layout_below="@id/code"
+        style="@style/Text.H3.Bold"
+        tools:text="Material Name"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/action_btn"
+        android:layout_below="@id/name"
+        style="@style/Text.H4"
+        tools:text="Material description"/>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        tools:text="Score: 00"
+        style="@style/Text.H4"/>
+
+</RelativeLayout>

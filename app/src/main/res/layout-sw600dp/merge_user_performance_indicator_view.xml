@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/tiles_container"
+        android:layout_width="317dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/sab_lightest_gray"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/section_margin_bottom"
+        android:paddingLeft="@dimen/section_margin_horizontal"
+        android:paddingRight="@dimen/section_margin_horizontal"
+        android:paddingTop="@dimen/section_margin_bottom">
+
+        <com.abinbev.dsa.ui.view.CasoView
+            android:id="@+id/my_visit"
+            style="@style/CasoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:cardTitle="@string/my_visit" />
+
+        <com.abinbev.dsa.ui.view.CasoView
+            android:id="@+id/open_tasks"
+            style="@style/CasoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:cardTitle="@string/tareas_abiertas" />
+
+
+        <com.abinbev.dsa.ui.view.CasoView
+            android:id="@+id/event_planning"
+            style="@style/CasoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:cardTitle="@string/event_planning_tile" />
+
+        <com.abinbev.dsa.ui.view.CasoView
+            android:id="@+id/my_orders"
+            style="@style/CasoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp"
+            app:cardTitle="@string/my_orders" />
+
+        <com.abinbev.dsa.ui.view.CasoView
+            android:id="@+id/open_surveys"
+            style="@style/CasoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:cardTitle="@string/survey_tile_title" />
+
+
+        <com.abinbev.dsa.ui.view.CasoView
+            android:id="@+id/rejected_account_changes"
+            style="@style/CasoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:cardTitle="@string/account_case_rejected_cases" />
+
+        <com.abinbev.dsa.ui.view.CasoView
+            android:id="@+id/picture_audit"
+            style="@style/CasoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp"
+            app:cardTitle="@string/picture_audit_tile" />
+
+        <com.abinbev.dsa.ui.view.CasoView
+            android:id="@+id/open_cases"
+            style="@style/CasoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:cardTitle="@string/casos_abiertas" />
+
+    </LinearLayout>
+</merge>

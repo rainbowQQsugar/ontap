@@ -1,0 +1,46 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="67dp"
+    android:paddingRight="67dp"
+    android:paddingTop="19dp">
+
+    <TextView
+        android:id="@+id/txt_date"
+        style="@style/Text.H7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@null"
+        android:maxLines="1"
+        android:textColor="@color/sab_gray"
+        tools:text="30/09/2017"/>
+
+    <TextView
+        android:id="@+id/txt_title"
+        style="@style/Text.H7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAllCaps="true"
+        android:textColor="@color/sab_gray"
+        tools:text="Esteban Garcia Rasso"/>
+
+    <TextView
+        android:id="@+id/txt_comment"
+        style="@style/Text.H5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:textColor="@color/sab_dark_gray"
+        tools:text="Really long comment of some sort"/>
+</LinearLayout>

@@ -1,0 +1,41 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/space">
+
+    <TextView
+        android:id="@+id/opportunity_Name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space"
+        android:textColor="@color/sab_blue"
+        tools:text="number" />
+
+    <TextView
+        android:id="@+id/opportunity_Ideal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/space"
+        tools:text="brand" />
+
+    <TextView
+        android:id="@+id/opportunity_Real"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/space"
+        tools:text="quantity" />
+
+    <TextView
+        android:id="@+id/opportunity_Opportunity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space"
+        tools:text="statement" />
+</LinearLayout>

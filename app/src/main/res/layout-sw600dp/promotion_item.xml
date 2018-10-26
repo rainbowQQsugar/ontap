@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sab_lightest_gray"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/space2">
+
+    <ImageView
+        android:id="@+id/action_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/give_item_btn"
+        android:layout_marginRight="@dimen/space2"/>
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/Text.H6.Large"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:text="@string/number"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/Text.H5.CondensedBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:text="@string/code"
+        android:lines="1"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/end_date"
+        style="@style/Text.H5.CondensedBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:text="@string/fecha_de_vencimiento"
+        android:lines="1"
+        android:textAllCaps="true" />
+
+</LinearLayout>

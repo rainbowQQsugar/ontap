@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/Text.H6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/field_label_margin"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/page_inset_vertical_large"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAllCaps="true"/>
+
+    <EditText
+        android:id="@+id/search_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/page_inset_vertical_large"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:drawableEnd="@drawable/ic_search_blue_24dp"
+        android:drawablePadding="8dp"
+        android:hint="@string/search"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:paddingRight="4dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:background="@color/divider_color"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:name="com.abinbev.dsa.fragments.ReferencedValuesFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="LinearLayoutManager"
+        tools:context="com.abinbev.dsa.fragments.ReferencedValuesFragment"
+        tools:listitem="@layout/support_simple_spinner_dropdown_item"/>
+</LinearLayout>

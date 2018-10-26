@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/tiles_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sab_lightest_gray"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/section_margin_bottom"
+        android:paddingLeft="@dimen/section_margin_horizontal"
+        android:paddingRight="@dimen/section_margin_horizontal">
+
+        <TextView
+            android:id="@+id/title_label"
+            style="@style/Text.H3.Bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/section_title_margin"
+            android:layout_marginTop="@dimen/section_margin_top"
+            android:background="@null"
+            android:text="@string/prospecto_creacion"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/basic_data_container"
+            style="@style/CardViewTile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp">
+
+            <TextView
+                android:id="@+id/basic_data_label"
+                style="@style/Text.H4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginRight="28dp"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:minHeight="24dp"
+                android:text="@string/datos_basicos"/>
+
+            <ImageView
+                android:id="@+id/basic_data_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/ic_check"
+                android:visibility="gone"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/additional_data_container"
+            style="@style/CardViewTile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/additional_data_label"
+                style="@style/Text.H4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginRight="28dp"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:minHeight="24dp"
+                android:text="@string/datos_adicionales"/>
+
+            <ImageView
+                android:id="@+id/additional_data_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/ic_check"
+                android:visibility="gone"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/negotiation_container"
+            style="@style/CardViewTile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/negotiation_label"
+                style="@style/Text.H4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginRight="28dp"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:minHeight="24dp"
+                android:text="@string/negociaciones"/>
+
+            <ImageView
+                android:id="@+id/negotiation_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/ic_check"
+                android:visibility="gone"/>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/attachment_container"
+            style="@style/CardViewTile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/attachment_label"
+                style="@style/Text.H4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginRight="28dp"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:minHeight="24dp"
+                android:text="@string/archivos"/>
+
+            <ImageView
+                android:id="@+id/attachment_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/ic_check"
+                android:visibility="gone"/>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

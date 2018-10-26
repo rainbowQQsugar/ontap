@@ -1,0 +1,56 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/space">
+
+    <LinearLayout
+        android:id="@+id/titleToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/space"
+        android:paddingLeft="@dimen/space"
+        android:paddingTop="@dimen/space"
+        tools:text="record type" />
+        <TextView
+            android:id="@+id/contact_Birthdate_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:visibility="gone"
+            android:paddingLeft="@dimen/space"
+            android:paddingRight="@dimen/space"
+            android:paddingBottom="@dimen/space"
+            android:text="@string/happy_birthday" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/contact_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/space"
+        tools:text="create date" />
+    <TextView
+        android:id="@+id/contact_function"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space"
+        tools:text="23/3/2016" />
+
+    <TextView
+        android:id="@+id/contact_birthdate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space"
+        tools:text="state" />
+</LinearLayout>

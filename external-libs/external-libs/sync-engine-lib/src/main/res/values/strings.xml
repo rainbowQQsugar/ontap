@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidSyncEngine</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+
+    <!-- These values should be overwritten by the client app strings.xml file -->
+    <string name="account_type">com.salesforce.androidsyncengine.login</string>
+    <string name="content_authority">com.salesforce.androidsyncengine.content</string>
+    <string name="provider">com.salesforce.androidsyncengine.provider</string>
+
+    <string name="sync_failure_message">Synchronization error. Please check the internet connection and try again.</string>
+
+</resources>

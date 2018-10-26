@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.salesforce.dsa.app.ui.activity.PlaylistsActivity">
+    <item
+        android:id="@+id/action_new_playlist"
+        android:icon="@drawable/ic_action_add"
+        android:title="@string/action_new_playlist"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_edit_playlists"
+        android:icon="@drawable/ic_action_mode_edit"
+        android:title="@string/action_edit_playlists"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_select"
+        android:icon="@drawable/ic_action_select"
+        android:title="@string/select"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_select_all"
+        android:icon="@drawable/ic_action_select_all"
+        android:title="@string/select_all"
+        app:showAsAction="never"/>
+
+</menu>

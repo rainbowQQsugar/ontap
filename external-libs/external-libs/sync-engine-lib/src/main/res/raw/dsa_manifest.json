@@ -1,0 +1,170 @@
+{
+  "configuration": {
+    "manifestVersion":"1.0",
+    "enableLogging":true,
+    "allowBackup": true,
+    "syncFrequency": 900,
+    "purgeFrequency": 86400,
+    "shouldCheckForDeleted": true,
+    "nameSpacePrefix":"ModelM",
+    "backgroundSync": {
+      "wifi": true,
+      "edge": false,
+      "3G": false,
+      "4G": true,
+      "lte": true
+    }
+  },
+  "objects":[
+    {
+      "objectName": "User",
+      "fieldsToFetch": [
+        "Id", "LastModifiedDate", "CreatedDate", "Username", "Name", "FirstName", "LastName", "Email", "UserRoleId", "UserPermissionsSFContentUser"
+      ],  
+      "purgeEnabled": true,
+      "localFields": ["UserProfileId"],
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }]
+    },
+    {
+      "objectName": "MobileAppConfig__c",
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }]
+    },
+    {
+      "objectName": "Category__c",
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }]
+    }, 
+    {
+      "objectName": "CategoryMobileConfig__c",
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }]
+    },
+    {
+      "objectName": "Cat_Content_Junction__c",
+      "dependencies": ["Category__c"],
+      "localFields": ["Internal_Document__c"],
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }]
+    },
+    {
+      "objectName": "ContentDocument",
+      "fieldsToFetch": ["Id"],
+      "syncDirection": "UP",
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }]
+    },
+    {
+      "objectName": "ContentVersion",
+      "fieldsToFetch": ["Id", "ContentDocumentId", "LastModifiedDate", "CreatedDate", "Description", 
+                        "Title", "PathOnClient", "ContentUrl", "FileType", "FeaturedContentBoost", "TagCsv", "ContentModifiedDate",
+                        "contentSize", "VersionNumber", "Document_Type__c", "Category__c", "VersionData", "Internal_Document__c"],
+      "dependencies": ["Category__c", "MobileAppConfig__c", "Cat_Content_Junction__c"],
+      "filters": [{
+          "field": "ContentDocument.PublishStatus", 
+          "op": "eq", 
+          "value":"P"}, 
+        {
+          "field": "IsLatest", 
+          "op": "eq", 
+          "value": true}],
+      "fileInfo": {
+        "binaryField": "VersionData",
+        "nameField": "Title",
+        "typeField": "FileType",
+        "sizeField": "ContentSize"
+        },
+      "fieldsToIndex": [{
+           "name": "Id",
+            "type": "string"},
+          {
+            "name": "Title",
+            "type": "string"
+            }],
+      "purgeEnabled": true
+    },
+    {
+      "objectName": "Contact",
+      "fieldsToFetch": ["Id", "LastModifiedDate", "Name", "FirstName", "LastName", "Email", "AccountId", "OwnerId"],
+      "extraFieldsToFetch": ["Account.Name"],
+      "fieldsToIndex": [{
+          "name":"LastName", 
+          "type":"string"}, 
+          {
+          "name":"FirstName", 
+          "type":"string"
+        }, 
+        {
+          "name":"hasEmail", 
+          "type":"boolean"
+        }],
+      "filters": [{
+        "field": "OwnerId", 
+        "op": "eq", 
+        "value":"$current_user"}],
+      "localFields": ["hasEmail"],
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }] 
+    }, 
+    {
+      "objectName": "Attachment",
+      "fieldsToFetch": ["Id", "Body", "Name", "ContentType", "CreatedDate", "ParentId"],
+      "dependencies": ["MobileAppConfig__c", "CategoryMobileConfig__c", "Category__c"],
+      "filters": [{
+        "field": "ContentType", 
+        "op": "like", 
+        "value":"image/%"}],
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }],
+      "fileInfo": {
+        "binaryField": "Body",
+        "nameField": "Name",
+        "typeField": "ContentType",
+        "sizeField": "BodyLength"
+        }
+    },
+    {
+      "objectName": "ContentReview__c",
+      "fetchAllFields": true,
+      "syncDirection": "UP",
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }]
+    },
+    {
+      "objectName": "Event",
+      "fetchAllFields": true,
+      "syncDirection": "UP",
+      "fieldsToIndex": [{
+          "name": "Id",
+          "type": "string"
+        }]
+    }
+  ]
+}

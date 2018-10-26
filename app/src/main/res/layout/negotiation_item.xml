@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sab_lightest_gray"
+    android:padding="@dimen/space">
+
+    <ImageView
+        android:id="@+id/action_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space2"
+        android:layout_centerVertical="true"
+        android:src="@drawable/give_item_btn" />
+
+    <LinearLayout
+        android:id="@+id/count_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/space"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cant" />
+
+        <EditText
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/qty_bg"
+            android:gravity="center"
+            android:maxLength="8"
+            android:inputType="number"
+            android:paddingBottom="@dimen/space_small"
+            android:paddingLeft="@dimen/space2"
+            android:paddingRight="@dimen/space2"
+            android:paddingTop="@dimen/space_small"
+            android:selectAllOnFocus="true"
+            tools:text="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/action_btn"
+        android:layout_toStartOf="@id/count_container"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/space"
+        android:paddingRight="@dimen/space2">
+
+        <TextView
+            android:id="@+id/code"
+            style="@style/Text.H8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1231456789" />
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/Text.H4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Comprar Miller Lite" />
+
+        <TextView
+            android:id="@+id/comment"
+            style="@style/Text.H8"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Some really long comment. Really, really long comment, really really long" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

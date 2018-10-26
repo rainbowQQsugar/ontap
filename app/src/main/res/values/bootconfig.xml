@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!--  TODO Connected App Credentials-->
+    <!-- DevPro consumer key -->
+    <string name="remoteAccessConsumerKey" translatable="false">3MVG9Iu66FKeHhIO0JvQI_CMj7lN3D5DKRNn8JmZeAnTfFSdflI.1sWstabP2GhWbxgCMEa.PTCPonQAIXs6w</string>
+    <string name="oauthRedirectURI" translatable="false">abinbev://callback</string>
+
+    <string-array name="oauthScopes">
+        <item>api</item>
+        <item>web</item>
+        <item>refresh_token</item>
+    </string-array>
+    <string name="androidPushNotificationClientId" translatable="false"></string>
+
+</resources>

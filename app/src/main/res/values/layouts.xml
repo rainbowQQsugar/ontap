@@ -1,0 +1,4 @@
+<resources>
+    <bool name="isTablet">false</bool>
+    <bool name="is10InchTablet">false</bool>
+</resources>

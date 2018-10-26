@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/DetailsToolbarStyle"/>
+
+    <ListView
+        android:id="@+id/notes_list"
+        android:layout_width="609dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:clipToPadding="false"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/separator"
+        android:footerDividersEnabled="true"
+        android:paddingTop="9dp"/>
+
+    <View
+        android:layout_width="@dimen/divider_size"
+        android:layout_height="0dp"
+        android:layout_alignBottom="@id/notes_list"
+        android:layout_alignTop="@id/notes_list"
+        android:layout_toRightOf="@id/notes_list"
+        android:background="@color/divider_color"/>
+
+    <View
+        android:layout_width="@dimen/divider_size"
+        android:layout_height="0dp"
+        android:layout_alignBottom="@id/notes_list"
+        android:layout_alignTop="@id/notes_list"
+        android:layout_toLeftOf="@id/notes_list"
+        android:background="@color/divider_color"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/divider_size"
+        android:layout_alignBottom="@id/notes_list"
+        android:layout_alignLeft="@id/notes_list"
+        android:layout_alignRight="@id/notes_list"
+        android:background="@color/divider_color"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/new_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/space2"
+        android:layout_marginEnd="@dimen/space2"
+        android:src="@drawable/ic_add_white"/>
+
+</RelativeLayout>

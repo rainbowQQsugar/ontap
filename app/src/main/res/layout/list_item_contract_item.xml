@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingBottom="4dp"
+    android:paddingLeft="@dimen/section_margin_horizontal"
+    android:paddingRight="@dimen/section_margin_horizontal"
+    android:paddingTop="4dp">
+
+    <android.support.v7.widget.CardView
+        style="@style/CardViewTile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-4dp"
+        android:layout_marginRight="-4dp"
+        app:contentPaddingBottom="10dp"
+        app:contentPaddingTop="10dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="1"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    android:text="@string/contract_item_sku_id"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/contract_item_sku_id"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/sab_dark_gray"
+                    tools:text="100003"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    android:text="@string/number"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/contract_item_name"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/abi_blue"
+                    tools:text="BUDWEISER"/>
+            </TableRow>
+
+
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    android:text="@string/contract_item_year_month"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/contract_item_year_month"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/sab_dark_gray"
+                    tools:text="201709"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    android:text="@string/contract_item_volume"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/contract_item_volume"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/sab_dark_gray"
+                    tools:text="300/400"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    android:text="@string/contract_item_achieved"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/contract_item_achieved"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/sab_dark_gray"
+                    tools:text="75%"/>
+            </TableRow>
+        </TableLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

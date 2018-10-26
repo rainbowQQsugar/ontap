@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/image_container"
+        app:layout_aspectRatio="241%"
+        app:layout_widthPercent="100%">
+
+
+        <ImageView
+            android:id="@+id/hero_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_empty_photo"/>
+
+        <ImageView
+            android:id="@+id/take_picture_button"
+            android:layout_width="33.6dp"
+            android:layout_height="33.6dp"
+            android:layout_alignBottom="@id/hero_image"
+            android:layout_alignLeft="@id/hero_image"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:src="@drawable/ic_camera_black_36dp"/>
+
+        <Button
+            android:id="@+id/take_picture_button_big"
+            style="?borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableTop="@drawable/ic_camera_grey_48dp"
+            android:text="@string/add_photo"
+            android:textAllCaps="false"
+            android:textAppearance="@style/Text.H3.Bold"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_container"
+        android:orientation="vertical">
+
+        <com.abinbev.dsa.ui.view.CheckInButton
+            android:id="@+id/check_in_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_size"
+            android:background="@color/divider_color"/>
+
+
+        <LinearLayout
+            android:id="@+id/account_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/account_name"
+                style="@style/Text.H1.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                android:layout_marginTop="@dimen/page_inset_vertical_large"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="La Botica Campeche"/>
+
+            <TextView
+                android:id="@+id/account_number"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="#592365"/>
+
+            <TextView
+                android:id="@+id/account_error_message"
+                style="@style/Text.H5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/red"
+                tools:text="(conversion problem)"/>
+
+            <TextView
+                style="@style/Text.H7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                android:layout_marginTop="@dimen/field_margin_half"
+                android:text="@string/primary_contact"
+                android:textAllCaps="true"
+                android:textColor="@color/sab_gray"/>
+
+            <TextView
+                android:id="@+id/primary_contact"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                tools:text="Giovanni Bernal Lopez"/>
+
+            <TextView
+                style="@style/Text.H7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                android:layout_marginTop="@dimen/field_margin_half"
+                android:text="@string/account_owner"
+                android:textAllCaps="true"
+                android:textColor="@color/sab_gray"/>
+
+            <TextView
+                android:id="@+id/account_owner"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                tools:text="Esteban Garcia Rasso"/>
+
+            <Button
+                android:id="@+id/call_button"
+                style="?borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                android:layout_marginTop="4dp"
+                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                android:drawablePadding="12dp"
+                android:gravity="left|center_vertical"
+                android:paddingBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Text.H4"
+                android:textColor="@color/sab_black"
+                tools:text="+593 4 288-3190"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/page_inset_vertical_large"
+            android:background="@color/divider_color"/>
+
+        <Button
+            android:id="@+id/timeline_button"
+            style="?borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="@dimen/page_inset_vertical_large"
+            android:drawableLeft="@drawable/ic_timeline_24dp"
+            android:drawablePadding="12dp"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/timeline"
+            android:textAllCaps="false"
+            android:textAppearance="@style/Text.H5"
+            android:textColor="@drawable/color_button_text"/>
+
+        <Button
+            android:id="@+id/notes_button"
+            style="?borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="8dp"
+            android:drawableLeft="@drawable/ic_notes_24dp"
+            android:drawablePadding="12dp"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/notes"
+            android:textAllCaps="false"
+            android:textAppearance="@style/Text.H5"
+            android:textColor="@drawable/color_button_text"/>
+
+        <Button
+            android:id="@+id/more_info"
+            style="?borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="8dp"
+            android:drawableLeft="@drawable/ic_info_24dp"
+            android:drawablePadding="12dp"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/more_info"
+            android:textAllCaps="false"
+            android:textAppearance="@style/Text.H5"
+            android:textColor="@drawable/color_button_text"/>
+
+        <Button
+            android:id="@+id/directions"
+            style="?borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="8dp"
+            android:drawableLeft="@drawable/ic_directions_24dp"
+            android:drawablePadding="12dp"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/directions"
+            android:textAllCaps="false"
+            android:textAppearance="@style/Text.H5"
+            android:textColor="@drawable/color_button_text"/>
+
+        <Button
+            android:id="@+id/chatter_button"
+            style="?borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="8dp"
+            android:drawableLeft="@drawable/ic_chatter_24dp"
+            android:drawablePadding="12dp"
+            android:gravity="left|center_vertical"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/chatter"
+            android:textAllCaps="false"
+            android:textAppearance="@style/Text.H5"
+            android:textColor="@drawable/color_button_text"/>
+
+    </LinearLayout>
+
+</android.support.percent.PercentRelativeLayout>

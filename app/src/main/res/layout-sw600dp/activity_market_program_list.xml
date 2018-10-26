@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_with_logo" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.H1.Condensed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginBottom="@dimen/page_inset_vertical_large"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/page_inset_vertical_large"
+        android:paddingTop="10dp"
+        android:text="@string/programas_de_mercado"
+        android:textAllCaps="true"/>
+
+    <LinearLayout
+        android:id="@+id/column_header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/title"
+        android:background="@color/sab_lightest_gray"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/page_inset_horizontal"
+        android:paddingRight="@dimen/page_inset_horizontal">
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/market_program"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/programa_de_mercado"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/market_program_state"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/status"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/market_program_start_date"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="left|center_vertical"
+            android:text="@string/fecha_de_inicio"
+            android:textAllCaps="true"/>
+
+        <com.abinbev.dsa.ui.view.SortableHeader
+            android:id="@+id/market_program_end_date"
+            style="@style/Text.H7.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/fecha_de_fin"
+            android:textAllCaps="true"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/market_program_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/column_header"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/divider_size"/>
+
+</RelativeLayout>

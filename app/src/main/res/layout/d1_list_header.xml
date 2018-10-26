@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title"
+    style="@style/Text.H3.Bold"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="-4dp"
+    android:paddingBottom="15dp"
+    android:paddingLeft="@dimen/section_margin_horizontal"
+    android:paddingRight="@dimen/section_margin_horizontal"
+    android:paddingTop="21dp"
+    android:text="@string/technicians_list_title" />

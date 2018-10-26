@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.abinbev.dsa.ui.view.FilePreview
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/file_preview"
+    android:layout_width="@dimen/file_preview_size"
+    android:layout_height="@dimen/file_preview_size"/>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.abinbev.dsa.activity.EventDetailActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/AppTheme.ToolbarOverlay"
+        app:subtitleTextAppearance="@style/Text.SubTitle"
+        app:titleTextAppearance="@style/Text.Title"></android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/event_detail_scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:id="@+id/event_detail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar">
+
+            <ImageView
+                android:id="@+id/event_details_image"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_account_background" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/event_details_image"
+                android:paddingTop="@dimen/space2">
+
+                <ImageView
+                    android:id="@+id/time_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space9"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/space2"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_action_time"
+                    android:tint="@color/sab_gray" />
+
+                <TextView
+                    android:id="@+id/event_name"
+                    style="@style/Text.H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space9" />
+
+                <TextView
+                    android:id="@+id/event_date"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_name"
+                    android:paddingLeft="@dimen/space9"
+                    android:paddingTop="@dimen/space" />
+
+                <TextView
+                    android:id="@+id/event_hour"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_date"
+                    android:paddingLeft="@dimen/space9" />
+
+                <ImageView
+                    android:id="@+id/person_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space6"
+                    android:layout_below="@id/time_icon"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/space2"
+                    android:paddingTop="@dimen/space"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_person_black"
+                    android:tint="@color/sab_gray" />
+
+                <TextView
+                    android:id="@+id/event_owner_name"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space6"
+                    android:layout_below="@id/time_icon"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space9"
+                    android:paddingTop="@dimen/space" />
+
+                <ImageView
+                    android:id="@+id/phone_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space6"
+                    android:layout_below="@id/person_icon"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/space2"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_phone_black_24dp"
+                    android:tint="@color/sab_gray" />
+
+                <TextView
+                    android:id="@+id/account_phone"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space6"
+                    android:layout_below="@id/person_icon"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space9"
+                    android:textColor="@color/sab_blue" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/equipment_container"
+                    android:layout_below="@id/phone_icon">
+
+
+                <ImageView
+                    android:id="@+id/speaker_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space6"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="@dimen/space2"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_speaker_white_24dp"
+                    android:tint="@color/sab_gray" />
+
+                <TextView
+                    android:id="@+id/event_accessories"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space6"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/space9"
+                    tools:text="Lorem ipsum" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/edit_event_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/event_details_image"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginLeft="@dimen/space"
+                android:src="@drawable/ic_action_mode_edit" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_with_logo"
+        />
+
+    <LinearLayout
+        android:id="@+id/action_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:gravity="right"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/actionCancel"
+            style="@style/Text.Action"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|right"
+            android:gravity="right"
+            android:paddingBottom="@dimen/space2"
+            android:paddingEnd="@dimen/space"
+            android:paddingStart="@dimen/space"
+            android:paddingTop="@dimen/space2"
+            android:text="@string/cancelar"
+            android:textColor="@color/sab_blue"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/actionSubmit"
+            style="@style/Text.Action"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|right"
+            android:gravity="right"
+            android:paddingBottom="@dimen/space2"
+            android:paddingEnd="@dimen/space"
+            android:paddingStart="@dimen/space"
+            android:paddingTop="@dimen/space2"
+            android:text="@string/create_case"
+            android:textColor="@color/sab_blue"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/instructions"
+        style="@style/Text.H3.Large"
+        tools:ignore="MissingPrefix"
+        android:fontFamily="sans-serif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/action_container"
+        android:paddingBottom="@dimen/space2"
+        android:paddingEnd="@dimen/space"
+        android:paddingStart="@dimen/space"
+        android:visibility="gone"
+        android:gravity="center"
+        android:text="@string/create_asset_case_instructions"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.H1.Condensed"
+        android:layout_below="@id/instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/page_inset_vertical_large"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/page_inset_vertical_large"
+        android:paddingTop="10dp"
+        android:text="@string/assets"
+        android:textAllCaps="true"/>
+
+    <View
+        android:id="@+id/header_divider"
+        android:layout_width="match_parent"
+        android:layout_below="@id/title"
+        android:layout_height="@dimen/divider_size"
+        android:background="@color/divider_color"/>
+
+    <ListView
+        android:id="@+id/assets_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_divider"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/divider_size"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/new_caso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/space1"
+        android:src="@drawable/ic_action_add"/>
+
+    <View
+        android:id="@+id/popup_menu_anchor"
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:layout_toStartOf="@id/new_caso"
+        android:visibility="invisible"/>
+</RelativeLayout>

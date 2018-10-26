@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_close_grey_24dp"/>
+
+    <View
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="2dp"
+        android:background="@color/sab_lightest_gray"/>
+
+    <com.abinbev.dsa.ui.customviews.ExpandedListView
+        android:id="@+id/volume_list"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:divider="@color/white"
+        android:dividerHeight="2dp"/>
+
+    <View
+        android:layout_width="220dp"
+        android:layout_height="2dp"
+        android:layout_below="@id/volume_list"
+        android:background="@color/white"/>
+
+    <TextView
+        android:id="@+id/volume_name"
+        style="@style/Text.H3.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/section_margin_top"
+        android:layout_toRightOf="@id/volume_list"
+        android:textColor="@color/sab_dark_gray"
+        tools:text="Quilmes"/>
+
+    <TextView
+        android:id="@+id/volume_sales_days_label"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/volume_name"
+        android:layout_marginBottom="22dp"
+        android:layout_marginLeft="7dp"
+        android:layout_toRightOf="@id/volume_list"
+        android:text="@string/volume"
+        android:textColor="@color/sab_dark_gray"/>
+
+    <TextView
+        android:id="@+id/volume_sales_days_hyphen"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/volume_sales_days_label"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/volume_sales_days_label"
+        android:text="–"
+        android:textColor="@color/sab_gray"/>
+
+    <TextView
+        android:id="@+id/volume_days_of_sale"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/volume_sales_days_hyphen"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_toRightOf="@id/volume_sales_days_hyphen"
+        android:paddingRight="7dp"
+        android:textColor="@color/sab_gray"
+        tools:text="15 de 20 dias de venta"/>
+
+
+    <com.abinbev.dsa.ui.customviews.ExpandedGridView
+        android:id="@+id/volume_children_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/volume_sales_days_label"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginRight="1dp"
+        android:layout_toRightOf="@id/volume_list"
+        android:horizontalSpacing="61dp"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"/>
+
+    <View
+        android:id="@+id/volume_children_list_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:layout_below="@id/volume_children_list"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/volume_list"
+        android:background="@color/divider_color"/>
+
+    <com.abinbev.dsa.ui.view.VolumeChartView
+        android:id="@+id/volume_chart"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:layout_below="@id/volume_children_list_divider"
+        android:layout_marginRight="8dp"
+        android:layout_toRightOf="@id/volume_list"/>
+
+
+</RelativeLayout>

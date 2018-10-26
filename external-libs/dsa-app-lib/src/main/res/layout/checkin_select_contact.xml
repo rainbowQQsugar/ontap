@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/title"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:text="@string/select_contact"
+        android:textColor="@color/accent"/>
+
+    <View
+        android:id="@+id/titleDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/title"
+        android:background="@color/accent"/>
+
+    <com.salesforce.dsa.app.ui.customview.SegmentedGroup
+        android:id="@+id/segmentedGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleDivider"
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/allContactsButton"
+            style="@style/RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/all_contacts"/>
+
+        <RadioButton
+            android:id="@+id/recentContactButton"
+            style="@style/RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/recent_contacts"/>
+    </com.salesforce.dsa.app.ui.customview.SegmentedGroup>
+
+    <!-- Editext for Search -->
+    <RelativeLayout
+        android:id="@+id/clearableEditText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/segmentedGroup"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_search_dialog_voice_default"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:drawableRight="@android:drawable/ic_menu_close_clear_cancel"
+            android:onClick="onClearButtonClick"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/contacts_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/clearableEditText"
+        android:layout_margin="10dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+    <Button
+        android:id="@+id/chooseAtCheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/contacts_list"
+        android:background="@android:color/transparent"
+        android:onClick="onChooseAtCheckoutClick"
+        android:paddingRight="15dp"
+        android:text="@string/choose_at_checkout"
+        android:textColor="@color/accent"/>
+
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_holder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/item_margin_vertical"
+    android:paddingEnd="@dimen/item_margin_horizontal"
+    android:paddingStart="@dimen/item_margin_horizontal"
+    android:paddingTop="@dimen/item_margin_vertical">
+
+    <TextView
+        android:id="@+id/txtName"
+        style="@style/Text.H4.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        tools:text="Carrefour Angel Gall"/>
+
+    <TextView
+        android:id="@+id/txtAddress"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/txtName"
+        android:background="@null"
+        android:textColor="@color/sab_gray"
+        tools:text="Av. Ángel Gallardo 30, 1405 Villa Crespo,  Capital Federal"/>
+
+    <TextView
+        android:id="@+id/txtDateLabel"
+        style="@style/Text.H7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/txtAddress"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="6dp"
+        android:background="@null"
+        android:text="@string/last_visit_label"
+        android:textAllCaps="true"
+        android:textColor="@color/sab_gray"/>
+
+    <TextView
+        android:id="@+id/txtDate"
+        style="@style/Text.H7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/txtDateLabel"
+        android:layout_toRightOf="@id/txtDateLabel"
+        android:background="@null"
+        android:textColor="@color/sab_dark_gray"
+        tools:text="10/10/2017"/>
+
+    <TextView
+        android:id="@+id/btnAddEvent"
+        style="@style/Text.H5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/txtDateLabel"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="left|center_vertical"
+        android:paddingTop="6dp"
+        android:text="@string/add_to_list"
+        android:textColor="@color/abi_blue"/>
+
+</RelativeLayout>

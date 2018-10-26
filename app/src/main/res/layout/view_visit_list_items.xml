@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.abinbev.dsa.ui.customviews.VisitListEventFilter
+        android:id="@+id/view_visit_list_items_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.abinbev.dsa.ui.view.AnimateableRecyclerView
+        android:id="@+id/view_visit_list_items_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fadeScrollbars="true"
+        android:scrollbars="vertical"/>
+
+</LinearLayout>

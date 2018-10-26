@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space2"
+    android:background="@color/sab_white">
+
+    <ImageView
+        android:id="@+id/page_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/space"
+        android:src="@drawable/ic_page_left" />
+
+    <ImageView
+        android:id="@+id/page_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/space"
+        android:src="@drawable/ic_page_right" />
+
+    <TextView
+        android:id="@+id/page_title"
+        style="@style/Text.H1.BoldCondensed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        tools:text="Paquete B" />
+
+    <LinearLayout
+        android:id="@+id/page_indicators"
+        android:layout_below="@id/page_title"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/vertical_padding_small"
+        android:showDividers="middle"
+        android:orientation="horizontal"/>
+
+</RelativeLayout>

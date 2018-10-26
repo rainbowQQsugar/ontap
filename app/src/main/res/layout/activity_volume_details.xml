@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/DetailsToolbarStyle"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/volume_name"
+                style="@style/Text.H1.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/field_label_margin"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                android:layout_marginTop="@dimen/page_inset_vertical_large"
+                android:textColor="@color/sab_dark_gray"
+                tools:text="Quilmes"/>
+
+            <TextView
+                android:id="@+id/volume_details_label"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/volume_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/page_inset_horizontal"
+                android:layout_marginRight="@dimen/page_inset_horizontal"
+                android:text="@string/volume"
+                android:textColor="@color/sab_dark_gray"/>
+
+            <TextView
+                android:id="@+id/volume_dates"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/volume_details_label"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/sab_gray"
+                tools:text="01-02-2016 / 01-31-2016" />
+
+            <TextView
+                android:id="@+id/volume_details"
+                style="@style/Text.H4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/volume_dates"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/sab_gray"
+                tools:text="15 de 20 dias de venta" />
+
+            <RelativeLayout
+                android:id="@+id/volume_progress_container"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/volume_details"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <ProgressBar
+                    android:id="@+id/volume_progress"
+                    style="@style/Progress.Circular_10dp"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:max="100"
+                    tools:progress="90"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/volume_percent"
+                        style="@style/Text.H1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/sab_dark_gray"
+                        android:textSize="48sp"
+                        tools:text="75%"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <com.abinbev.dsa.ui.customviews.DiagonalLineView
+                android:id="@+id/volume_result_divider"
+                android:layout_width="28dp"
+                android:layout_height="0dp"
+                android:layout_alignBottom="@+id/volume_actual_container"
+                android:layout_alignTop="@id/volume_actual_container"
+                android:layout_below="@id/volume_progress_container"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:lineColor="@color/sab_gray"
+                app:lineSize="2dp"/>
+
+            <RelativeLayout
+                android:id="@id/volume_actual_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/volume_progress_container"
+                android:layout_marginTop="12dp"
+                android:layout_toLeftOf="@id/volume_result_divider">
+
+                <TextView
+                    android:id="@+id/volume_actual_label"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/actual_progress"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/volume_actual_value"
+                    style="@style/Text.H1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/volume_actual_label"
+                    android:layout_marginTop="-6sp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_dark_gray"
+                    android:textSize="32sp"
+                    tools:text="300"/>
+
+                <TextView
+                    android:id="@+id/volume_actual_units"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/volume_actual_value"
+                    android:layout_toRightOf="@id/volume_actual_value"
+                    android:textColor="@color/sab_dark_gray"
+                    tools:text="HL"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/volume_target_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/volume_progress_container"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/volume_result_divider">
+
+                <TextView
+                    android:id="@+id/volume_target_label"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/target_progress"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/volume_target_value"
+                    style="@style/Text.H1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/volume_target_label"
+                    android:layout_marginTop="-6sp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_dark_gray"
+                    android:textSize="32sp"
+                    tools:text="400"/>
+
+                <TextView
+                    android:id="@+id/volume_target_units"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/volume_target_value"
+                    android:layout_toRightOf="@id/volume_target_value"
+                    android:textColor="@color/sab_dark_gray"
+                    tools:text="HL"/>
+
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/volume_target_container_divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_size"
+                android:layout_below="@id/volume_target_container"
+                android:layout_marginTop="14dp"
+                android:background="@color/divider_color"/>
+
+            <com.abinbev.dsa.ui.view.VolumeChartView
+                android:id="@+id/volume_chart"
+                android:layout_width="match_parent"
+                android:layout_height="191dp"
+                android:layout_marginBottom="15dp"
+                android:layout_below="@id/volume_target_container_divider"/>
+
+            <com.abinbev.dsa.ui.customviews.ExpandedListView
+                android:id="@+id/volume_details_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/volume_chart"
+                android:layout_marginBottom="25dp"
+                android:divider="@color/transparent_color"/>
+        </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>

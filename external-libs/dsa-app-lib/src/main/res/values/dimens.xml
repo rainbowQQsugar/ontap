@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <integer name="lines_in_response">1</integer>
+
+    <dimen name="submit_margin">20dp</dimen>
+    <dimen name="divider_margin">20dp</dimen>
+
+    <!-- this value is different for phones and tablets -->
+    <dimen name="details_view_padding">0dp</dimen>
+
+    <dimen name="action_button_min_width">56dp</dimen>
+    <dimen name="indeterminate_progress_size">32dp</dimen>
+
+    <dimen name="menu_browser_list_width">300dp</dimen>
+
+    <dimen name="visual_browser_listview_image_size">132dp</dimen>
+
+    <dimen name="visual_browser_listview_width">210dp</dimen>
+
+    <dimen name="radio_button_conner_radius">5dp</dimen>
+
+    <!--icon height + textview height + padding for playlist items -->
+    <dimen name="playlist_row_height">226dp</dimen>
+
+    <dimen name="playlist_item_width">200dp</dimen>
+    <dimen name="space2">16dp</dimen>
+    <dimen name="space">8dp</dimen>
+    <dimen name="space_small">4dp</dimen>
+    <dimen name="spotlight_header_text_size">16sp</dimen>
+    <dimen name="text_size_x_large">24sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/spotlight_filters"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/spotlight_filter_all"
+            android:title="All"/>
+        <item
+            android:id="@+id/spotlight_filter_featured"
+            android:title="Featured"/>
+        <item
+            android:id="@+id/spotlight_filter_new_and_updated"
+            android:title="New &amp; Updated"/>
+    </group>
+</menu>

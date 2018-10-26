@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_msg_airplanemode_wifioff">定位失败，飞行模式下关闭了WIFI开关，请关闭飞行模式或者打开WIFI开关</string>
+    <string name="error_msg_failure_cell">错误的基站信息，请检查是否安装SIM卡</string>
+    <string name="error_msg_failure_location_permission">缺少定位权限,请检查是否配置定位权限,并在安全软件和设置中给应用打开定位权限</string>
+    <string name="error_msg_failure_connection">网络连接异常，请检查网络</string>
+    <string name="error_msg_failure_no_enough_statellites">GPS定位失败，可用卫星数不足</string>
+    <string name="error_msg_no_cgi_wifi_off">定位失败，没有检查到SIM卡，并且关闭了WIFI开关，请打开WIFI开关或者插入SIM卡</string>
+
+    <string name="error_msg_failure_auth">高德地图授权失败</string>
+    <string name="error_msg_failure_init">高德定位模块初始化异常</string>
+    <string name="error_msg_failure_location">定位结果错误</string>
+    <string name="error_msg_failure_location_parameter">获取到的定位请求参数为空，可能获取过程中出现异常</string>
+    <string name="error_msg_failure_no_wifi_and_ap">网络定位失败，请检查设备是否插入sim卡、开启移动网络或开启了wifi模块</string>
+    <string name="error_msg_failure_parse">解析XML出错</string>
+    <string name="error_msg_failure_simulation_location">定位位置可能被模拟</string>
+    <string name="error_msg_service_fail">定位服务启动失败，请检查是否配置service并且manifest中service标签是否配置在application标签内</string>
+    <string name="error_msg_invalid_parameter">一些重要参数为空，如context</string>
+
+    <string name="error_msg_unknow">未知错误，请记录操作过程，并且及时反馈</string>
+    <string name="error_msg_default">定位失败，请记录操作过程，并且及时反馈</string>
+</resources>

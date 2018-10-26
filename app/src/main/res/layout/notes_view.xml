@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sab_white">
+
+    <TextView
+        android:id="@+id/notas_label"
+        style="@style/Text.H3.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/section_title_margin"
+        android:layout_marginLeft="@dimen/section_margin_horizontal"
+        android:layout_marginRight="@dimen/section_margin_horizontal"
+        android:layout_marginTop="@dimen/section_margin_top"
+        android:text="@string/notas" />
+
+    <View
+        android:id="@+id/notas_label_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/notas_label"
+        android:background="@color/divider_color" />
+
+    <ImageView
+        android:id="@+id/add_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/ic_add_box_blue_36dp" />
+
+    <TextView
+        android:id="@+id/no_notes"
+        style="@style/Text.H7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notas_label_divider"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/section_margin_horizontal"
+        android:layout_marginRight="@dimen/section_margin_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="@string/no_notas" />
+
+    <TextView
+        android:id="@+id/note_created_date"
+        style="@style/Text.H7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/no_notes"
+        android:layout_marginLeft="@dimen/section_margin_horizontal"
+        android:layout_marginRight="@dimen/section_margin_horizontal"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/sab_gray"
+        tools:text="23/4/2015" />
+
+    <TextView
+        android:id="@+id/note_title"
+        style="@style/Text.H4.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_created_date"
+        android:layout_marginLeft="@dimen/section_margin_horizontal"
+        android:layout_marginRight="@dimen/section_margin_horizontal"
+        android:layout_marginTop="@dimen/space_small"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textStyle="bold"
+        tools:text="Title of the Note" />
+
+    <TextView
+        android:id="@+id/note_body"
+        style="@style/Text.H4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_title"
+        android:layout_marginLeft="@dimen/section_margin_horizontal"
+        android:layout_marginRight="@dimen/section_margin_horizontal"
+        android:layout_marginTop="@dimen/space_small"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/sab_black"
+        tools:text="Keep calm. Count to 10. Here is some very long text, what happens: aasdfasdfasdf asdf pumpkin" />
+
+    <View
+        android:id="@+id/view_all_notes_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/note_body"
+        android:layout_marginTop="10dp"
+        android:background="@color/divider_color" />
+
+    <TextView
+        android:id="@+id/view_all_notes"
+        style="@style/Text.H3.Bold"
+        android:textColor="@color/abi_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_all_notes_divider"
+        android:layout_marginLeft="@dimen/section_margin_horizontal"
+        android:layout_marginRight="@dimen/section_margin_horizontal"
+        android:paddingBottom="@dimen/section_margin_bottom"
+        android:paddingTop="10dp"
+        android:text="@string/ver_todos_notes" />
+</RelativeLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/message"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="18dp"
+        android:paddingLeft="?attr/dialogPreferredPadding"
+        android:paddingRight="?attr/dialogPreferredPadding"
+        android:paddingTop="18dp"
+        tools:text="This is Activity Dialog"/>
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/image_container"
+            app:layout_aspectRatio="150%"
+            app:layout_widthPercent="100%">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_empty_photo"
+                android:scaleType="centerInside"/>
+
+            <Button
+                android:id="@+id/take_picture_button_big"
+                style="?borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/ic_camera_grey_48dp"
+                android:text="@string/add_photo"
+                android:textAllCaps="false"
+                android:textAppearance="@style/Text.H3.Bold"/>
+
+        </RelativeLayout>
+
+    </android.support.percent.PercentRelativeLayout>
+
+    <EditText
+        android:id="@+id/text_field"
+        style="@style/Widget.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="?attr/dialogPreferredPadding"
+        android:layout_marginRight="?attr/dialogPreferredPadding"
+        android:layout_marginTop="18dp"
+        android:hint="@string/input_text"
+        android:minLines="2"/>
+
+    <CheckBox
+        android:id="@+id/check_box"
+        style="@style/Widget.CheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="?attr/dialogPreferredPadding"
+        android:layout_marginRight="?attr/dialogPreferredPadding"
+        android:layout_marginTop="8dp"
+        tools:text="Just test question?"/>
+
+    <TextView
+        android:id="@+id/error_message"
+        style="@style/Text.H7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="?attr/dialogPreferredPadding"
+        android:alpha="0.5"
+        android:textColor="@color/red"
+        tools:text="Validation error!"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="4dp">
+
+        <Button
+            android:id="@+id/negative"
+            style="?attr/buttonBarNegativeButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelar"/>
+
+        <Button
+            android:id="@+id/positive"
+            style="?attr/buttonBarPositiveButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/apply"/>
+
+    </LinearLayout>
+
+</LinearLayout>

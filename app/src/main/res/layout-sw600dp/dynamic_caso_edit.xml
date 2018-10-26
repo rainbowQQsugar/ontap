@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/DetailsToolbarStyle" />
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/caso_save"
+            style="@style/Widget.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/space"
+            android:text="@string/caso_save" />
+
+        <Button
+            android:id="@+id/caso_cancel"
+            style="@style/Widget.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/caso_save"
+            android:padding="@dimen/space"
+            android:text="@string/caso_cancel" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/complete_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/header"
+                    style="@style/Text.H5.CondensedBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:paddingTop="@dimen/space2"
+                    android:paddingBottom="@dimen/space2"
+                    android:layout_marginBottom="@dimen/space2"
+                    android:background="@color/sab_lightest_gray"
+                    android:text="@string/comentario"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:id="@+id/empty_comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_hay_comentarios"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:layout_marginBottom="@dimen/space2"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    style="@style/Text.H4"/>
+
+                <LinearLayout
+                    android:id="@+id/comment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:visibility="gone"/>
+
+                <EditText
+                    android:id="@+id/comment_input"
+                    style="@style/Widget.EditText.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:layout_marginBottom="@dimen/space2"
+                    android:minLines="3"
+                    android:maxLines="4"
+                    android:visibility="gone"
+                    android:hint="@string/add_comment"/>
+
+                <TextView
+                    android:id="@+id/save_comment"
+                    style="@style/Text.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:text="@string/guardar_comentario"
+                    android:visibility="gone"
+                    android:enabled="false"/>
+
+                <LinearLayout
+                    android:id="@+id/related_cases_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    android:id="@+id/attachment_header_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space3">
+
+                    <TextView
+                        android:id="@+id/attachment_header"
+                        style="@style/Text.H5.CondensedBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/space"
+                        android:paddingRight="@dimen/space"
+                        android:paddingTop="@dimen/space2"
+                        android:paddingBottom="@dimen/space2"
+                        android:text="@string/archivos"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/add_attachment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/space"
+                        android:paddingRight="@dimen/space"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_add_box_sab_blue"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/empty_attachments"
+                    style="@style/Text.H4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:layout_marginBottom="@dimen/space2"
+                    android:text="@string/sin_adjunto_archivos"
+                    android:textColor="@color/gray"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/attachment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space"
+                    android:paddingRight="@dimen/space"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

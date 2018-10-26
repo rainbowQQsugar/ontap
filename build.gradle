@@ -1,0 +1,38 @@
+apply from: "./libraries.gradle"
+
+buildscript {
+    repositories {
+        jcenter()
+		google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+allprojects {
+
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url "https://maven.google.com"
+        }
+            jcenter()
+    }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            sourceCompatibility = "1.7"
+            targetCompatibility = "1.7"
+            options.encoding = "UTF-8"
+        }
+    }
+    // Temporary workaround for bug: https://code.google.com/p/android-test-kit/issues/detail?id=136
+    configurations.all {
+        resolutionStrategy.force "com.android.support:support-annotations:${rootProject.ext.androidSupportVersion}"
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}

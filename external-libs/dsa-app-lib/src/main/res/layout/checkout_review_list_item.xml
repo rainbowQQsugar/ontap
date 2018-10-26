@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+    <ImageView
+        android:id="@+id/thumbnailIcon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/thumbnail_desc"/>
+
+    <ImageView
+        android:id="@+id/docTypeIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="83dp"
+        android:layout_marginTop="81dp"
+        android:contentDescription="@string/docType_desc"/>
+
+    <TextView
+        android:id="@+id/docTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/thumbnailIcon"
+        android:textColor="@android:color/black"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/docTypeIcon"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0"/>
+
+    <TextView
+        android:id="@+id/mailToContactTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/mail_to_contact"
+        android:textColor="@android:color/black"/>
+
+    <Switch
+        android:id="@+id/mailToContactSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/mailToContactTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/ratingBar"/>
+
+</RelativeLayout>

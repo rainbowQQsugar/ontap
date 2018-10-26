@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sab_lightest_gray"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".activity.AddProductActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/AppTheme.ToolbarOverlay"
+        app:subtitleTextAppearance="@style/Text.SubTitle"
+        app:titleTextAppearance="@style/Text.Title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sab_white"
+        android:padding="@dimen/space2">
+
+        <EditText
+            android:id="@+id/searchProduct"
+            style="@style/Widget.EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:drawableEnd="@drawable/ic_search"
+            android:drawablePadding="36dp"
+            android:focusable="false"
+            android:hint="@string/select_product_for_distribution_list_search_product_hint"
+            android:inputType="text"
+            android:textSize="14sp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator"
+        android:background="@color/sab_lightest_gray" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/product_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/space2"
+        android:layout_marginStart="@dimen/space2"
+        android:clipToPadding="false"
+        android:divider="@color/sab_lightest_gray"
+        android:dividerHeight="2dp"
+        android:paddingBottom="@dimen/space1"
+        android:paddingTop="@dimen/space1" />
+
+</LinearLayout>

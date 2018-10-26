@@ -1,0 +1,2938 @@
+{
+  "configuration": {
+    "manifestVersion": "1.30",
+    "nameSpacePrefix": "ONTAP",
+    "enableLogging": true,
+    "allowBackup": true,
+    "syncFrequency": 86400,
+    "purgeFrequency": 86400,
+    "shouldCheckForDeleted": true,
+    "backgroundSync": {
+      "wifi": true,
+      "edge": true,
+      "3G": true,
+      "4G": true,
+      "lte": true
+    },
+    "shouldRunLocalCleanup": "lastCleanup.daysBetween(date.now()) >= 1 && date.now().isGreaterOrEqual(date.today().setHours(8))",
+    "shouldFetchDeletedRecords": "true",
+    "localQueries": {
+      "fetchSurveyQuestions": {
+        "query": "SELECT {Survey_Question__c:Id} FROM {Survey_Question__c}"
+      },
+      "fetchMAAndSQAndCM": {
+        "query": "SELECT {Survey_Question__c:Id} FROM {Survey_Question__c} UNION ALL SELECT {MobileAppConfig__c:Id} FROM {MobileAppConfig__c} UNION ALL SELECT {CategoryMobileConfig__c:Id} FROM {CategoryMobileConfig__c}"
+      },
+      "getCaseIdsByAccount": {
+        "args": [
+          "accountId"
+        ],
+        "query": "SELECT {Case_Force__c:Id} FROM {Case_Force__c} WHERE {Case_Force__c:Account__c} = '${ args.accountId }$'"
+      },
+      "getMaximumDateId": {
+        "query": "SELECT {CN_KPI_Statistic__c:Id} FROM {CN_KPI_Statistic__c} ORDER BY {CN_KPI_Statistic__c:CN_Calculate_Date__c} DESC LIMIT 1"
+      },
+      "getCaseIdsInVisitList": {
+        "query": "SELECT {Case_Force__c:Id} FROM {Case_Force__c} WHERE {Case_Force__c:Account__c} IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+      },
+      "getSurveyResponsesByAccount": {
+        "args": [
+          "accountId"
+        ],
+        "query": "SELECT {SurveyQuestionResponse__c:Id} FROM {SurveyQuestionResponse__c} LEFT JOIN {SurveyTaker__c} ON {SurveyQuestionResponse__c:SurveyTaker__c} = {SurveyTaker__c:Id} WHERE {SurveyTaker__c:Account__c} = '${ args.accountId }$'"
+      },
+      "getSurveyResponsesInVisitList": {
+        "query": "SELECT {SurveyQuestionResponse__c:Id} FROM {SurveyQuestionResponse__c} LEFT JOIN {SurveyTaker__c} ON {SurveyQuestionResponse__c:SurveyTaker__c} = {SurveyTaker__c:Id} WHERE {SurveyTaker__c:Account__c} IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+      },
+      "getTodayMorningMeetingEvents": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {Event} WHERE (({Event:StartDateTime} >= '${ dateTime.today() }$' AND {Event:StartDateTime} < '${ dateTime.today().addDays(1) }$') OR ({Event:StartDateTime} >= '${ dateTime.today().addDays(-1) }$' AND {Event:StartDateTime} < '${ dateTime.today() }$' AND {Event:Estado_de_visita__c} = 'Abierto' AND {Event:Control_inicio__c} >= '${ dateTime.today().addDays(-1) }$')) AND {Event:CN_Visit_Type__c} = 'Morning Meeting'"
+      },
+      "getCurrentVisits": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {Event} LEFT JOIN (SELECT max({Event:StartDateTime}) as morningMeetingDate FROM {Event} WHERE {Event:StartDateTime} >= '${ dateTime.today() }$' AND {Event:StartDateTime} < '${ dateTime.today().addDays(1) }$' AND {Event:CN_Visit_Type__c} = 'Morning Meeting') WHERE {Event:CN_Visit_Type__c} IN ('In Plan Visit', 'Out of Plan Visit')"
+      },
+      "getAllVisits": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {Event} WHERE {Event:CN_Visit_Type__c} IN ('In Plan Visit', 'Out of Plan Visit')"
+      },
+      "hasAnyVisits": {
+        "query": "${ localQueries.getQuery('getCurrentVisits', 'count()') }$ LIMIT 1"
+      },
+      "getVisitListAccountIds": {
+        "query": "${ localQueries.getQuery('getCurrentVisits', '{Event:AccountId}') }$ UNION ${ localQueries.getQuery('getCurrentVisits', '{Event:WhatId}') }$ EXCEPT VALUES (null)"
+      },
+      "getSurveyDocumentIds": {
+        "query": "SELECT DISTINCT {Survey__c:HTML5_Bundle__c} FROM {Survey__c}"
+      },
+      "getAllMeetingAttendees": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {Meeting_Attendee2__c}"
+      },
+      "getQuizSurveyTakers": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {SurveyTaker__c} WHERE {SurveyTaker__c:Type__c} = 'Quiz'"
+      },
+      "getNonQuizSurveyTakers": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {SurveyTaker__c} WHERE {SurveyTaker__c:Type__c} != 'Quiz'"
+      },
+      "getNonQuizSurveyTakersForAccount": {
+        "args": [
+          "fieldNames",
+          "accountId"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {SurveyTaker__c} WHERE {SurveyTaker__c:Type__c} != 'Quiz' AND {SurveyTaker__c:Account__c} = '${ args.accountId }$'"
+      },
+      "getAllPriceCollectionHeaders": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {CN_Price_Collection_Header__c}"
+      },
+      "getQuizPriceCollectionHeaders": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {CN_Price_Collection_Header__c} WHERE {CN_Price_Collection_Header__c:Survey_Taken__c} IN (${ localQueries.getQuery('getQuizSurveyTakers', '{SurveyTaker__c:Id}') }$)"
+      },
+      "getNonQuizPriceCollectionHeaders": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {CN_Price_Collection_Header__c} WHERE {CN_Price_Collection_Header__c:Survey_Taken__c} IN (${ localQueries.getQuery('getNonQuizSurveyTakers', '{SurveyTaker__c:Id}') }$)"
+      },
+      "getNonQuizPriceCollectionHeadersForAccount": {
+        "args": [
+          "fieldNames",
+          "accountId"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {CN_Price_Collection_Header__c} WHERE {CN_Price_Collection_Header__c:Survey_Taken__c} IN (${ localQueries.getQuery('getNonQuizSurveyTakersForAccount', '{SurveyTaker__c:Id}', args.accountId) }$)"
+      },
+      "getAllContractToAccount": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {CN_PBO_ContractToAccount__c}"
+      },
+      "getVisitListContractToAccount": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {CN_PBO_ContractToAccount__c} WHERE {CN_PBO_ContractToAccount__c:Account__c} IN (${ localQueries.getQuery('getVisitListAccountIds') }$)"
+      },
+      "getAllContracts": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {CN_PBO_Contract__c}"
+      },
+      "getVisitListContracts": {
+        "args": [
+          "fieldNames"
+        ],
+        "query": "SELECT ${ args.fieldNames }$ FROM {CN_PBO_Contract__c} WHERE {CN_PBO_Contract__c:Id} IN (${ localQueries.getQuery('getVisitListContractToAccount', '{CN_PBO_ContractToAccount__c:CN_PBO_Contract__c}') }$)"
+      }
+    }
+  },
+  "objects": [
+    {
+      "objectName": "User",
+      "shouldUseNamespace": true,
+      "fieldsToFetch": [
+        "Id",
+        "LastModifiedDate",
+        "CreatedDate",
+        "Country",
+        "Username",
+        "Name",
+        "City__c",
+        "FirstName",
+        "LastName",
+        "Email",
+        "ProfileId",
+        "UserRoleId",
+        "UserPermissionsSFContentUser",
+        "Business_Unit__c",
+        "User_Profile__c",
+        "TimeZoneSidKey",
+        "ManagerId",
+        "CN_Related_KUser__c",
+        "CN_Employee_Code__c"
+      ],
+      "purgeEnabled": true,
+      "localFields": [
+        "UserProfileId"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_Related_KUser__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "MobileAppConfig__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "DOWN",
+      "shouldFetchLayoutMetadata": false,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Active__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Category__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "DOWN",
+      "shouldFetchLayoutMetadata": false,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Is_Top_Level__c",
+          "type": "floating"
+        },
+        {
+          "name": "Parent_Category__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CategoryMobileConfig__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "DOWN",
+      "shouldFetchLayoutMetadata": false,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "MobileAppConfigurationId__c",
+          "type": "string"
+        },
+        {
+          "name": "CategoryId__c",
+          "type": "string"
+        },
+        {
+          "name": "IsDraft__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Cat_Content_Junction__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "NONE",
+      "shouldFetchLayoutMetadata": false,
+      "localFields": [
+        "Internal_Document__c"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Category__c",
+          "type": "string"
+        },
+        {
+          "name": "ContentId__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "ContentDocument",
+      "fieldsToFetch": [
+        "Id"
+      ],
+      "filters": [
+        {
+          "query": "PublishStatus = 'R'"
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "ContentVersion",
+      "shouldUseNamespace": true,
+      "filters": [
+        {
+          "query": "IsLatest = true AND ContentDocumentId IN (${ localQueries.execute('getSurveyDocumentIds') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "fieldsToFetch": [
+        "Id",
+        "ContentDocumentId",
+        "LastModifiedDate",
+        "CreatedDate",
+        "Description",
+        "Title",
+        "PathOnClient",
+        "ContentUrl",
+        "FileType",
+        "FeaturedContentBoost",
+        "TagCsv",
+        "ContentModifiedDate",
+        "contentSize",
+        "VersionNumber",
+        "Document_Type__c",
+        "VersionData",
+        "Internal_Document__c",
+        "PublishStatus",
+        "IsLatest"
+      ],
+      "dependencies": [
+        "MobileAppConfig__c",
+        "Survey__c"
+      ],
+      "fileInfo": {
+        "binaryField": "VersionData",
+        "nameField": "Title",
+        "typeField": "FileType",
+        "sizeField": "ContentSize",
+        "requiredFilesFilters": [
+          "{ContentVersion:ContentDocumentId} IN (${ localQueries.getQuery('getSurveyDocumentIds') }$)"
+        ]
+      },
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Title",
+          "type": "string"
+        },
+        {
+          "name": "TagCsv",
+          "type": "string"
+        },
+        {
+          "name": "ContentDocumentId",
+          "type": "string"
+        },
+        {
+          "name": "Internal_Document__c",
+          "type": "string"
+        },
+        {
+          "name": "FeaturedContentBoost",
+          "type": "string"
+        },
+        {
+          "name": "PublishStatus",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        },
+        {
+          "name": "IsLatest",
+          "type": "string"
+        }
+      ],
+      "purgeEnabled": true
+    },
+    {
+      "objectName": "Attachment",
+      "fetchAllFields": true,
+      "dependencies": [
+        "CategoryMobileConfig__c",
+        "MobileAppConfig__c",
+        "Event",
+        "Account",
+        "SurveyTaker__c",
+        "SurveyQuestionResponse__c",
+        "Case_Force__c",
+        "Survey_Question__c",
+        "Morning_Meeting2__c"
+      ],
+      "filters": [
+        {
+          "query": "ParentId IN (${ localQueries.execute('fetchMAAndSQAndCM') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "query": "ParentId IN (${ localQueries.execute('getVisitListAccountIds') ?: \"'001abcdefghijklmno'\" }$)"
+        },
+        {
+          "query": "ParentId IN (${ localQueries.execute('getSurveyResponsesInVisitList') ?: \"'001abcdefghijklmno'\" }$) AND CreatedDate = LAST_N_DAYS:60"
+        },
+        {
+          "query": "ParentId IN (${ localQueries.execute('getCaseIdsInVisitList') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ParentId = '${ params.accountId }$' AND Name like '%AccountPhoto%' AND (ContentType like 'image%') ORDER BY CreatedDate DESC LIMIT 1"
+            },
+            {
+              "query": "ParentId = '${ params.accountId }$' AND (NOT Name LIKE '%AccountPhoto%')"
+            },
+            {
+              "query": "ParentId IN (${ localQueries.execute('getSurveyResponsesByAccount', params.accountId) ?: \"'001abcdefghijklmno'\" }$) AND CreatedDate = LAST_N_DAYS:60"
+            },
+            {
+              "query": "ParentId IN (${ localQueries.execute('getCaseIdsByAccount', params.accountId) ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "ParentId",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        }
+      ],
+      "fileInfo": {
+        "binaryField": "Body",
+        "nameField": "Name",
+        "typeField": "ContentType",
+        "sizeField": "BodyLength",
+        "additionalFilesFilters": [
+          "1=1 ORDER BY {Attachment:LastModifiedDate} DESC"
+        ]
+      }
+    },
+    {
+      "objectName": "ContentReview__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "UP",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Contact",
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "checkLastModify": "Account.OwnerId='${ currentUser.getId() }$'",
+      "extraFieldsToFetch": [
+        "Account.Name"
+      ],
+      "dependencies": [
+        "User",
+        "Event"
+      ],
+      "filters": [
+        {
+          "query": "(Account.OwnerId = '${ currentUser.getId() }$')"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "(Account.OwnerId = '${ currentUser.getId() }$' AND AccountId IN (${ localQueries.execute('getVisitListAccountIds') ?: \"'001abcdefghijklmno'\" }$))"
+            }
+          ]
+        }
+      ],
+      "localFields": [
+        "hasEmail"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "LastName",
+          "type": "string"
+        },
+        {
+          "name": "FirstName",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "full_text"
+        },
+        {
+          "name": "AccountId",
+          "type": "string"
+        },
+        {
+          "name": "Contact_Function__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Account",
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "syncDirection": "BOTH",
+      "fetchAllFields": true,
+      "checkLastModify": "(OwnerId = '${ currentUser.getId() }$')",
+      "dependencies": [
+        "User"
+      ],
+      "filters": [
+        {
+          "query": "OwnerId = '${ currentUser.getId() }$'"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "(OwnerId = '${ currentUser.getId() }$') AND Id IN (${ localQueries.execute('getVisitListAccountIds') ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "SAP_Number__c",
+          "type": "string"
+        },
+        {
+          "name": "Street__c",
+          "type": "string"
+        },
+        {
+          "name": "Description",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        },
+        {
+          "name": "Account_Status__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Prospect_Status__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Task",
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "dateQuery": false,
+      "fetchAllFields": true,
+      "checkLastModify": "(OwnerId = '${ currentUser.getId() }$')",
+      "syncDirection": "BOTH",
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "WhatId IN (${ localQueries.execute('getVisitListAccountIds') }$) AND (CreatedDate = LAST_N_DAYS:5 OR Status IN ('Not Started', 'In Progress'))"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{Task:CreatedDate} < '${ date.today().addDays(-5) }$' AND {Task:Status} != 'Not Started'"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "WhatId = '${ params.accountId }$' AND (CreatedDate = LAST_N_DAYS:5 OR Status IN ('Not Started', 'In Progress'))"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Status",
+          "type": "string"
+        },
+        {
+          "name": "AccountId",
+          "type": "string"
+        },
+        {
+          "name": "ActivityDate",
+          "type": "string"
+        },
+        {
+          "name": "WhatId",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "RecordType",
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "SobjectType",
+          "type": "string"
+        },
+        {
+          "name": "IsActive",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Note",
+      "fetchAllFields": true,
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ParentId IN (${ localQueries.execute('getVisitListAccountIds') }$) AND OwnerId = '${ currentUser.getId() }$' AND CreatedDate >= ${ dateTime.today().addDays(-90) }$"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{Note:CreatedDate} < '${ date.today().addDays(-90) }$'"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ParentId = '${ params.accountId }$' AND OwnerId = '${ currentUser.getId() }$' AND CreatedDate >= ${ dateTime.today().addDays(-90) }$"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "ParentId",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event",
+        "User"
+      ]
+    },
+    {
+      "objectName": "Event",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "BOTH",
+      "checkLastModify": "(OwnerId = '${ currentUser.getId() }$')",
+      "dateQuery": true,
+      "filters": [
+        {
+          "query": "OwnerId = '${ currentUser.getId() }$' AND ((StartDateTime >= ${ dateTime.thisMonth().addDays(-1) }$ OR StartDateTime >= ${ dateTime.thisWeekMonday().addWeeks(-1) }$) AND StartDateTime < ${ dateTime.thisWeekMonday().addWeeks(1) }$) AND Event.AccountId != null AND (Event.WhatId in (select Id from Account)) AND CN_Visit_Type__c IN ('In Plan Visit', 'Out of Plan Visit')"
+        },
+        {
+          "query": "OwnerId = '${ currentUser.getId() }$' AND (StartDateTime < ${ dateTime.thisWeekMonday().addWeeks(1) }$ AND EndDateTime >= ${ dateTime.thisWeekMonday() }$) AND CN_Visit_Type__c = 'Morning Meeting'"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "query": "OwnerId = '${ currentUser.getId() }$' AND StartDateTime >= ${ dateTime.thisWeekMonday() }$ AND StartDateTime < ${ dateTime.thisWeekMonday().addWeeks(1) }$ AND Event.AccountId != null AND Event.WhatId IN (SELECT Id FROM Account) AND CN_Visit_Type__c IN ('In Plan Visit', 'Out of Plan Visit')"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{Event:EndDateTime} < '${ dateTime.thisMonth().addDays(-1) }$' AND {Event:EndDateTime} < '${ dateTime.thisWeekMonday().addWeeks(-1) }$'"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "timelineEvents",
+          "filters": [
+            {
+              "query": "OwnerId = '${ currentUser.getId() }$' AND (StartDateTime >= ${ dateTime.today().addDays(-90) }$ AND StartDateTime < ${ dateTime.thisWeekMonday().addWeeks(1) }$) AND Event.AccountId = '${ params.accountId }$'"
+            }
+          ]
+        },
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "OwnerId = '${ currentUser.getId() }$' AND ((StartDateTime >= ${ dateTime.thisMonth().addDays(-1) }$ OR StartDateTime >= ${ dateTime.thisWeekMonday().addWeeks(-1) }$) AND StartDateTime < ${ dateTime.thisWeekMonday().addWeeks(1) }$) AND Event.AccountId != null AND CN_Visit_Type__c IN ('In Plan Visit', 'Out of Plan Visit')"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "AccountId",
+          "type": "string"
+        },
+        {
+          "name": "EndDateTime",
+          "type": "string"
+        },
+        {
+          "name": "StartDateTime",
+          "type": "string"
+        },
+        {
+          "name": "ActivityDate",
+          "type": "string"
+        },
+        {
+          "name": "WhatId",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        },
+        {
+          "name": "Estado_de_visita__c",
+          "type": "string"
+        },
+        {
+          "name": "Control_inicio__c",
+          "type": "string"
+        },
+        {
+          "name": "Control_fin__c",
+          "type": "string"
+        },
+        {
+          "name": "Event_Catalog__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Visit_Type__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User",
+        "Meeting_Attendee2__c"
+      ]
+    },
+    {
+      "objectName": "Negotiation__c",
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "checkLastModify": "ONTAP__Account__r.OwnerId='${ currentUser.getId() }$'",
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ONTAP__Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$) AND CreatedDate = LAST_N_DAYS:180"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{Negotiation__c:CreatedDate} < '${ date.today().addDays(-180) }$'"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Account__c = '${ params.accountId }$' AND CreatedDate = LAST_N_DAYS:180"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "Negotiation_Item__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "checkLastModify": "ONTAP__Negotiation__r.ONTAP__Account__r.OwnerId = '${ currentUser.getId() }$'",
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ONTAP__Negotiation__r.ONTAP__Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$) AND ONTAP__Negotiation__r.CreatedDate = LAST_N_DAYS:180"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Negotiation__r.ONTAP__Account__c = '${ params.accountId }$' AND ONTAP__Negotiation__r.CreatedDate = LAST_N_DAYS:180"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        },
+        {
+          "name": "Material_Give__c",
+          "type": "string"
+        },
+        {
+          "name": "Material_Get__c",
+          "type": "string"
+        },
+        {
+          "name": "Negotiation__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "Material_Get__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Material_Give__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "extraFieldsToFetch": [
+        "RecordType.Name"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Survey__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "filters": [
+        {
+          "query": "ONTAP__Profiles__c like '%${ appPreferenceUtils.getUserProfile() }$%'"
+        }
+      ],
+      "extraFieldsToFetch": [
+        "RecordType.Name"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Parent__c",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        },
+        {
+          "name": "HTML5_Bundle__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Survey_Question__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "filters": [
+        {
+          "query": "ONTAP__Survey__r.ONTAP__Profiles__c like '%${ appPreferenceUtils.getUserProfile() }$%'"
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Survey__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Survey_Question_Dependencies__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "filters": [
+        {
+          "query": "ONTAP__Controlling_Question__r.ONTAP__Survey__r.ONTAP__Profiles__c like '%${ appPreferenceUtils.getUserProfile() }$%'"
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Controlling_Question__c",
+          "type": "string"
+        },
+        {
+          "name": "Dependent_Question__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "SurveyTaker__c",
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "extraFieldsToFetch": [
+        "ONTAP__Survey__r.Name"
+      ],
+      "filters": [
+        {
+          "query": "ONTAP__Type__c = 'Quiz' AND (ONTAP__User__c = '${ currentUser.getId() }$' OR OwnerId = '${ currentUser.getId() }$') AND ((ONTAP__Status__c = 'Completada' AND LastModifiedDate >= LAST_N_MONTHS:1) OR (ONTAP__Status__c = 'Abierta'))"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ONTAP__Type__c != 'Quiz' AND ONTAP__Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "NOT (({SurveyTaker__c:Status__c} = 'Abierta' OR {SurveyTaker__c:LastModifiedDate} > '${ date.today().addWeeks(-1) }$') OR ({SurveyTaker__c:Status__c} = 'Completada' AND {SurveyTaker__c:Type__c} = 'POCE' AND {SurveyTaker__c:LastModifiedDate} > '${ date.today().addMonths(-3) }$'))"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Type__c != 'Quiz' AND ONTAP__Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "Type__c",
+          "type": "string"
+        },
+        {
+          "name": "Taken__c",
+          "type": "string"
+        },
+        {
+          "name": "User__c",
+          "type": "string"
+        },
+        {
+          "name": "Contact__c",
+          "type": "string"
+        },
+        {
+          "name": "Survey__c",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User",
+        "Event"
+      ]
+    },
+    {
+      "objectName": "SurveyQuestionResponse__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "filters": [
+        {
+          "query": "(ONTAP__SurveyTaker__r.ONTAP__Status__c = 'Abierta' OR CreatedDate >= LAST_N_MONTHS:3) AND ONTAP__SurveyTaker__r.ONTAP__Type__c = 'Quiz'"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "(ONTAP__SurveyTaker__r.ONTAP__Status__c = 'Abierta' OR CreatedDate >= LAST_N_MONTHS:3) AND ONTAP__SurveyTaker__r.ONTAP__Type__c != 'Quiz' AND ONTAP__SurveyTaker__r.ONTAP__Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{SurveyQuestionResponse__c:SurveyTaker__c} NOT IN (Select {SurveyTaker__c:Id} FROM {SurveyTaker__c} LIMIT 30000)"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "(ONTAP__SurveyTaker__r.ONTAP__Status__c = 'Abierta' OR CreatedDate >= LAST_N_MONTHS:3) AND ONTAP__SurveyTaker__r.ONTAP__Type__c != 'Quiz' AND ONTAP__SurveyTaker__r.ONTAP__Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Survey_Question__c",
+          "type": "string"
+        },
+        {
+          "name": "SurveyTaker__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "Municipio__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Promociones__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "dateQuery": false,
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ONTAP__Customer__c IN (${ localQueries.execute('getVisitListAccountIds') }$) AND ONTAP__Starting_date__c <= TODAY AND ONTAP__Ending_date__c >= TODAY"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{Promociones__c:Ending_date__c} < '${ date.today() }$'"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Customer__c = '${ params.accountId }$' AND ONTAP__Starting_date__c <= TODAY AND ONTAP__Ending_date__c >= TODAY"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Customer__c",
+          "type": "string"
+        },
+        {
+          "name": "Starting_date__c",
+          "type": "string"
+        },
+        {
+          "name": "Ending_date__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "CN_Product_Negotiation__c",
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "checkLastModify": "Account__r.OwnerId='${ currentUser.getId() }$'",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "Promotion_Type__c",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        },
+        {
+          "name": "Start_Time__c",
+          "type": "string"
+        },
+        {
+          "name": "End_Time__c",
+          "type": "string"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "Negotiation_Limit__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Business_Unit__c",
+          "type": "string"
+        },
+        {
+          "name": "Classification__c",
+          "type": "string"
+        },
+        {
+          "name": "Segment__c",
+          "type": "string"
+        },
+        {
+          "name": "Volume_High__c",
+          "type": "integer"
+        },
+        {
+          "name": "Volume_Low__c",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "objectName": "Account_Asset__c",
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "checkLastModify": "ONTAP__Account__r.OwnerId='${ currentUser.getId() }$'",
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ONTAP__Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        },
+        {
+          "name": "QR_Code__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Supplementary_QR_Code__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "AccountAssetTracking__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "checkLastModify": "ONTAP__Account_Asset__r.ONTAP__Account__r.OwnerId='${ currentUser.getId() }$'",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Visit_ID__c",
+          "type": "string"
+        },
+        {
+          "name": "Account_Asset__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Last_Tracking_Time__c",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ONTAP__Account_Asset__r.ONTAP__Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Account_Asset__r.ONTAP__Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "AssetActions__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "filters": [
+        {
+          "query": "ONTAP__CountryCode__c = '${ currentUser.getCountry() }$'"
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CountryCode__c",
+          "type": "string"
+        },
+        {
+          "name": "Action__c",
+          "type": "string"
+        },
+        {
+          "name": "Action_Label__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event",
+        "User"
+      ]
+    },
+    {
+      "objectName": "OnTapSettings__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "SetupOwnerId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "OnTap_Permission__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Profile_Name__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Profile",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ],
+      "filters": [
+        {
+          "query": "Id = '${ currentUser.getProfileId() }$'"
+        }
+      ]
+    },
+    {
+      "objectName": "Order__c",
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "checkLastModify": "ONTAP__OrderAccount__r.OwnerId='${ currentUser.getId() }$'",
+      "extraFieldsToFetch": [
+        "RecordType.Name"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "OrderAccount__c",
+          "type": "string"
+        },
+        {
+          "name": "OrderStatus__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "RecordTypeId",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "EndDate__c",
+          "type": "string"
+        },
+        {
+          "name": "BeginDate__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ],
+      "filters": [
+        {
+          "query": "ONTAP__OrderAccount__r.OwnerId = '${ currentUser.getId() }$' AND CreatedDate >= ${ dateTime.today().addDays(-30) }$"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "ONTAP__OrderAccount__r.OwnerId = '${ currentUser.getId() }$' AND CreatedDate >= ${ dateTime.today().addDays(-30) }$ AND Id IN (${ localQueries.execute('getVisitListAccountIds') ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ],
+      "cleanupQueryFilters": [
+        "ONTAP__OrderAccount__r.OwnerId = '${ currentUser.getId() }$' AND CreatedDate < ${ dateTime.today().addDays(-30) }$"
+      ]
+    },
+    {
+      "objectName": "Product__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "MaterialProduct__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Channel__c",
+          "type": "string"
+        },
+        {
+          "name": "Competitor_Flag__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CN_SKU_TC_Relationship__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Area__c",
+          "type": "string"
+        },
+        {
+          "name": "Channel__c",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Product__c",
+          "type": "string"
+        },
+        {
+          "name": "Region__c",
+          "type": "string"
+        },
+        {
+          "name": "BU__c",
+          "type": "string"
+        },
+        {
+          "name": "Territory__c",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Order_Item__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "checkLastModify": "(ONTAP__CustomerOrder__r.ONTAP__OrderAccount__r.OwnerId = '${ currentUser.getId() }$')",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CustomerOrder__c",
+          "type": "string"
+        },
+        {
+          "name": "ItemProduct__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "Order__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ],
+      "filters": [
+        {
+          "query": "ONTAP__CustomerOrder__r.ONTAP__OrderAccount__r.OwnerId = '${ currentUser.getId() }$'"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "ONTAP__CustomerOrder__r.ONTAP__OrderAccount__r.OwnerId = '${ currentUser.getId() }$' AND Id IN (${ localQueries.execute('getVisitListAccountIds') ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "Case_Force__c",
+      "shouldUseNamespace": true,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "checkLastModify": "ONTAP__Account__r.OwnerId='${ currentUser.getId() }$'",
+      "filters": [
+        {
+          "query": "RecordType.Name = 'Account Change Request' AND OwnerId = '${ currentUser.getId() }$'"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ONTAP__Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "extraFieldsToFetch": [
+        "RecordType.Name"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "RecordType.Name",
+          "type": "string"
+        },
+        {
+          "name": "SLA1__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "Event"
+      ]
+    },
+    {
+      "objectName": "Case_Force_Comment__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "checkLastModify": "ONTAP__Case_Force__r.ONTAP__Account__r.OwnerId='${ currentUser.getId() }$'",
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "IsDeleted = false AND ONTAP__Case_Force__r.ONTAP__Account__c IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "IsDeleted = false AND ONTAP__Case_Force__r.ONTAP__Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        "Case_Force__c",
+        "Event"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "Case_Force__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Market_Program__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "checkLastModify": "ONTAP__Account__r.OwnerId='${ currentUser.getId() }$'",
+      "dependencies": [
+        "User"
+      ],
+      "filters": [
+        {
+          "query": "ONTAP__Account__r.OwnerId = '${ currentUser.getId() }$'"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        },
+        {
+          "name": "CN_Contract_Id__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Market_Program_Item__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "checkLastModify": "ONTAP__Market_Program__r.ONTAP__Account__r.OwnerId='${ currentUser.getId() }$'",
+      "dependencies": [
+        "User"
+      ],
+      "filters": [
+        {
+          "query": "ONTAP__Market_Program__r.ONTAP__Account__r.OwnerId = '${ currentUser.getId() }$'"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Market_Program__r.ONTAP__Account__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Market_Program__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "CN_Item_Id__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Event_Catalog__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "filters": [
+        {
+          "query": "ONTAP__Country__c = '${ currentUser.getCountry() }$'"
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "Initial_Date__c",
+          "type": "string"
+        },
+        {
+          "name": "End_Date__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ]
+    },
+    {
+      "objectName": "Event_Equipment__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Business_Unit__c",
+          "type": "string"
+        },
+        {
+          "name": "Sales_Office__c",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "KPI__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "checkLastModify": "ONTAP__User_id__c = '${ currentUser.getId() }$'",
+      "filters": [
+        {
+          "query": "(ONTAP__User_id__c = '${ currentUser.getId() }$' AND ONTAP__Kpi_end_date__c >= LAST_N_MONTHS:6)"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "ONTAP__Kpi_end_date__c >= LAST_N_MONTHS:6 AND ONTAP__Account_id__c IN (${ localQueries.execute('getVisitListAccountIds') }$)"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{KPI__c:Kpi_end_date__c} < '${ dateTime.thisMonth().addMonths(-6) }$'"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Kpi_end_date__c >= LAST_N_MONTHS:6 AND ONTAP__Account_id__c = '${ params.accountId }$'"
+            }
+          ]
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account_id__c",
+          "type": "string"
+        },
+        {
+          "name": "Categorie__c",
+          "type": "string"
+        },
+        {
+          "name": "Kpi_start_date__c",
+          "type": "string"
+        },
+        {
+          "name": "Kpi_end_date__c",
+          "type": "string"
+        },
+        {
+          "name": "User_id__c",
+          "type": "string"
+        },
+        {
+          "name": "Kpi_parent_id__c",
+          "type": "integer"
+        },
+        {
+          "name": "Kpi_id__c",
+          "type": "integer"
+        }
+      ],
+      "dependencies": [
+        "Event",
+        "User"
+      ]
+    },
+    {
+      "objectName": "Resource__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": true,
+      "filters": [
+        {
+          "query": "ONTAP__Country__c = '${ currentUser.getCountry() }$'"
+        }
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Country__c",
+          "type": "string"
+        },
+        {
+          "name": "Profile_Name__c",
+          "type": "string"
+        },
+        {
+          "name": "LabelName__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ]
+    },
+    {
+      "objectName": "Auth_Keys__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "SensitiveData__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "ObjectName__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Morning_Meeting2__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "BOTH",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Weekday__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "query": "Id IN (${ localQueries.execute('getAllMeetingAttendees', '{Meeting_Attendee2__c:Morning_Meeting__c}') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "dependencies": [
+        "User",
+        "Meeting_Attendee2__c"
+      ]
+    },
+    {
+      "objectName": "Meeting_Attendee2__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "BOTH",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Morning_Meeting__c",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "query": "ONTAP__Attendee_Name__c = '${ currentUser.getId() }$'"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ]
+    },
+    {
+      "objectName": "Office_Location2__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CN_SPR__c",
+      "shouldUseNamespace": false,
+      "checkLastModify": "Account__r.OwnerId='${ currentUser.getId() }$'",
+      "dependencies": [
+        "Account"
+      ],
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Work_Date__c",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{CN_SPR__c:Work_Date__c} < '${ date.thisWeekSunday() }$'"
+      ],
+      "filters": [
+        {
+          "query": "Work_Date__c = THIS_WEEK AND Account__r.OwnerId = '${ currentUser.getId() }$'"
+        }
+      ]
+    },
+    {
+      "objectName": "CN_Price_Collection_Header__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "checkLastModify": "Survey_Taken__c IN (SELECT Id from ONTAP__SurveyTaker__c )",
+      "syncDirection": "BOTH",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "POC_Id__c",
+          "type": "string"
+        },
+        {
+          "name": "PriceCollectionConfig__c",
+          "type": "string"
+        },
+        {
+          "name": "Survey_Taken__c",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "SurveyTaker__c"
+      ],
+      "filters": [
+        {
+          "query": "Survey_Taken__c IN (${ localQueries.execute('getQuizSurveyTakers', '{SurveyTaker__c:Id}') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "Survey_Taken__c IN (${ localQueries.execute('getNonQuizSurveyTakers', '{SurveyTaker__c:Id}') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "Survey_Taken__c IN (${ localQueries.execute('getNonQuizSurveyTakersForAccount', '{SurveyTaker__c:Id}', params.accountId) ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "CN_Price_Collection_Detail__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "syncDirection": "BOTH",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "PriceCollectionHeader__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "CN_Price_Collection_Header__c"
+      ],
+      "filters": [
+        {
+          "query": "PriceCollectionHeader__c IN (${ localQueries.execute('getQuizPriceCollectionHeaders', '{CN_Price_Collection_Header__c:Id}') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "isActive": "localQueries.execute('hasAnyVisits')[0] > 0",
+          "query": "PriceCollectionHeader__c IN (${ localQueries.execute('getNonQuizPriceCollectionHeaders', '{CN_Price_Collection_Header__c:Id}') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "PriceCollectionHeader__c IN (${ localQueries.execute('getNonQuizPriceCollectionHeadersForAccount', '{CN_Price_Collection_Header__c:Id}', params.accountId) ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "CN_Price_Collection_Config__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "syncDirection": "BOTH",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CN_Price_Collection_Config_Product__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "syncDirection": "BOTH",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_Price_Collection_Configuration__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Mandatory_Task_Group__c",
+      "shouldUseNamespace": true,
+      "dependencies": [
+        "Account"
+      ],
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "POC_Category__c",
+          "type": "string"
+        },
+        {
+          "name": "POC_Channel__c",
+          "type": "string"
+        },
+        {
+          "name": "POC_City_Region__c",
+          "type": "string"
+        },
+        {
+          "name": "User_Profile__c",
+          "type": "string"
+        },
+        {
+          "name": "First_Monthly_Visit_Only_Flag__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Mandatory_Task_Detail__c",
+      "shouldUseNamespace": true,
+      "dependencies": [
+        "Mandatory_Task_Group__c"
+      ],
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Mandatory_Task_Group__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CN_PBO_ContractToAccount__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Account__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_PBO_Contract__c",
+          "type": "string"
+        },
+        {
+          "name": "End_Month__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ],
+      "filters": [
+        {
+          "query": "Account__r.OwnerId = '${ currentUser.getId() }$' AND CN_PBO_Contract__r.Start_Month__c <= ${ date.today() }$ AND CN_PBO_Contract__r.End_Month__c >= ${ date.today() }$ AND (CN_PBO_Contract__r.Contract_Status__c = 'Active' OR CN_PBO_Contract__r.Contract_Status__c = '签署确认')"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "Account__r.OwnerId = '${ currentUser.getId() }$' AND CN_PBO_Contract__r.Start_Month__c <= ${ date.today() }$ AND CN_PBO_Contract__r.End_Month__c >= ${ date.today() }$ AND (CN_PBO_Contract__r.Contract_Status__c = 'Active' OR CN_PBO_Contract__r.Contract_Status__c = '签署确认') AND Account__c IN (${ localQueries.execute('getVisitListAccountIds') ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{CN_PBO_ContractToAccount__c:End_Month__c} < ${ date.today() }$"
+      ]
+    },
+    {
+      "objectName": "CN_PBO_Contract_Item__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "checkLastModify": "CN_PBO_Contract__c IN (SELECT CN_PBO_Contract__c FROM CN_PBO_ContractToAccount__c WHERE Account__r.OwnerId = '${ currentUser.getId() }$')",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_PBO_Contract__c",
+          "type": "string"
+        },
+        {
+          "name": "Year_Month__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "CN_PBO_Contract__c"
+      ],
+      "filters": [
+        {
+          "query": "CN_PBO_Contract__c IN ( ${ localQueries.execute('getAllContracts', '{CN_PBO_Contract__c:Id}') ?: \"'001abcdefghijklmno'\" }$ )"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "CN_PBO_Contract__c IN ( ${ localQueries.execute('getVisitListContracts', '{CN_PBO_Contract__c:Id}') ?: \"'001abcdefghijklmno'\" }$ )"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "CN_PBO_Contract__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "checkLastModify": " Id IN (SELECT CN_PBO_Contract__c FROM CN_PBO_ContractToAccount__c WHERE Account__r.OwnerId = '${ currentUser.getId() }$')",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_PBO_Contract__c",
+          "type": "string"
+        },
+        {
+          "name": "Contract_Status__c",
+          "type": "string"
+        },
+        {
+          "name": "Start_Month__c",
+          "type": "string"
+        },
+        {
+          "name": "End_Month__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "CN_PBO_ContractToAccount__c"
+      ],
+      "filters": [
+        {
+          "query": "Id IN ( ${ localQueries.execute('getAllContractToAccount', '{CN_PBO_ContractToAccount__c:CN_PBO_Contract__c}') ?: \"'001abcdefghijklmno'\" }$ )"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "Id IN ( ${ localQueries.execute('getVisitListContractToAccount', '{CN_PBO_ContractToAccount__c:CN_PBO_Contract__c}') ?: \"'001abcdefghijklmno'\" }$ )"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "CN_Technicians__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_POC__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CN_Account_Technicians__c",
+      "shouldUseNamespace": false,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_Poc__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Technician__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CN_Distribution__c",
+      "shouldUseNamespace": false,
+      "shouldFetchLayoutMetadata": true,
+      "fetchAllFields": true,
+      "checkLastModify": "POC_Id__r.OwnerId='${ currentUser.getId() }$'",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "POC_Id__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Product__c",
+          "type": "string"
+        },
+        {
+          "name": "Active_Flag__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ],
+      "filters": [
+        {
+          "query": "POC_Id__r.OwnerId = '${ currentUser.getId() }$'"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "morningMeetingCheckedIn",
+          "fetchValidity": 0,
+          "fetchDeletedRecords": true,
+          "filters": [
+            {
+              "query": "POC_Id__r.OwnerId = '${ currentUser.getId() }$' AND POC_Id__c IN (${ localQueries.execute('getVisitListAccountIds') ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "CN_DSA_Azure_File__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": false,
+      "fieldsToIndex": [
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_DSA_Folder__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_File_Expire_Date__c",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "query": " (CN_DSA_Folder__r.OwnerID = '${ currentUser.getRelatedKUser() }$' or CN_DSA_Folder__r.OwnerID = '${ currentUser.getManagerId() }$')"
+        }
+      ],
+      "dependencies": [
+        "User",
+        "CN_DSA_Folder__c"
+      ]
+    },
+    {
+      "objectName": "Picture_Audit_Status__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Status__c",
+          "type": "string"
+        },
+        {
+          "name": "CreatedDate",
+          "type": "string"
+        },
+        {
+          "name": "Parent_ID__c",
+          "type": "string"
+        },
+        {
+          "name": "Storage_Picture_Reference__c",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "query": "ONTAP__Parent_ID__c IN (${ localQueries.execute('fetchSurveyQuestions') ?: \"'001abcdefghijklmno'\" }$)"
+        },
+        {
+          "query": "ONTAP__Status__c = 'Rejected' AND CreatedBy.Id = '${ currentUser.getId() }$' AND CreatedDate = LAST_N_DAYS:14"
+        }
+      ],
+      "dynamicFetchFilters": [
+        {
+          "query": "ONTAP__Parent_ID__c IN (${ localQueries.execute('getVisitListAccountIds') ?: \"'001abcdefghijklmno'\" }$)"
+        },
+        {
+          "query": "ONTAP__Parent_ID__c IN (${ localQueries.execute('getSurveyResponsesInVisitList') ?: \"'001abcdefghijklmno'\" }$) AND CreatedDate = LAST_N_DAYS:10"
+        },
+        {
+          "query": "ONTAP__Parent_ID__c IN (${ localQueries.execute('getCaseIdsInVisitList') ?: \"'001abcdefghijklmno'\" }$)"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "accountCheckedIn",
+          "filters": [
+            {
+              "query": "ONTAP__Parent_ID__c = '${ params.accountId }$' AND Name like '%AccountPhoto%' ORDER BY CreatedDate DESC LIMIT 1"
+            },
+            {
+              "query": "ONTAP__Parent_ID__c = '${ params.accountId }$' AND (NOT Name LIKE '%AccountPhoto%')"
+            },
+            {
+              "query": "ONTAP__Parent_ID__c IN (${ localQueries.execute('getSurveyResponsesByAccount', params.accountId) ?: \"'001abcdefghijklmno'\" }$) AND CreatedDate = LAST_N_DAYS:10"
+            },
+            {
+              "query": "ONTAP__Parent_ID__c IN (${ localQueries.execute('getCaseIdsByAccount', params.accountId) ?: \"'001abcdefghijklmno'\" }$)"
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        "Event",
+        "Account",
+        "SurveyTaker__c",
+        "SurveyQuestionResponse__c",
+        "Case_Force__c",
+        "Survey_Question__c",
+        "Morning_Meeting2__c"
+      ],
+      "fileInfo": {
+        "binaryField": "Storage_Picture_Reference__c",
+        "nameField": "Name",
+        "typeField": "ContentType",
+        "sizeField": "BodyLength",
+        "additionalFilesFilters": [
+          ""
+        ]
+      }
+    },
+    {
+      "objectName": "CN_DSA_Azure_File_Usage__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": false,
+      "syncDirection": "UP",
+      "fieldsToIndex": [
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_User__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Datetime__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Access_Type__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_DSA_Azure_File__c",
+          "type": "string"
+        }
+      ],
+      "dependencies": [
+        "CN_DSA_Azure_File__c",
+        "User"
+      ]
+    },
+    {
+      "objectName": "CN_DSA_Folder__c",
+      "fetchAllFields": true,
+      "shouldUseNamespace": false,
+      "syncDirection": "DOWN",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_Parent_Folder__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_DSA__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Is_Top_Level__c",
+          "type": "floating"
+        }
+      ],
+      "filters": [
+        {
+          "query": " (OwnerID = '${ currentUser.getRelatedKUser() }$' or OwnerID = '${ currentUser.getManagerId() }$') and (CN_IsActive__c = true)"
+        }
+      ],
+      "dependencies": [
+        "CN_DSA__c",
+        "User"
+      ]
+    },
+    {
+      "objectName": "CN_DSA__c",
+      "fetchAllFields": true,
+      "syncDirection": "DOWN",
+      "shouldUseNamespace": false,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "OwnerID",
+          "type": "string"
+        },
+        {
+          "name": "IsActive__c",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "query": " (OwnerID = '${ currentUser.getRelatedKUser() }$' or OwnerID = '${ currentUser.getManagerId() }$') and (IsActive__c = true)"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ]
+    },
+    {
+      "objectName": "CN_Share__c",
+      "fetchAllFields": true,
+      "syncDirection": "DOWN",
+      "shouldUseNamespace": false,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        },
+        {
+          "name": "CN_Parent_ID__c",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "query": " ((CN_Share_Type__c = 'ManagerId' and CN_Shared_Value__c = '${ currentUser.getManagerId() }$') or (CN_Share_Type__c = 'KeyUserId' and CN_Shared_Value__c = '${ currentUser.getRelatedKUser() }$') or (CN_Share_Type__c = 'UserId' and CN_Shared_Value__c = '${ currentUser.getId() }$'))"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ]
+    },
+    {
+      "objectName": "CN_Notification_Message__c",
+      "shouldUseNamespace": false,
+      "syncDirection": "DOWN",
+      "fetchAllFields": true,
+      "checkLastModify": " (OwnerId = '${ currentUser.getId() }$' OR (CN_Category__c = 'System Notification'))",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "CN_Related_ID__c",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "query": "(CN_Notify_Time__c <= ${ dateTime.now() }$ AND CN_Invalid_Date__c >= ${ date.today() }$) AND ((CN_Category__c != 'System Notification' AND CN_Visibility_Type__c = 'Private' AND OwnerId = '${ currentUser.getId() }$') OR (CN_Category__c = 'System Notification'))"
+        }
+      ],
+      "dependencies": [
+        "User"
+      ],
+      "dynamicFetch": [
+        {
+          "name": "notificationMessageLatest",
+          "fetchValidity": 0,
+          "filters": [
+            {
+              "query": "(CN_Notify_Time__c <= ${ dateTime.now() }$ AND CN_Invalid_Date__c >= ${ date.today() }$) AND ((CN_Category__c != 'System Notification' AND CN_Visibility_Type__c = 'Private' AND OwnerId = '${ currentUser.getId() }$') OR (CN_Category__c = 'System Notification'))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "CN_App_Version__c",
+      "shouldUseNamespace": false,
+      "syncDirection": "DOWN",
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "CN_Release_Date__c",
+          "type": "string"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "checkLatestVersion",
+          "fetchValidity": 0,
+          "filters": [
+            {
+              "query": "CN_Release_Date__c >= ${ date.today() }$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "objectName": "CN_NotificationUserRead__c",
+      "shouldUseNamespace": false,
+      "syncDirection": "BOTH",
+      "fetchAllFields": true,
+      "checkLastModify": "User__c = '${ currentUser.getId() }$'",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_Notification_Message__c",
+          "type": "string"
+        },
+        {
+          "name": "User__c",
+          "type": "string"
+        }
+      ],
+      "dynamicFetch": [
+        {
+          "name": "notificationUserRead",
+          "fetchValidity": 0,
+          "filters": [
+            {
+              "query": "User__c >= '${ currentUser.getId() }$'"
+            }
+          ]
+        }
+      ],
+      "dependencies": [
+        "User"
+      ]
+    },
+    {
+      "objectName": "CN_KPI_Statistic__c",
+      "fetchAllFields": true,
+      "syncDirection": "DOWN",
+      "shouldUseNamespace": false,
+      "fieldsToIndex": [
+        {
+          "name": "CN_Calculate_Date__c",
+          "type": "string"
+        },
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "OwnerId",
+          "type": "string"
+        },
+        {
+          "name": "CN_External_ID__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_User__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Date__c",
+          "type": "string"
+        }
+      ],
+      "filters": [
+        {
+          "query": "CN_User__c = '${currentUser.getId()}$' AND ((CN_Calculate_Date__c >= ${date.thisMonth()}$ AND CN_Date__c != null)) ORDER BY CN_Calculate_Date__c DESC"
+        }
+      ],
+      "cleanupQueryFilters": [
+        "{CN_KPI_Statistic__c:CN_Calculate_Date__c} < '${ dateTime.thisMonth().addMonths(-6)}$' OR ( '${dateTime.thisMonth()}$' < {CN_KPI_Statistic__c:CN_Date__c} AND {CN_KPI_Statistic__c:CN_Date__c} <= '${dateTime.thisMonthEnd()}$' AND {CN_KPI_Statistic__c:Id} != ${localQueries.execute('getMaximumDateId')}$)"
+      ],
+      "dependencies": [
+        "User"
+      ]
+    },
+    {
+      "objectName": "CN_KPI_Dict__c",
+      "fetchAllFields": true,
+      "syncDirection": "DOWN",
+      "shouldUseNamespace": false,
+      "fieldsToIndex": [
+        {
+          "name": "CN_Desc__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_Mapping_Field__c",
+          "type": "string"
+        },
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "CN_External_ID__c",
+          "type": "string"
+        },
+        {
+          "name": "CN_KPI__c",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

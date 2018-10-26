@@ -1,0 +1,3 @@
+include ':sync-engine-lib'
+include ':SmartStore'
+include ':SalesforceSDK'

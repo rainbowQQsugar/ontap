@@ -1,0 +1,360 @@
+{
+  "configuration": {
+    "manifestVersion": "1.0",
+    "enableLogging": true,
+    "allowBackup": true,
+    "syncFrequency": 86400,
+    "purgeFrequency": 86400,
+    "shouldCheckForDeleted": true,
+    "nameSpacePrefix": "SABM_DSA",
+    "backgroundSync": {
+      "wifi": true,
+      "edge": false,
+      "3G": false,
+      "4G": true,
+      "lte": true
+    }
+  },
+  "objects": [
+    {
+      "objectName": "User",
+      "fieldsToFetch": [
+        "Id",
+        "LastModifiedDate",
+        "CreatedDate",
+        "Username",
+        "Name",
+        "FirstName",
+        "LastName",
+        "Email",
+        "UserRoleId",
+        "UserPermissionsSFContentUser"
+      ],
+      "purgeEnabled": true,
+      "localFields": [
+        "UserProfileId"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "MobileAppConfig__c",
+      "shouldUseNamespace": true,
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "filter": "(SABM_DSA__Active__c = true)",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Active__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Category__c",
+      "shouldUseNamespace": true,
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Is_Top_Level__c",
+          "type": "floating"
+        },
+        {
+          "name": "Parent_Category__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "CategoryMobileConfig__c",
+      "shouldUseNamespace": true,
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "MobileAppConfigurationId__c",
+          "type": "string"
+        },
+        {
+          "name": "CategoryId__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Cat_Content_Junction__c",
+      "shouldUseNamespace": true,
+      "dependencies": [
+        "Category__c"
+      ],
+      "localFields": [
+        "Internal_Document__c"
+      ],
+      "purgeEnabled": true,
+      "fetchAllFields": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Category__c",
+          "type": "string"
+        },
+        {
+          "name": "ContentId__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "ContentDocument",
+      "fieldsToFetch": [
+        "Id"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "ContentVersion",
+      "shouldUseNamespace": true,
+      "fieldsToFetch": [
+        "Id",
+        "ContentDocumentId",
+        "LastModifiedDate",
+        "CreatedDate",
+        "Description",
+        "Title",
+        "PathOnClient",
+        "ContentUrl",
+        "FileType",
+        "FeaturedContentBoost",
+        "TagCsv",
+        "ContentModifiedDate",
+        "contentSize",
+        "VersionNumber",
+        "Document_Type__c",
+        "Category__c",
+        "VersionData",
+        "Internal_Document__c",
+        "PublishStatus"
+      ],
+      "dependencies": [
+        "Category__c",
+        "MobileAppConfig__c",
+        "Cat_Content_Junction__c"
+      ],
+      "filter": "(IsLatest = true)",
+      "fileInfo": {
+        "binaryField": "VersionData",
+        "nameField": "Title",
+        "typeField": "FileType",
+        "sizeField": "ContentSize"
+      },
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Title",
+          "type": "string"
+        },
+        {
+          "name": "TagCsv",
+          "type": "string"
+        },
+        {
+          "name": "ContentDocumentId",
+          "type": "string"
+        },
+        {
+          "name": "Internal_Document__c",
+          "type": "string"
+        },
+        {
+          "name": "FeaturedContentBoost",
+          "type": "string"
+        },
+        {
+          "name": "PublishStatus",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        }
+      ],
+      "purgeEnabled": true
+    },
+    {
+      "objectName": "Contact",
+      "fieldsToFetch": [
+        "Id",
+        "LastModifiedDate",
+        "Name",
+        "FirstName",
+        "LastName",
+        "Email",
+        "AccountId",
+        "OwnerId"
+      ],
+      "extraFieldsToFetch": [
+        "Account.Name"
+      ],
+      "filter": "(OwnerId = '$current_user')",
+      "fieldsToIndex": [
+        {
+          "name": "LastName",
+          "type": "string"
+        },
+        {
+          "name": "FirstName",
+          "type": "string"
+        },
+        {
+          "name": "hasEmail",
+          "type": "boolean"
+        }
+      ],
+      "localFields": [
+        "hasEmail"
+      ],
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Attachment",
+      "fieldsToFetch": [
+        "Id",
+        "Body",
+        "Name",
+        "ContentType",
+        "CreatedDate",
+        "ParentId"
+      ],
+      "dependencies": [
+        "MobileAppConfig__c",
+        "CategoryMobileConfig__c",
+        "Category__c"
+      ],
+      "filter": "(ContentType like 'image%')",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "ParentId",
+          "type": "string"
+        }
+      ],
+      "fileInfo": {
+        "binaryField": "Body",
+        "nameField": "Name",
+        "typeField": "ContentType",
+        "sizeField": "BodyLength"
+      }
+    },
+    {
+      "objectName": "ContentReview__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "syncDirection": "UP",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Event",
+      "fetchAllFields": true,
+      "syncDirection": "UP",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "DSA_Playlist__c",
+      "shouldUseNamespace": true,
+      "fetchAllFields": true,
+      "purgeEnabled": true,
+      "filter": "(OwnerId = '$current_user')",
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "type": "string"
+        },
+        {
+          "name": "IsFeatured__c",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "objectName": "Playlist_Content_Junction__c",
+      "shouldUseNamespace": true,
+      "dependencies": [
+        "DSA_Playlist__c"
+      ],
+      "fetchAllFields": true,
+      "purgeEnabled": true,
+      "fieldsToIndex": [
+        {
+          "name": "Id",
+          "type": "string"
+        },
+        {
+          "name": "Playlist__c",
+          "type": "string"
+        },
+        {
+          "name": "ContentId__c",
+          "type": "string"
+        },
+        {
+          "name": "Order__c",
+          "type": "string"
+        },
+        {
+          "name": "LastModifiedDate",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

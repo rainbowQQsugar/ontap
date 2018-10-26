@@ -1,0 +1,8 @@
+<CheckBox
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Text.H4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space1"
+    android:layout_marginTop="@dimen/space"
+    android:text="@string/not_interested_in_negotiation"/>

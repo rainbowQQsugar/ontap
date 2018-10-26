@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sab_lightest_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/DetailsToolbarStyle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space1"
+            android:background="@color/sab_white"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/abi_black"
+                style="@style/Text.H5"
+                android:textAllCaps="true"
+                android:text="@string/negotiation_type" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/negotiation_type_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:text="@string/promotion" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space1"
+            android:background="@color/sab_white"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/Text.H5"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/abi_black"
+                android:text="@string/status" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/negotiation_status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:text="@string/promotion_status_in_negotiation" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="@drawable/divider_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/space1"
+            android:background="@color/sab_white"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/Text.H5.Bold"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/abi_black"
+                android:text="@string/promotion_type" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/promotion_type"
+                android:background="@null"
+                android:textAlignment="textEnd"
+                android:gravity="end"
+                android:textColor="@color/sab_dark_gray"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sab_white"
+            android:paddingLeft="@dimen/space1"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/Text.H5.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/abi_black"
+                android:textAllCaps="true"
+                android:text="@string/category_label" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:gravity="end"
+                android:id="@+id/promotion_category"
+                android:background="@null"
+                android:textColor="@color/sab_dark_gray"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sab_white"
+            android:padding="@dimen/space1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Text.H5.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:background="@null"
+                android:paddingBottom="@dimen/space"
+                android:text="@string/description"
+                android:textAllCaps="true" />
+
+            <EditText
+                android:id="@+id/description_editable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|left"
+                android:maxLength="255"
+                android:minHeight="112dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:src="@drawable/divider_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sab_white"
+            android:paddingLeft="@dimen/space1"
+            android:paddingTop="@dimen/space1"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Text.H5.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="@string/producto"
+                android:textAllCaps="true" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:gravity="end"
+                android:id="@+id/products"
+                android:background="@null"
+                android:textColor="@color/sab_dark_gray"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space1"
+            android:background="@color/sab_white"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/Text.H5"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/abi_black"
+                android:text="@string/product_brand" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/product_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space1"
+            android:background="@color/sab_white"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/Text.H5"
+                android:textAllCaps="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/abi_black"
+                android:text="@string/product_uom" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/product_uom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/submit_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sab_white"
+            android:divider="@drawable/divider_vertical_lightest_gray"
+            android:showDividers="middle"
+            android:gravity="end"
+            android:paddingBottom="@dimen/space2"
+            android:paddingTop="@dimen/space2">
+
+            <!--<TextView-->
+            <!--android:id="@+id/save"-->
+            <!--style="@style/Text.Action"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="@dimen/space"-->
+            <!--android:text="@string/submit"-->
+            <!--android:textSize="16sp" />-->
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/space4"
+                android:src="@drawable/ic_save_white_18dp" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/submit_and_order"-->
+            <!--style="@style/Text.Action"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:padding="@dimen/space"-->
+            <!--android:text="@string/submit_and_order"-->
+            <!--android:textSize="16sp" />-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

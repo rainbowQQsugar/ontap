@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name" translatable="false"><b>AB InBev</b></string>
+    <string name="logout">Logout</string>
+    <string name="refresh">Refresh</string>
+    <string name="chatter_feed_url_suffix" translatable="false">apex/ONTAP__ChatterComponent?id=</string>
+    <string name="chatter_newsfeed_url_suffix" translatable="false">apex/ONTAP__ChatterComponent</string>
+    <string name="loading">Loading…</string>
+
+    <string name="submit_button">Save</string>
+    <string name="delete_button">Delete</string>
+    <string name="duplicate_button">New from this</string>
+    <string name="create_account">Create Account and associate this contact</string>
+    <string name="create_account_and_conatct">Create Account and contact</string>
+
+    <string name="no_contacts">You do not have any contacts!</string>
+
+    <string name="account">Account</string>
+    <string name="email">Email</string>
+    <string name="title">Title</string>
+    <string name="phone">Phone</string>
+    <string name="localName">Local Name</string>
+
+    <string name="empty_value" translatable="false">-</string>
+
+    <string name="list_header_text">Category</string>
+    <string name="content_header_text">Content</string>
+
+    <string name="response_hint">Please enter your response here (up to 255 chars allowed)</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_checkin">Check In</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_spotlight">Spotlight</string>
+    <string name="menu_menu_browser__view">Menu Browser</string>
+    <string name="menu_visual_browser_view">Visual Browser</string>
+    <string name="menu_history">History</string>
+    <string name="menu_playlist">Playlist</string>
+    <string name="menu_add_additional">Add</string>
+    <string name="full_order_message">An order cannot have more than seven items.</string>
+    <string name="minimum_order_message">An order must have at least one item.</string>
+    <string name="add_order_item_item_added">Item added</string>
+
+    <!--General-->
+    <string name="number">name</string>
+    <string name="tipo">type</string>
+    <string name="description">description</string>
+    <string name="startDate">start date</string>
+    <string name="endDate">end date</string>
+    <string name="obligatory">mandatory</string>
+    <string name="result">BDR Feedback</string>
+    <string name="related_to">related to</string>
+    <string name="value">value</string>
+    <string name="last_modified_date">last modified date</string>
+    <string name="caso">case</string>
+
+
+    <!-- blank string -->
+    <string name="first_activity_name" translatable="false"></string>
+    <string name="background_image_contentDescription" translatable="false">background image</string>
+    <string name="image_contentDescription" translatable="false">image</string>
+    <string name="border_image_contentDescription" translatable="false">red border for internal mode</string>
+
+    <string name="menu_delta_sync">Delta Sync</string>
+    <string name="menu_clear">Clear Offline Store</string>
+    <string name="menu_clear_errors">Clear Errors</string>
+    <string name="menu_log_errors">Log Errors</string>
+    <string name="menu_purge">Purge Deleted</string>
+    <string name="menu_clear_log">Clear Log</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_calculator">Calculator</string>
+    <string name="menu_auto_sync_off">Auto Sync Off</string>
+    <string name="show_content">Show Content</string>
+    <string name="history_title">History</string>
+
+    <string name="menu_sync_error">Sync Errors</string>
+
+    <!-- checkin/checkout -->
+    <string name="select_contact">Select Contact</string>
+    <string name="all_contacts">All</string>
+    <string name="recent_contacts">Recent</string>
+    <string name="choose_at_checkout">Choose at Check Out</string>
+    <string name="mail_to_contact">Mail to Contact</string>
+    <string name="thumbnail_desc" translatable="false">thumbnail Icon</string>
+    <string name="docType_desc" translatable="false">docTypeIcon</string>
+    <string name="done_button_title">Done</string>
+    <string name="review_materials">Review Materials</string>
+    <string name="locating_current_location">Locating current location…</string>
+    <string name="search">Search…</string>
+    <string name="email_subject">AB InBev – Required documents</string>
+    <string name="email_body">Estimado cliente,\n\nAttached you\'ll have the required information.\n\nCordial Saludo.</string>
+    <string name="email_type" translatable="false">image/*</string>
+
+    <!-- about dsa -->
+    <string name="about_title">About This App</string>
+    <string name="create_and_developed">Created and developed by</string>
+    <string name="about_desc">Salesforce Services Digital Sales Aid helps organizations efficiently deliver compelling sales presentations while on the go.</string>
+    <string name="privacy_note" translatable="false">© Salesforce Services, All Rights Reserved</string>
+    <string name="about_icon_desc" translatable="false">AboutSalesforce</string>
+
+    <!-- settings -->
+    <string name="utilities">Utilities</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="select_config">Select Configuration</string>
+    <string name="synchronization">Synchronize</string>
+    <string name="security">Security</string>
+    <string name="internal_mode">InternalMode</string>
+    <string name="support">Support</string>
+    <string name="help">Help</string>
+    <string name="report">Report a Problem</string>
+    <string name="html5_demo" translatable="false">HTML5 Demo</string>
+    <string name="about">About</string>
+    <string name="about_dsa">About DSA</string>
+    <string name="internal_mode_alert_msg">The information in this area is for internal personnel and authorized agent use only and may not be shown, printed or distributed (including email) outside of the company or used for sales or promotional purposes</string>
+    <string name="caution">Caution</string>
+    <string name="enable">Enable</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_playlists">Playlists</string>
+
+    <!--playlists-->
+    <string name="new_playlist_hint">Shelf name</string>
+    <string name="btn_new_playlist">Create playlist</string>
+    <string name="action_new_playlist">New playlist</string>
+    <string name="action_edit_playlists">Edit playlists</string>
+    <string name="personal_library_header_text">PERSONAL LIBRARY</string>
+    <string name="personal_library_italic_text">Permanent Shelf</string>
+    <string name="empty_content_item_title_text">NO CONTENT</string>
+    <string name="empty_content_item_message_text">Files can be added to your Personal Library in Salesforce by going to the Libraries tab and then Contribute</string>
+    <string name="create_new_playlist">Create New Playlist</string>
+    <string name="set_playlist">Set Playlist</string>
+    <string name="set">Set</string>
+    <string name="playlist_name_hint">Playlist Name</string>
+    <string name="create">Create</string>
+    <string name="delete">Delete</string>
+    <string name="select">Select</string>
+    <string name="select_all">Select all</string>
+    <string name="num_selected">%s selected</string>
+    <string name="error_create">"Problem creating "</string>
+    <string name="error_delete">"Problem deleting "</string>
+    <string name="error_update">"Problem updating "</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_empty_playlist_name">Shelf name cannot be empty</string>
+    <string name="edit_playlist_name">Edit Playlist Name</string>
+    <string name="filter">Filter</string>
+    <string name="dialog_library_copy_title">Copy from Library</string>
+    <string name="dialog_library_copy_text">Would you like to copy this content to the playlist?</string>
+    <string name="dialog_copy_button">Copy</string>
+    <string name="dialog_cancel_button">Cancel</string>
+    <string name="dialog_move_title">Edit Playlist</string>
+    <string name="dialog_move_text">Would you like to move or copy the item to this playlist?</string>
+    <string name="dialog_move_button">Move</string>
+    <string name="edit_action_mode_title">Drag content to move or copy. Tap on playlist names to edit.</string>
+    <string name="select_action_mode_title">Select content to delete.</string>
+    <string name="error_delete_library_items">Library items must be deleted from the web application.</string>
+    <string name="type">Type</string>
+    <string name="location">Location</string>
+    <string name="date_added">Date Added</string>
+    <string name="green_approval">Approval UEN</string>
+    <string name="yellow_approval">Approval DRV</string>
+    <string name="red_approval">Approval Corporativo</string>
+
+    <!-- Quizzes -->
+    <string name="supervisor_prompt">Please chose if you want to assign a quiz or do a new one</string>
+    <string name="take_quiz">Do the Quizz</string>
+    <string name="select_user">Select User</string>
+    <string name="assign_quiz">Assign the Quizz to an user</string>
+    <string name="take_quiz_user">Do the Quizz to an user</string>
+    <string name="quiz_assigned">Quizz: %1$s User assigned: %2$s</string>
+    <string name="no_results">No results</string>
+    <string name="enter_three_characters">Isert three characters to the search</string>
+    <string name="busca_nombre_o_zona">Find name</string>
+    <string name="total_score">Points</string>
+    <string name="quizzes">Quizzes</string>
+    <string name="quiz_sync_in_progress">Please, wait for some seconds while synchronization finishes before doing the quizz!</string>
+
+    <!-- Alert Dialog Text -->
+    <string name="yes">Yes</string>
+    <string name="si">Yes</string>
+    <string name="no">No</string>
+
+    <string name="error_continue_sync">Continue synchronization?</string>
+    <string name="button_continue">Continue</string>
+
+    <string name="are_you_sure_to_discard">Are you sure you want to discard the information?</string>
+    <string name="asset_detection_failed">Asset detection failed! Please take a photo of the asset.</string>
+    <string name="asset_status_update_failed">Could not update status for %1$s! Please try again.</string>
+    <string name="asset_photo_trigger">[%1$s] successfully detected!\nPlease take a photo of the asset.</string>
+    <string name="asset_photo_failure">Failed to set an image for the asset. Status update failed.</string>
+    <string name="warning">Warning</string>
+    <string name="take_photo_button">Take photo</string>
+    <string name="set_to_lost_button">Set to Lost</string>
+    <string name="set_to_lost_msg">Take photo</string>
+    <!--asset add activity error msg-->
+    <string name="asset_add_activity_error_qr_code">please get qr code</string>
+    <string name="asset_add_activity_error_asset_name">please set asset name</string>
+    <string name="asset_add_activity_error_asset_type">please set asset type</string>
+    <string name="asset_add_activity_warning">Please make sure your input correct, as you will not be able to change after submission.</string>
+    <string name="asset_add_activity_title">add asset</string>
+    <!--visits-->
+    <string name="title_event_list">Lista de Visitas</string>
+    <string name="visits">Visits</string>
+    <string name="in_plan_visits">In-Plan</string>
+    <string name="out_of_plan_visits">Out-Of-Plan</string>
+    <string name="completed">Completed</string>
+    <string name="add">Add</string>
+    <string name="filter_button">FILTER</string>
+    <string name="img_hero_desc" translatable="false">account image</string>
+    <string name="visit_state_label">Visit state:</string>
+    <string name="account_details">Account details</string>
+    <plurals name="duration">
+        <item quantity="one">Visit time: %d min</item>
+        <item quantity="other">Visit time: %d min</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <string name="filter_results_label">Found Results</string>
+    <string name="btn_remove_filter">Remove filters</string>
+    <string name="add_to_list">Add to list</string>
+    <string name="error_no_phone_app">There is no application that could start the call.</string>
+
+
+    <!--SAB MILLER-->
+    <string name="add_event_label">Add new client</string>
+    <string name="add_event_hint">Search Name, ID or Street</string>
+    <string name="search_product_hint">Search Product Name or Code</string>
+
+    <!-- Account 360 -->
+    <string name="add_photo">Add a photo</string>
+    <string name="primary_contact">Primary contact:</string>
+    <string name="notes">Notes</string>
+    <string name="timeline">Timeline</string>
+    <string name="please_check_in">Please check in</string>
+    <string name="please_check_out">At the end of the visit please check out</string>
+    <string name="visits_dashboard">Visits dashboard</string>
+    <string name="check_out_comment">Add comment</string>
+    <string name="please_wait_for_location">Please wait for GPS location.</string>
+    <string name="error_latest_data_not_available">Latest data for this account is not available.</string>
+    <string name="error_waiting_for_prospect_conversion_approval">Waiting for prospect conversion approval.</string>
+
+    <!-- Account Details -->
+    <string name="happy_birthday">happy birthday</string>
+    <string name="account_owner">Account Owner:</string>
+    <string name="last_visit_label">Last visit:</string>
+    <string name="end_date_label">End date:</string>
+    <string name="next_visit_label">Next visit:</string>
+    <string name="more_info">More Information</string>
+    <string name="more_info_english">More Information</string>
+    <string name="check_in">Check In</string>
+    <string name="check_out">Check Out</string>
+    <string name="directions">Directions</string>
+    <string name="call">Call</string>
+    <string name="location_error">Location not found</string>
+    <string name="location_error_message">Location not found</string>
+    <string name="ok">OK</string>
+    <string name="itos_result">Last POCE</string>
+    <string name="survey_tile_title">Surveys</string>
+    <string name="tareas_abiertas">Open tasks</string>
+    <string name="casos_abiertas">Cases</string>
+    <string name="promociones">Promotions</string>
+    <string name="poc_promotions">POC Promotions</string>
+    <string name="poc_promotion">POC Promotion</string>
+    <string name="consumer_promotions">Consumer Promotions</string>
+    <string name="activos_por_cliente">Assets per clients</string>
+    <string name="negociaciones_activas">Active negotiations</string>
+    <string name="casos">Cases</string>
+    <string name="programas_de_mercado">Market programs</string>
+    <string name="ver_todos_pedidos">See All Orders</string>
+    <string name="ver_todos_archivos">See All Attachments</string>
+    <string name="ver_todos_notes">See all notes</string>
+    <string name="to_visit">Per visit</string>
+    <string name="visited">Visited</string>
+    <string name="selected">Selected</string>
+    <string name="checked_in">Checked in</string>
+    <string name="attachments">Attachments</string>
+    <string name="no_attachments">No attachments available</string>
+    <string name="modified">modified</string>
+    <string name="spr_list">SPR list</string>
+
+    <!-- Account Details -->
+    <string name="no_record_type_mapping">There is no record type mapping available for the selected account</string>
+    <string name="notas">Notes</string>
+    <string name="new_note">New note</string>
+    <string name="no_notas">No available notes</string>
+    <string name="pedidos">Orders</string>
+    <string name="pbo_contract">PBO Contract</string>
+    <string name="coverage">Coverage</string>
+    <string name="volume">Sales Volume</string>
+    <string name="days_of_sale">%1$d of %2$d days of sale</string>
+    <string name="coverage_progress_title">%1$s - %2$d FROM %3$d</string>
+    <string name="no_pedidos">No orders available</string>
+    <string name="número_de_pedido">order number</string>
+    <string name="estado">State</string>
+    <string name="fecha">Date</string>
+    <string name="valor">value</string>
+    <string name="fecha_de_creacion">creation date</string>
+    <string name="negotiations">negotiations</string>
+    <string name="new_negotiation">new negotiation</string>
+    <string name="negotiation_type">Negotiation type</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="observaciones">observation</string>
+    <string name="observation_detail">Help on finding active promotion codes.</string>
+    <string name="id" translatable="false">id</string>
+    <string name="fecha_de_vencimiento">due date</string>
+    <string name="clasificacíon">Classification</string>
+    <string name="pesos_caja">%s Weight/box</string>
+    <string name="contract_negotiation">Contract Negotiation</string>
+    <string name="trade_program">Trade Program</string>
+    <string name="listing">Listing</string>
+    <string name="sales_event">Sales Event</string>
+    <string name="start_time">Start Time</string>
+    <string name="end_time">End Time</string>
+
+    <!-- Prospect KPI Detail -->
+    <string name="prospect_kpi">Prospect KPI</string>
+    <string name="prospect_kpi_all">All</string>
+    <string name="prospect_kpi_description">The funnel chart displays the conversion progress for your prospects from creation to convertion.You are also able to see the conversion status for the prospects created in a specific time period with the help of filter.</string>
+
+    <!-- Prospect Account Dialog -->
+    <string name="dialog_prospect_status">Prospect status</string>
+    <string name="dialog_prospect_creation_date">Creation date</string>
+    <string name="dialog_prospect_filter">Filter</string>
+    <string name="dialog_prospect_clear">Clear</string>
+    <string name="prospect_all_states">All states</string>
+    <string name="prospect_all_creation_date">All creation date</string>
+
+    <!-- Order Details -->
+    <string name="title_activity_pedido_detail">Order</string>
+    <string name="status_text">State:  </string>
+    <string name="not_editable">This order is running and can\'t be changed</string>
+    <string name="order_id_label">Order ID:</string>
+    <string name="order_status_label">Order Status</string>
+    <string name="order_source_label">Order Source</string>
+
+    <!-- PBO Contract Items -->
+    <string name="contract_item_year_month">Month</string>
+    <string name="contract_item_achieved">Achieved</string>
+    <string name="contract_item_volume">Volume</string>
+    <string name="contract_item_sku_id">SKU ID</string>
+
+    <!-- Picture audit -->
+    <string name="picture_audit_list_title">Rejected pictures</string>
+    <string name="picture_audit_tile">Rejected pictures</string>
+    <string name="picture_audit_case_name">Case</string>
+    <string name="picture_audit_account_asset_name">Asset</string>
+    <string name="picture_audit_survey_name">Survey</string>
+    <string name="picture_audit_survey_question">Question</string>
+    <string name="picture_audit_account_name">Account</string>
+    <string name="picture_audit_event_name">Event</string>
+    <string name="picture_audit_type_name">Type</string>
+    <string name="picture_audit_file_name">File name</string>
+    <string name="picture_audit_audit_name">Audit Id</string>
+
+    <string name="rejected_file_type_survey_response">Survey response photo</string>
+    <string name="rejected_file_type_case_attachment">Case attachment</string>
+    <string name="rejected_file_type_asset_attachment">Asset attachment</string>
+
+    <string name="rejected_file_type_account_check_in_photo">Account Check-in photo</string>
+    <string name="rejected_file_type_morning_meeting_check_in_photo">Morning meeting Check-in photo</string>
+    <string name="rejected_file_type_check_in_photo">Check-in photo</string>
+    <string name="rejected_file_type_account_check_out_photo">Account Check-out photo</string>
+    <string name="rejected_file_type_morning_meeting_check_out_photo">Morning meeting Check-out photo</string>
+    <string name="rejected_file_type_check_out_photo">Check-out photo</string>
+
+    <string name="rejected_file_type_event_attachment">Event attachment</string>
+    <string name="rejected_file_type_account_attachment">Account attachment</string>
+    <string name="rejected_file_type_account_photo">Account photo</string>
+
+    <!-- Address dialog -->
+    <string name="address_dialog_country">Country</string>
+    <string name="address_dialog_postal_code">Postal Code</string>
+    <string name="address_dialog_state">State</string>
+    <string name="address_dialog_city">City</string>
+    <string name="address_dialog_street">Street</string>
+
+    <!-- Distribution Items -->
+    <string name="distribution_category">Category</string>
+    <string name="distribution_brand">Brand</string>
+    <string name="distribution_sku">SKU</string>
+    <string name="distribution_package">Package</string>
+    <string name="distribution_ptr">PTR</string>
+    <string name="distribution_ptc">PTC</string>
+    <string name="distribution_unit">Unit</string>
+    <string name="distribution_product">Product</string>
+    <string name="distribution_are_you_sure_you_want_to_delete">Are you sure you want to delete this distribution?</string>
+
+    <string-array name="negotiation_statuses" translatable="false">
+        <item>In Negotiation</item>
+        <item>Confirmed</item>
+        <item>Cancelled</item>
+        <item>Rejected</item>
+    </string-array>
+
+    <string-array name="visit_statuses" translatable="false">
+        <item>Abierto</item>
+        <item>Completado</item>
+        <item>Cancelado</item>
+    </string-array>
+
+    <string-array name="units_of_measure">
+        <item>EA</item>
+        <item>CS</item>
+    </string-array>
+
+    <string name="distance_sort_ascending">Show nearest first</string>
+
+    <string-array name="distance_sort">
+        <item>@string/distance_sort_ascending</item>
+        <item>Show most distant first</item>
+    </string-array>
+
+
+    <string name="estatus">Status</string>
+    <string name="apply">Apply</string>
+    <string name="cant">can\'t</string>
+    <string name="gives_header">Give to %1$s…</string>
+    <string name="then_receive">then receive…</string>
+    <string name="total_para_esta_negociaci_n">TOTAL FOR NEGOTIATIONS</string>
+    <string name="gives">gives</string>
+    <string name="gives_sub_label">Recives as change</string>
+    <string name="gets_sub_label">Prospect committed to</string>
+    <string name="gets">gets</string>
+    <string name="no_gives">No Gives</string>
+    <string name="no_gets">No Gets</string>
+    <string name="productos_disponibles">available products</string>
+    <string name="producto">product</string>
+    <string name="código">code</string>
+    <string name="cantidad">quantity</string>
+    <string name="añadir_a_venta">add to sale</string>
+    <string name="nueva_venta">new sale</string>
+    <string name="no_products">No available products</string>
+    <string name="cajas">Boxes</string>
+    <string name="inversion_total">Total of investiment:</string>
+    <string name="order_detail_action_add_products">Add products</string>
+    <string name="order_detail_action_cancel_order">Cancel order</string>
+    <string name="order_detail_action_submit">Submit</string>
+    <string name="order_detail_submitted_info">Your order is created successfully, and here are the order details:</string>
+
+
+    <!-- Asset Case Details -->
+    <string name="title_activity_asset_case_detail">Cases</string>
+    <string name="cancelar">CANCEL</string>
+    <string name="create_case">Creat case</string>
+    <string name="create_asset_case_instructions">Please select the assets</string>
+
+    <!-- App Support About -->
+    <string name="app_version">App Version</string>
+    <string name="user">User</string>
+    <string name="android_version">Android Version</string>
+    <string name="device_name">Device Name</string>
+    <string name="available_storage">Available Storage</string>
+    <string name="total_storage">Total Storage</string>
+    <string name="database_size">Database Size</string>
+
+    <string name="html_about_row" translatable="false"><![CDATA[%1$s: <b>%2$s</b> <br/>]]></string>
+    <string name="marca">brand</string>
+    <string name="categoría">category</string>
+
+    <!-- Sync Error List -->
+    <string name="sync_error_header">SYNCHRONIZATION ERRORS (%d)</string>
+    <string name="contact_admin">Report an incident</string>
+    <string name="sync_error">Error</string>
+    <string name="dash" translatable="false">-</string>
+    <string name="no_data">No data!</string>
+    <string name="admin_email" translatable="false">mkaminishi@salesforce.com</string>
+    <string name="contact_admin_email_subject">Salesforce SDK - synchronization errors</string>
+    <string name="no_email_clients">"There are no email clients installed."</string>
+    <string name="contact_admin_instructions">"This tool will allow to report incidents for mobile solution, recompiling device technical information del dispositivo. Please describe details for procedure in execution and the error related."</string>
+    <string name="contact_admin_title">SalesForce AB InBev solution</string>
+    <string name="contact_admin_subtitle">Report incident</string>
+
+    <!-- Pending Queue List -->
+    <string name="pending_header">DATA SYNCHRONIZATION (%d)</string>
+    <string name="pending">Pending</string>
+    <string name="pending_error">Pending per Error</string>
+    <string name="pending_description">%1$s on object: %2$s with id: %3$s</string>
+
+    <!-- Navigation Menu Items -->
+
+    <string name="menu_system_info">System information</string>
+    <string name="menu_synchronization">Synchronization</string>
+    <string name="revisar_pedido">review order</string>
+
+    <!-- Dynamic Views -->
+    <string name="not_available">n/a</string>
+    <string name="empty">Empty</string>
+
+    <!-- Surveys -->
+    <string name="surveys">surveys</string>
+    <string name="survey_number">name</string>
+    <string name="survey_state">state</string>
+    <string name="survey_due_date">due date</string>
+    <string name="survey_create_date">creation date</string>
+    <string name="survey_header_title">Surveys</string>
+    <string name="survey_error_message">Survey does not have bundle associated with it! Check survey object!</string>
+    <string name="survey_sync_in_progress">Please wait until background sync is complete before taking or viewing a survey!</string>
+    <string name="wait_sync_in_progress">This action cannot be triggered while background sync is in progress. Please try again!</string>
+
+    <!-- Assets -->
+    <string name="assets">assets</string>
+    <string name="serialized">Serialized</string>
+    <string name="no_serialized">No serialized</string>
+    <string name="asset_name">asset name</string>
+    <string name="serial_number">serial_number</string>
+    <string name="brand">Brand</string>
+    <string name="quantity">quantity</string>
+    <string name="asset_code">asset_code</string>
+    <string name="audit_instructions">Choose the assets to be audited. When an asset is audited, the last access date (audited day) is kept and saved.</string>
+    <string name="audit">Audit</string>
+    <string name="audit_success">Assets were successfully audited</string>
+    <string name="assets_wifi_scan">WiFi scan</string>
+    <string name="assets_tracking_lost">Set to Lost</string>
+    <string name="assets_wifi_scan_in_progress">Scanning...</string>
+    <string name="assets_qrc_scan">QR code scan</string>
+    <string name="asset_status_reason">Reason</string>
+    <string name="asset_wifi_finish_prompt">WIFI detection completed. Please detect through QR code for any devices undetected.</string>
+    <string name="asset_add_exit_error_msg">Asset Exit.\nAsset Name:%s</string>
+    <string name="asset_status_reason_qr_lost">QR Code Issue</string>
+    <string name="asset_status_reason_no_tag">Without any asset tag</string>
+    <string name="asset_status_reason_other_issue">Other Issues</string>
+    <string name="asset_beer_cleaned">Cleaned</string>
+    <string name="asset_beer_not_cleaned">Not cleaned</string>
+    <string name="asset_installed">Installed</string>
+    <string name="asset_in_stock">In Stock</string>
+    <string name="refridgerator">Refridgerator</string>
+    <string name="draught_machine">Draught Machine</string>
+    <string name="asset_tracking_time">Last tracking time</string>
+    <string name="asset_tracking_success">Success</string>
+    <!-- activity_asset_add_view -->
+    <string name="asset_add_activity_qr_code">QR Code</string>
+    <string name="asset_add_activity_qr_code_button">GET QR CODE</string>
+    <string name="asset_add_activity_device_name">ASSET NAME</string>
+    <string name="asset_add_activity_input_device_name">please input asset name</string>
+    <string name="asset_add_activity_device_category">asset category</string>
+    <string name="asset_tracking_last_modified">Last Modified By</string>
+    <string name="asset_list_activity_add_device">add asset</string>
+    <!-- Cases -->
+    <string name="cases">cases</string>
+    <string name="caseCode">code</string>
+    <string name="caseRecordType">Register type</string>
+    <string name="caseDate">sla1 date</string>
+    <string name="caseState">state</string>
+    <string name="pendiente">&lt;pending&gt;</string>
+    <string name="allStates">All states</string>
+    <string name="allRecordTypes">All records</string>
+    <string name="types_of_cases">Case types</string>
+    <string name="no_hay_comentarios">No comments</string>
+    <string name="comentario">Comment</string>
+    <string name="guardar_comentario">save comment</string>
+    <string name="case_save_success">case successfuly saved</string>
+    <string name="fecha_de_sla1">Sla1 date</string>
+
+    <!-- Opportunity -->
+    <string name="opportunityName">name</string>
+    <string name="opportunityReal">real</string>
+    <string name="opportunityIdeal">ideal</string>
+    <string name="opportunityOpportunity">opportunity</string>
+
+    <string name="submit">Submit</string>
+    <string name="save_and_send">Save and send</string>
+    <string name="item_validation_error">Not allowed to add a Give/Get from same group</string>
+    <string name="give_get_quantity_error">It\'s required at least one Give and Get</string>
+    <string name="escoge_del_listado_completo">Choose the complete list</string>
+    <string name="necesitas_un_give_o_get_adicional">Do you need an additional Give or Get?</string>
+    <string name="additional_gives">ADD GIVES</string>
+    <string name="additional_gets">ADD GETS</string>
+    <string name="additional_gives_gets">ADD GIVES/GETS</string>
+    <string name="promotions_header">These are the available promotions. Please select the promotions you want to add to this promotion.</string>
+    <string name="code">code</string>
+    <string name="list_empty">empty</string>
+    <string name="account_d1_name">D1 name</string>
+    <string name="account_d1_id">D1 id</string>
+    <string name="account_d1_tel">phone</string>
+    <string name="promotion_type">Promotion type</string>
+    <string name="additional_promo_codes">ADD A PROMOTIONAL CODE</string>
+
+    <!-- Account List -->
+    <string name="account_name">Name</string>
+    <string name="address">Address</string>
+
+    <!-- Caso View/Edit -->
+    <string name="caso_edit">Edit</string>
+    <string name="caso_save">Save Case</string>
+    <string name="caso_cancel">Cancel</string>
+    <string name="picklist_none">--None--</string>
+    <string name="title_activity_account">Account</string>
+    <string name="title_activity_caso">Case</string>
+    <string name="title_activity_contact">Contact</string>
+    <string name="title_activity_asset">Asset</string>
+    <string name="title_activity_promotion">Promotion</string>
+    <string name="required_quanitity">required quantity</string>
+    <string name="no_record_type">No record type available.</string>
+
+    <!-- Case Validations -->
+
+    <string name="dismiss">Dismiss</string>
+    <string name="failed_to_save_case">Failed to save case!</string>
+    <string name="no_case_found">No Case found!</string>
+    <string name="missing_required_field"> One of mandatory fields is not found! </string>
+    <string name="invalid_case_status_change">This profile doesn\'t have permission to change the case in current state</string>
+    <string name="nothing_was_changed">Nothing was changed!</string>
+
+    <!-- Tasks -->
+    <string name="tasks">Tasks</string>
+    <string name="task">Task</string>
+    <string name="new_task">New task</string>
+    <string name="issue">Subject</string>
+    <string name="allIssues">All subject</string>
+    <string name="fecha_de_finalizacion">Due date</string>
+    <string name="no_subject">Value different from values into SUBJECT is not allowed, select a value from SUBJECT list.</string>
+    <string name="failed_to_save_task">Failed to save task!</string>
+    <string name="archivos">Files</string>
+    <string name="sin_adjunto_archivos">No attached files</string>
+    <string name="no_permitted_task_status">Not allowed to register the Task as Cancelled!</string>
+    <string name="priority_normal">Normal</string>
+    <string name="priority_high">High</string>
+    <string name="priority_low">Low</string>
+    <string name="not_started">Not Started</string>
+    <string name="in_progress">In Progress</string>
+    <string name="waiting_someone">Waiting on someone else</string>
+    <string name="deferred">Deferred</string>
+    <string name="status_completed">Completed</string>
+    <string name="expired">Expired</string>
+    <string name="to_be_expired">To Be Expired</string>
+    <string name="status_tip">Please input BDR feedback.</string>
+
+    <string name="assign">Assigned to</string>
+    <string name="commentaries">Task </string>
+    <string name="scheduledTask">scheduled task</string>
+    <string name="state">State</string>
+    <string name="activityDate">activity date</string>
+    <string name="priority">priority</string>
+    <string name="user_details">User 360</string>
+    <string name="lista_de_vistas">Visit List</string>
+    <string name="prospectos">Prospects</string>
+    <string name="cuentas">PDVs</string>
+    <string name="ayuda_ventas_y_capacitaci_n">Sales help and capacitation</string>
+    <string name="chatter">Chatter</string>
+    <string name="loading_chatter">Chatter load…</string>
+    <string name="informaci_n_del_sistema">System Information</string>
+    <string name="sincronizaci_n">Pending Changes</string>
+    <string name="invalid_date">Invalid date</string>
+    <string name="date_error_message">The selected date must be later than current one.</string>
+
+    <!-- Contacts -->
+    <string name="contacts">contacts</string>
+    <string name="contact_name_short">NAME</string>
+    <string name="function">FUNCTION</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="telephone">TELEPHONE</string>
+    <string name="full_sync">Reset Data</string>
+    <!--<string name="only_for_tablets_warning">This app is currently tested only to run on tablets!!</string>-->
+    <string name="pending_approval">Pending approval</string>
+    <string name="add_to_negotiation">Add to Negotiation</string>
+    <string name="esto_puede_tomar_unos_minutos">It must take some minutes</string>
+    <string name="clearing_local_cata">Clearing local data</string>
+
+    <!-- Note -->
+    <string name="note_title">title</string>
+    <string name="note_body">content</string>
+    <string name="failed_to_save_note">Failed to save note!</string>
+
+    <!-- Photo Selection -->
+    <string name="choose_image_from">Select image from</string>
+    <string name="take_new_photo">Take new photo</string>
+    <string name="choose_existing">Select existent</string>
+
+    <!-- PBO Contract -->
+    <string name="contract_manager">Manager</string>
+    <string name="contract_expiring_contracts">Expiring contracts:</string>
+
+    <string name="save_note_criteria">Title and Content are required to save a note.</string>
+
+    <string name="no_available_app">Application to handle this file type is not available on the device!!</string>
+    <string name="abi_full_sync_message">You are going to reset data which will remove all local changes and force a synchronization to fetch data from backend. Are you sure?</string>
+    <string name="manifest_update_message">Due to a new version of synchronization manifest full synchronization is required. Do you wish to perform it now?</string>
+    <string name="abi_logout">Log out</string>
+    <string name="logging_out">Logging out</string>
+    <string name="sync_failure_message">Synchronization error. Please check the internet connection and try again.</string>
+    <string name="try_again">Try again</string>
+    <string name="banner_message">You are checked in %1$s. Do you want to leave?</string>
+
+    <string name="basic_data_title_text">All fields are mandatory</string>
+
+    <!-- Additional Information -->
+    <string name="promotion">Promotion</string>
+    <string name="product_sellin">Product Sell-In</string>
+    <string name="prospecto_creacion">Prospect capture creation</string>
+    <string name="convert_prospect">Convert</string>
+    <string name="unqualified_prospect">Unqualified</string>
+    <string name="error_your_user_has_to_have_manager_assigned">Error: Your user has to have a manager assigned.</string>
+    <string name="datos_basicos">Basic data</string>
+    <string name="datos_adicionales">Additional data</string>
+    <string name="negociaciones">Negotiations</string>
+    <string name="not_interested_in_negotiation">Not interested in negotiation</string>
+    <string name="promotion_status_in_negotiation">In negotiation</string>
+    <string name="footer_poc_attachment_list">Please add the following documents:
+        \n\nCustomer Registration:
+    \n\t\u2022 	Official identification
+	\n\t\u2022	Proof of address
+	\n\t\u2022	RFC copy
+        \n\nLoan Request (personal):
+	\n\t\u2022	Operating License
+        \n\nLoan Request (company):
+        \n\t\u2022	Constitutive Act
+        \n\t\u2022	Official ID of legal representant
+    \n\t\u2022	Warranty
+    \n\t\u2022	Proof of address
+    \n\t\u2022	Operating License
+    \n\t\u2022	Official endorsement ID
+    \n\t\u2022	Proof of address of the guarantee</string>
+
+    <!-- Prospect List -->
+    <string name="status">Status</string>
+    <string name="prospect_status">Status</string>
+    <string name="clean_status">Clean Status</string>
+    <string name="asset_latest_clean_time">Latest Clean Time</string>
+    <string name="owner">Owner</string>
+    <string name="dia_de_atencion">Day(s)</string>
+    <string name="hora_de_atencion">Hour(s)</string>
+    <string name="propietario_de_registro">Register owner</string>
+    <string name="prospect_photo_is_missing">Prospect photo is missing. Do you want to add it now?</string>
+    <string name="lead_source">Lead source</string>
+    <string name="gps">GPS</string>
+    <string name="account_photo">Account Photo</string>
+    <string name="license_photo">License Photo</string>
+
+    <!-- Prospect Status -->
+    <string name="prospect_status_open">Open</string>
+    <string name="prospect_status_contacted">Contacted</string>
+    <string name="prospect_status_submitted">Submitted</string>
+    <string name="prospect_status_converted">Converted</string>
+    <string name="prospect_status_unqualified">Unqualified</string>
+    <string name="prospect_status_rejected">Rejected</string>
+
+    <!-- Market Programs -->
+    <string name="programa_de_mercado">Market Program</string>
+    <string name="fecha_de_inicio">Start Date</string>
+    <string name="fecha_de_fin">Due Date</string>
+
+    <!-- Market Programs Items -->
+    <string name="market_program_item_record_type">Record Type</string>
+    <string name="market_program_item_type">type</string>
+    <string name="market_program_item_period">period</string>
+    <string name="market_program_item_value">value</string>
+    <string name="market_program_item_date">date</string>
+    <string name="no_market_program_items">No available points for market program</string>
+    <string name="market_program_month_title">Month gap</string>
+    <string name="market_program_quarter_title">Quarter gap</string>
+
+    <!-- Prompt to exit survey on back key -->
+    <string name="survey_exit_prompt">Data will be lost!</string>
+
+    <!-- Market Program Details -->
+    <string name="on_loan_materials">On Loan Materials</string>
+    <string name="counterpart">Counterpart (Sales Actuals)</string>
+
+    <!-- Event Planning -->
+    <string name="event_planning_tile">Events</string>
+    <string name="event_planning_header">Event Calendar Planning</string>
+    <string name="weekly_visit">Weekly Visit</string>
+
+    <!-- Event Editing -->
+    <string name="equipment">Equipment</string>
+    <string name="event_with_a_band">Event with a band</string>
+    <string name="sales_increment">Sales increment</string>
+    <string name="sales_increment_placeholder">10hl/mes</string>
+    <string name="comments">Comments</string>
+    <string name="events_ending">\'s events</string>
+    <string name="bar_placeholder">Enter title, times, people, places…</string>
+    <string name="save_capital">SAVE</string>
+    <string name="hour_placeholder" translatable="false">00:00 AM</string>
+    <string name="pick_equipment">Pick equipment</string>
+    <string name="exceeded_duration">Event duration is too long.</string>
+    <string name="wrong_event_time">Start time is after end time.</string>
+    <string name="start_time_is_not_set">Start time is not set.</string>
+    <string name="end_time_is_not_set">End time is not set.</string>
+    <string name="equipment_unavailable">There is no equipment for this event.</string>
+    <string name="event_added">The event has been added.</string>
+    <string name="event_updated">The event has been updated.</string>
+    <string name="equipment_not_available_for_date">Chosen equipment is not available for given time.</string>
+
+    <!-- New Additions -->
+    <string name="zero" translatable="false">0</string>
+    <string name="survey_test_activity" translatable="false">Survey Test Activity</string>
+    <string name="give_get_search_hint">Search Name or Material Code</string>
+    <string name="scoreview_pesos">0 Weight/Box</string>
+    <string name="contact_admin_send">Submit</string>
+    <string name="negotitation_save">Save</string>
+    <string name="negotiation_save_create_order">Save Create Order</string>
+    <string name="give_tab">Material Gives</string>
+    <string name="get_tab">Material Gets</string>
+    <string name="add_get">Add Get</string>
+    <string name="add_give">Add Give</string>
+    <string name="add_comment">Add a comment</string>
+    <string name="event_filter">Filter</string>
+
+    <string name="toast_downloading_attachment">Downloading attachment…</string>
+    <string name="toast_attachment_download_failed">Download failed.</string>
+
+    <string name="send_or_delete_queue">There are changes that have not yet been sent to server. Do you want to send or delete them?</string>
+    <string name="send">Send</string>
+
+    <!--Volume details-->
+    <string name="actual_progress">Actual</string>
+    <string name="target_progress">Objective</string>
+    <string name="current_chart">Current</string>
+    <string name="last_year_chart">Previous Year</string>
+
+    <!--Coverage details-->
+    <string name="coverage_brand">Brand</string>
+    <string name="coverage_status">Status</string>
+
+    <!--User details-->
+    <string name="my_360">My 360</string>
+    <string name="label_volume">Volume</string>
+
+    <string name="abi_logout_message">Are you sure you want to log out?</string>
+    <string name="save">Save</string>
+    <string name="all">All</string>
+    <string name="time_zone_warning">Your users time zone is set to: \"%1$s\" but your phone is set to: \"%2$s\". This may cause unpredictable behaviour of the application. Please make sure that your phone has the same time zone as your Salesforce user.</string>
+    <!--ONTAP__AccountAssetTracking__c status-->
+    <string name="account_asset_tracking_status_qualified">Qualified</string>
+    <string name="account_asset_tracking_status_no_poc">Not asset of this POC</string>
+    <string name="account_asset_tracking_status_undetected">Undetected</string>
+    <string name="account_asset_tracking_status_lost">Lost</string>
+    <!--ONTAP__Account_Asset__c ONTAP__Capacity__c-->
+    <string name="account_asset_capacity_none">--None--</string>
+    <string name="account_asset_capacity_refrigerator">Refrigerator</string>
+    <string name="account_asset_capacity_barrel_beer">Draught  Beer Machine</string>
+    <!--Check-in dialog-->
+    <string name="too_far_from_target">You are too far away from your target. Please take a picture.</string>
+    <string name="cannot_detect_your_location">We cannot detect your location. Please take a picture and enter reason.</string>
+    <string name="set_current_location_as_poc_location">Set Current GPS Location as POC GPS Location.</string>
+    <string name="morning_meeting_doesnt_have_location">Morning meeting doesn\'t have location. Please take a picture.</string>
+    <string name="missing_account_location">Account doesn\'t have location. Please take a picture.</string>
+    <string name="input_text">Reason…</string>
+    <string name="please_check_into_morning_meeting">Please check into the morning meeting.</string>
+    <string name="please_check_out_from_morning_meeting">Please check out from the morning meeting.</string>
+    <string name="dialog_tasks_before_checkout_title">Before checking out you have to perform actions listed below</string>
+    <string name="dialog_tasks_before_checkout_button_title">OK</string>
+
+    <string name="morning_meeting_checkin">Morning Meeting Check In</string>
+    <string name="morning_meeting_checkout">Morning Meeting Check Out</string>
+    <string name="spr_working_hours">Working hours:</string>
+    <string name="spr_contact_phone">Contact Phone:</string>
+    <string name="spr_temporary_promo">Temporary promo:</string>
+    <string name="activity_kpi_button_current_month">Current month</string>
+    <string name="activity_kpi_button_previous_month">Previous month</string>
+    <string name="trade_program_title">Trade program</string>
+    <string name="technicians_list_title">D1</string>
+    <string name="distribution_list_title">Distribution</string>
+    <string name="trade_program_valid">Valid</string>
+    <string name="trade_program_contract_id">Contract</string>
+    <string name="trade_program_program_item_id">Program item</string>
+    <string name="trade_program_description">Description</string>
+    <string name="trade_program_description_order">Description order</string>
+    <string name="trade_program_name">Name</string>
+    <string name="trade_program_status">Status</string>
+    <string name="add_to_distribution_list_title">Add to distribution list</string>
+    <string name="product_for_distribution_product_name">Product name</string>
+    <string name="select_product_for_distribution_list_search_product_hint">Search Product by name</string>
+    <string name="category_label">Category</string>
+    <string name="brand_label">Brand</string>
+    <string name="sku_label">SKU</string>
+    <string name="select_negotation_type">Select negotiation type</string>
+    <string name="product_brand">Product brand</string>
+    <string name="product_uom">Product UOM</string>
+    <string name="promotion_category_item_fixed_case">Fixed Case rate</string>
+    <string name="promotion_category_item_laddered_rebate">Laddered Rebate</string>
+    <string name="promotion_category_item_beer">Beer</string>
+    <string name="orders">Orders</string>
+    <string name="sales_volume">Sales volume</string>
+    <string name="volume_case">Volume(case)</string>
+    <string name="time_range">Time range</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="order_source">Source</string>
+    <string name="order_source_filter">Order Source</string>
+    <string name="show_more_details">Show more details</string>
+    <string name="hide_more_details">Hide details</string>
+    <string name="poc_name">POC name</string>
+    <string name="distance">Distance:</string>
+    <string name="kilometers">km</string>
+    <string name="distance_filter_label">Distance</string>
+    <string name="channel_filter_label">Channel</string>
+    <string name="visit_state_filter_label">Visit state</string>
+    <string name="negotiation_history">Negotiation History</string>
+    <string name="add_note">Add note</string>
+    <string name="contract_valid_from">Valid from</string>
+    <string name="contract_valid_to">Valid to</string>
+    <string name="number_of_visits">Number of visits</string>
+
+    <string name="asset_poc_list_title">Assets</string>
+    <!--Account cases-->
+    <string name="account_case_reject_reason">Reject reason</string>
+    <string name="account_case_rejected_cases">Rejected account changes</string>
+    <string name="request_account_info_change">Request account info change</string>
+
+    <!--Product negotiation details-->
+    <string name="error_no_negotiation_with_id">There is no negotiation with Id: %1$s</string>
+
+    <!-- Wifi scan results -->
+    <string name="detected_wifi_devices">Detected WiFi devices</string>
+    <string name="wifi_scan_details">Details</string>
+    <string name="wifi_scan_asset_tag_label">Current asset tag:</string>
+
+    <string name="all_values">All</string>
+    <string name="confirm_order_deletion">Are you sure to delete this order?</string>
+    <string name="order_source_sfdc">WCCS Order(from mobile)</string>
+    <string name="create_new">Create new</string>
+    <string name="notify_new_task">New Task</string>
+    <string name="notify_system_notifycation">System Notification</string>
+    <string name="notify_contract_renewal">Contract Renewal</string>
+    <string name="whether_delete">Is %1$s deleted?</string>
+    <string name="no_such_message">No Such Message</string>
+    <string name="dialog_version_tip">Please install the latest version of App version %1$s\n </string>
+    <string name="sync_data_success">Synchronization is successful, please download the latest version of the application</string>
+    <string name="confirm">Confirm</string>
+    <string name="install">Install</string>
+    <string name="file_damage">File lossy, redownload</string>
+    <string name="down_load_fail">Download Fail</string>
+    <string name="down_load_success">Download Successful</string>
+    <string name="please_net_status">Please check the network</string>
+    <string name="timer_out">Timer Out:</string>
+    <string name="notify_contract_renewal_">Expiration notice</string>
+    <string name="due_with_days">Contracts due within days : \n</string>
+
+    <string name="downlaod_done">Dwonload finish</string>
+    <string name="download_failed">Download failed,please click try again</string>
+    <string name="download_start">Download start</string>
+    <string name="can_not_open_this_file">cannot open this file</string>
+    <string name="being_downloading">the file has downloaded to %1$s</string>
+    <string name="empty_folder">empty folder</string>
+    <string name="downloaded_file">downloaded file</string>
+    <string name="undownloaded_file">undownloaded file</string>
+    <string name="network_disconnection">network disconnection</string>
+    <string name="net_tips">You are currently in a non-wifi environment,whether to continue downloading?</string>
+    <string name="categories">Categories</string>
+    <string name="no_access">All Mobile Configurations are inactive</string>
+    <string name="no_access_title">Mobile Configurations</string>
+    <string name="related_id">Related Id Empty</string>
+
+    <string name="net_error">Network connection error</string>
+    <string name="skip_tips">You are now entering into B2B order page.It might take some time for the new order record to be synchronized back to the APP after order taken.Please take a screenshot of the order number after the order token</string>
+    <string name="B2B_order">B2B order</string>
+
+    <string name="my_visit">My Visits</string>
+    <string name="my_orders">My orders</string>
+
+    <string name="individual_kpi">Individual Kpi</string>
+    <string name="basic_kpi">Basic KPI</string>
+    <string name="performance_kpi">Performance KPI</string>
+    <string name="kpi_name">KPI NAME</string>
+    <string name="accomplishment">ACCOMPLISHMENT</string>
+    <string name="target">TARGET</string>
+    <string name="achieving_rate">ACHIEVING RATE</string>
+    <string name="ttl_volume">TTL Volume</string>
+    <string name="key_sku">Key SKU</string>
+    <string name="execution">Execution +</string>
+    <string name="distribution">Distribution</string>
+    <string name="visit_rate">Visit Rate</string>
+    <string name="B2B_volume_target">B2B Volume Target</string>
+    <string name="ttl_kpi_rate">TTL KPI rate</string>
+    <string name="bonus_rate">Bonus Rate</string>
+    <string name="visit_rate_for_month">Monthly visit</string>
+    <string name="visit_rate_for_week">Weekly visit</string>
+    <string name="up_to_now">Up to now</string>
+
+    <string name="no_instructions">no instructions</string>
+    <string name="more">more</string>
+
+    <string name="order_status">Order Status</string>
+    <string name="select_brand">please click to select brand</string>
+    <string name="select_sku">please click to select SKU</string>
+    <string name="hint_leave_store_firstly">Welcome back, this POC has not been checked out last time, please check out first!</string>
+    <string name="competitor_flag_c">C-</string>
+    <string name="competitor_flag_ABI">ABI-</string>
+</resources>

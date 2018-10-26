@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/space2"
+    android:layout_marginStart="@dimen/space2"
+    android:background="@color/sab_white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/product_name"
+        style="@style/Text.H3.Bold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/space1"
+        android:layout_marginTop="@dimen/space1"
+        android:layout_weight="1.3"
+        android:padding="@dimen/space"
+        android:paddingStart="@dimen/space1"
+        tools:text="Miller Lite" />
+
+    <TextView
+        android:id="@+id/product_code"
+        style="@style/Text.H4"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/space1"
+        android:layout_marginTop="@dimen/space1"
+        android:padding="@dimen/space"
+        tools:text="3423TT" />
+
+    <Spinner
+        android:id="@+id/spinnerReason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/space1"
+        android:layout_marginEnd="@dimen/space"
+        android:layout_marginTop="@dimen/space1"
+        android:layout_weight="1"
+        android:dropDownWidth="384dp"
+        android:visibility="gone"
+        tools:listitem="@layout/reason_dropdown"/>
+
+    <EditText
+        android:id="@+id/product_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/space1"
+        android:layout_marginTop="@dimen/space1"
+        android:background="@drawable/product_count_background"
+        android:gravity="center"
+        android:inputType="number"
+        android:minWidth="48dp"
+        android:imeOptions="actionDone"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        tools:text="50" />
+
+    <TextView
+        android:id="@+id/measure"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space1"
+        android:layout_marginTop="@dimen/space1"
+        android:layout_gravity="top"
+        android:minWidth="64dp"
+        android:padding="@dimen/space1"
+        android:text="@string/cajas" />
+
+    <Spinner
+        android:id="@+id/spinnerQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/space1"
+        android:layout_marginTop="@dimen/space1"
+        android:layout_marginStart="@dimen/space"
+        tools:listitem="@layout/reason_dropdown"
+        android:entries="@array/units_of_measure"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/order_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="?selectableItemBackgroundBorderless"
+        android:gravity="center_vertical"
+        android:padding="@dimen/space2"
+        android:src="@drawable/ic_minus" />
+</LinearLayout>

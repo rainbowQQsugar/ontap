@@ -1,0 +1,22 @@
+include ':SalesforceAnalytics'
+project(':SalesforceAnalytics').projectDir = new File('external-libs/external-libs/SalesforceAnalytics')
+
+include ':SalesforceSDK'
+project(':SalesforceSDK').projectDir = new File('external-libs/external-libs/SalesforceSDK')
+
+include ':SmartStore'
+project(':SmartStore').projectDir = new File('external-libs/external-libs/SmartStore')
+
+include ':sync-engine-lib'
+project(':sync-engine-lib').projectDir = new File('external-libs/external-libs/sync-engine-lib')
+
+include ':dsa-core'
+project(':dsa-core').projectDir = new File('external-libs/dsa-core')
+
+include ':dsa-app-lib'
+project(':dsa-app-lib').projectDir = new File('external-libs/dsa-app-lib')
+
+include ':adapterodactil'
+project(':adapterodactil').projectDir = new File('external-libs/adapterodactil')
+
+include ':app'

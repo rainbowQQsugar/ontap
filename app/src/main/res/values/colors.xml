@@ -1,0 +1,113 @@
+<resources>
+
+    <!--ALPHA HEX VALUES-->
+    <!--100%  — FF-->
+    <!--95%   — F2-->
+    <!--90%   — E6-->
+    <!--85%   — D9-->
+    <!--80%   — CC-->
+    <!--75%   — BF-->
+    <!--70%   — B3-->
+    <!--65%   — A6-->
+    <!--60%   — 99-->
+    <!--55%   — 8C-->
+    <!--50%   — 80-->
+    <!--45%   — 73-->
+    <!--40%   — 66-->
+    <!--35%   — 59-->
+    <!--30%   — 4D-->
+    <!--25%   — 40-->
+    <!--20%   — 33-->
+    <!--15%   — 26-->
+    <!--10%   — 1A-->
+    <!--5%    — 0D-->
+
+    <color name="header_background">#d7d7d7</color>
+    <color name="submit_background">#aaaaaa</color>
+
+    <color name="category_list_item_name_color">#777777</color>
+    <color name="category_name_color">#999999</color>
+
+    <color name="header_blue_color">#0288D1</color>
+    <color name="transparent_color">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#7c7c7c</color>
+    <color name="blue_background">#2994D6</color>
+    <color name="light_gray">#F2F2F2</color>
+    <color name="color_control_highlight">#ebebeb</color>
+
+    <color name="primaryOld">#6B6B6B</color>
+    <color name="primary_dark">#262626</color>
+    <color name="blue_accent">#009DF2</color>
+
+    <!-- New theme design here and down. Based on the "light blue" color palette
+        https://www.google.com/design/spec/style/color.html#color-color-palette
+    -->
+
+    <color name="primary">#009BB9</color>
+    <color name="accent">#0091EA</color>
+    <color name="playlist_header">#6B6B6B</color>
+    <color name="header_light">#CCFFFFFF</color>
+
+    <!--SAB MILLER-->
+    <color name="abi_blue2">#009BB9</color>
+    <color name="sab_blue">#409CD4</color>
+    <color name="sab_black">@color/primary_dark</color>
+    <color name="sab_white">#FFFFFF</color>
+    <color name="sab_dark_gray">#302D38</color>
+    <color name="sab_gray">#999999</color>
+    <color name="sab_light_gray">#BFBFBF</color>
+    <color name="sab_lighter_gray">#E0E1DC</color>
+    <color name="sab_lightest_gray">#F2F2F2</color>
+    <color name="sab_light_gold">#C1AD80</color>
+    <color name="sab_lightest_gold">#E8E0C5</color>
+    <color name="sab_yellow">#FCBA00</color>
+    <color name="abi_black">#2a2f2a</color>
+    <color name="abi_green">#59C68F</color>
+    <color name="abi_blue">#009BB9</color>
+    <color name="abi_gray">#EBEBEB</color>
+    <color name="white80">#CCFFFFFF</color>
+    <color name="black80">#CC000000</color>
+    <color name="red">#ff0000</color>
+    <color name="meter_goal">#74D600</color>
+    <color name="green">#00ff00</color>
+
+    <color name="divider_color">#CCCCCC</color>
+    
+    <!-- Marker Colors -->
+    <color name="normal">#E80200</color>
+    <color name="visited">#535E5F</color>
+    <color name="selected">#F9EB00</color>
+    <color name="checked_in">#00E700</color>
+
+    <color name="dynamic_color_field">@color/sab_dark_gray</color>
+    <color name="dynamic_color_label">#999</color>
+
+    <color name="disabled_text">@color/sab_gray</color>
+    <color name="disabled_field_bg">#CCCCCC</color>
+
+    <color name="menu_list_bg_color">#105361</color>
+    <color name="menu_tint_color">#019BB9</color>
+
+    <color name="asterisk">#FF2802</color>
+
+    <color name="list_button_green">#59c68f</color>
+    <color name="list_button_blue">#009bb9</color>
+
+    <color name="status_yes">#59c68f</color>
+    <color name="status_no">#d91935</color>
+
+
+    <color name="chart_primary">#1cc8d8</color>
+    <color name="chart_primary_90">#e51cc8d8</color>
+    <color name="chart_secondary">#59C68F</color>
+    <color name="text_normal">#333333</color>
+    <color name="divide_normal">#ebebeb</color>
+    <color name="actionsheet_blue">#2c79ed</color>
+
+    <color name="chart_kpi_color_1">#FF0000</color>
+    <color name="chart_kpi_color_2">#FFFF00</color>
+    <color name="chart_kpi_color_3">#00FF00</color>
+    <color name="chart_kpi_color_4">#0000FF</color>
+
+</resources>

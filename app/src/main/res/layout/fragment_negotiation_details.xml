@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sab_lightest_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/DetailsToolbarStyle" />
+
+        <com.abinbev.dsa.ui.view.negotiation.NegotiationDateHeaderView
+            android:id="@+id/header_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.abinbev.dsa.ui.view.negotiation.PointScoreView
+            android:id="@+id/points_score_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space2" />
+
+        <TextView
+            android:id="@+id/approval_title"
+            style="@style/Text.H3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space2"
+            tools:text="Aprobación UEN" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space" />
+
+        <com.abinbev.dsa.ui.view.negotiation.NegotiationDetailView
+            android:id="@+id/negotiation_detail_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/space2"
+            android:paddingRight="@dimen/space2"/>
+
+        <!--<com.abinbev.dsa.ui.view.negotiation.PackagesView-->
+            <!--android:id="@+id/packages_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingLeft="@dimen/space2"-->
+            <!--android:paddingRight="@dimen/space2" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/space2">
+
+            <com.abinbev.dsa.ui.view.negotiation.NegotiationItemsView
+                android:id="@+id/negotiation_item_views"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.abinbev.dsa.ui.view.negotiation.ObservationsView
+                android:id="@+id/observation_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/submit_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sab_white"
+                android:divider="@drawable/divider_vertical_lightest_gray"
+                android:showDividers="middle"
+                android:gravity="end"
+                android:paddingBottom="@dimen/space2"
+                android:paddingTop="@dimen/space2">
+
+                <!--<TextView-->
+                    <!--android:id="@+id/save"-->
+                    <!--style="@style/Text.Action"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:padding="@dimen/space"-->
+                    <!--android:text="@string/submit"-->
+                    <!--android:textSize="16sp" />-->
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/space4"
+                    android:src="@drawable/ic_save_white_18dp" />
+
+                <!--<TextView-->
+                    <!--android:id="@+id/submit_and_order"-->
+                    <!--style="@style/Text.Action"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:padding="@dimen/space"-->
+                    <!--android:text="@string/submit_and_order"-->
+                    <!--android:textSize="16sp" />-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

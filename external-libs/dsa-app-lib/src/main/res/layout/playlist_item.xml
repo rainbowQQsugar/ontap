@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/playlist_item_width"
+    android:layout_height="@dimen/playlist_row_height"
+    style="?android:attr/borderlessButtonStyle"
+    android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/img_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/more"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:contentDescription="@string/image_contentDescription"
+        android:scaleType="centerInside"
+        android:src="@drawable/pdf_thumbnail"/>
+
+    <TextView
+        android:id="@+id/txt_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/more"
+        android:lines="1"
+        android:gravity="center"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/gray"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/more"
+        android:layout_alignBottom="@+id/more"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/more"
+        android:padding="@dimen/space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_more"/>
+
+</RelativeLayout>
+

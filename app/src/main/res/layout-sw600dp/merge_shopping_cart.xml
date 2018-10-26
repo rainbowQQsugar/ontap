@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="42dp"
+        android:layout_height="32dp"
+        android:paddingLeft="@dimen/space"
+        tools:background="@color/red"
+        android:layout_margin="@dimen/space">
+
+        <ImageView
+            android:id="@+id/imageShoppingCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:src="@drawable/ic_shopping_cart"
+            android:tint="@color/white"/>
+
+        <TextView
+            android:id="@+id/txtItemCount"
+            style="@style/Text.H6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:background="@drawable/shopping_cart_badge"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textColor="@color/sab_blue" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txtLabel"
+        style="@style/Text.Action"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingRight="@dimen/space"
+        android:gravity="center"
+        android:clickable="false"
+        android:textColor="@color/sab_blue" />
+</merge>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_close_grey_24dp"/>
+
+    <TextView
+        android:id="@+id/coverage_details_title"
+        style="@style/Text.H3.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/section_margin_top"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:text="@string/coverage"
+        android:textColor="@color/sab_dark_gray"/>
+
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/coverage_details_title"
+        android:background="@color/sab_lightest_gray"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/page_inset_horizontal"
+        android:paddingRight="@dimen/page_inset_horizontal">
+
+        <TextView
+            style="@style/Text.H5.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/coverage_brand"
+            android:textAllCaps="true"
+            android:textColor="@color/abi_black"/>
+
+        <TextView
+            style="@style/Text.H5.Bold"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="14dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:text="@string/coverage_status"
+            android:textAllCaps="true"
+            android:textColor="@color/abi_black"/>
+
+
+    </LinearLayout>
+
+    <com.abinbev.dsa.ui.customviews.ExpandedListView
+        android:id="@+id/coverage_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_container"
+        android:divider="@color/divider_color"
+        android:dividerHeight="@dimen/divider_size"/>
+
+</RelativeLayout>

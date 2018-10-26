@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sab_white"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--style="@style/Text.H2"-->
+        <!--android:text="@string/total_para_esta_negociaci_n"/>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/all_give_gets"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/necesitas_un_give_o_get_adicional"-->
+            <!--style="@style/Text.H8.Large"/>-->
+
+        <!--<android.support.v4.widget.Space-->
+            <!--android:layout_width="@dimen/space2"-->
+            <!--android:layout_height="match_parent" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/give_get_search"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/escoge_del_listado_completo"-->
+            <!--android:textColor="@color/sab_blue"-->
+            <!--style="@style/Text.H8.Large"/>-->
+    <!--</LinearLayout>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gets"
+        android:layout_marginLeft="@dimen/space2"
+        android:layout_marginRight="@dimen/space2"
+        android:layout_marginTop="@dimen/space2"
+        style="@style/Text.H5.CondensedBold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space2"
+        android:layout_marginRight="@dimen/space2"
+        android:layout_marginBottom="@dimen/space2"
+        android:text="@string/gets_sub_label"
+        android:textColor="@color/sab_light_gray"
+        style="@style/Text.H4"/>
+
+    <LinearLayout
+        android:id="@+id/gets_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/vertical_padding_small"
+        android:showDividers="middle"
+        android:layout_marginBottom="@dimen/space2"
+        android:layout_marginLeft="@dimen/space2"
+        android:layout_marginRight="@dimen/space2"
+        android:paddingTop="@dimen/space2"
+        android:orientation="vertical"/>
+
+    <Button
+        android:id="@+id/add_gets_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:layout_marginBottom="@dimen/space2"
+        android:layout_marginLeft="@dimen/space2"
+        android:layout_marginRight="@dimen/space2"
+        android:text="@string/add_get"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/sab_gray"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space2"
+        android:layout_marginRight="@dimen/space2"
+        android:layout_marginTop="@dimen/space2"
+        android:text="@string/gives"
+        style="@style/Text.H5.CondensedBold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space2"
+        android:layout_marginRight="@dimen/space2"
+        android:layout_marginBottom="@dimen/space2"
+        android:text="@string/gives_sub_label"
+        android:textColor="@color/sab_light_gray"
+        style="@style/Text.H4"/>
+
+    <LinearLayout
+        android:id="@+id/gives_container"
+        android:paddingTop="@dimen/space2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space2"
+        android:layout_marginLeft="@dimen/space2"
+        android:layout_marginRight="@dimen/space2"
+        android:divider="@drawable/vertical_padding_small"
+        android:showDividers="middle"
+        android:orientation="vertical"/>
+
+    <Button
+        android:id="@+id/add_gives_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:layout_marginBottom="@dimen/space2"
+        android:layout_marginLeft="@dimen/space2"
+        android:layout_marginRight="@dimen/space2"
+        android:text="@string/add_give"/>
+
+
+</LinearLayout>

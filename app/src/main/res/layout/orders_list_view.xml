@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/sab_lightest_gray">
+
+        <TextView
+            android:id="@+id/filter_title"
+            style="@style/Text.H5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/page_inset_vertical_large"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/page_inset_vertical_large"
+            android:layout_weight="1"
+            android:text="@string/filter"/>
+
+        <ImageView
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingBottom="@dimen/page_inset_vertical_large"
+            android:paddingLeft="@dimen/page_inset_horizontal"
+            android:paddingRight="@dimen/page_inset_horizontal"
+            android:paddingTop="@dimen/page_inset_vertical_large"
+            android:src="@drawable/ic_filter_list"/>
+
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/sab_lightest_gray"
+        android:clipToPadding="false"
+        android:divider="@color/transparent_color"
+        android:dividerHeight="0dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:scrollbars="vertical"/>
+
+
+</LinearLayout>

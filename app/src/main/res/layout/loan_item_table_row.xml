@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="@dimen/space_small"
+    android:paddingBottom="@dimen/space_small">
+    <TextView android:id="@+id/item_type"
+        style="@style/Text.LoanItemsTableLabel"
+        android:layout_width="0dp"
+        android:layout_weight="7"/>
+    <TextView android:id="@+id/item_value"
+        style="@style/Text.H5.CondensedBold"
+        android:layout_width="0dp"
+        android:layout_weight="2"/>
+    <TextView android:id="@+id/item_description"
+        style="@style/Text.H5.CondensedBold"
+        android:layout_width="0dp"
+        android:layout_weight="2"/>
+</TableRow>

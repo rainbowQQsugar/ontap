@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/tiles_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sab_lightest_gray"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/section_margin_bottom"
+        android:paddingLeft="@dimen/section_margin_horizontal"
+        android:paddingRight="@dimen/section_margin_horizontal">
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-8dp"
+            android:layout_marginRight="-8dp"
+            android:orientation="vertical"
+            app:alignContent="flex_start"
+            app:alignItems="flex_start"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_start">
+
+            <TextView
+                android:id="@+id/title_label"
+                style="@style/Text.H3.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/section_title_margin"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="@dimen/section_margin_top"
+                android:background="@null"
+                android:text="@string/prospecto_creacion"/>
+
+            <FrameLayout
+                android:id="@+id/basic_data_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_flexBasisPercent="50%">
+
+                <android.support.v7.widget.CardView
+                    style="@style/CardViewTile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/basic_data_label"
+                        style="@style/Text.H4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_marginRight="28dp"
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:minHeight="24dp"
+                        android:text="@string/datos_basicos"/>
+
+                    <ImageView
+                        android:id="@+id/basic_data_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/ic_check"
+                        android:visibility="gone"/>
+
+                </android.support.v7.widget.CardView>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/additional_data_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_flexBasisPercent="50%">
+
+                <android.support.v7.widget.CardView
+                    style="@style/CardViewTile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/additional_data_label"
+                        style="@style/Text.H4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_marginRight="28dp"
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:minHeight="24dp"
+                        android:text="@string/datos_adicionales"/>
+
+                    <ImageView
+                        android:id="@+id/additional_data_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/ic_check"
+                        android:visibility="gone"/>
+                </android.support.v7.widget.CardView>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/negotiation_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_flexBasisPercent="50%">
+
+                <android.support.v7.widget.CardView
+                    style="@style/CardViewTile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/negotiation_label"
+                        style="@style/Text.H4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_marginRight="28dp"
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:minHeight="24dp"
+                        android:text="@string/negociaciones"/>
+
+                    <ImageView
+                        android:id="@+id/negotiation_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/ic_check"
+                        android:visibility="gone"/>
+                </android.support.v7.widget.CardView>
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/attachment_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_flexBasisPercent="50%">
+
+                <android.support.v7.widget.CardView
+                    style="@style/CardViewTile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/attachment_label"
+                        style="@style/Text.H4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_marginRight="28dp"
+                        android:background="@null"
+                        android:gravity="left|center_vertical"
+                        android:minHeight="24dp"
+                        android:text="@string/archivos"/>
+
+                    <ImageView
+                        android:id="@+id/attachment_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:src="@drawable/ic_check"
+                        android:visibility="gone"/>
+                </android.support.v7.widget.CardView>
+            </FrameLayout>
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

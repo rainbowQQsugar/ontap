@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/visit_list_header_height"
+    android:divider="@drawable/divider_vertical"
+    android:orientation="horizontal"
+    android:showDividers="middle">
+
+    <LinearLayout
+        android:id="@+id/visit_tab_bar_button_in_plan_visits"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/visit_tab_bar_txt_in_plan_visits"
+            style="@style/Text.H2.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            tools:text="88/88"/>
+
+        <TextView
+            style="@style/Text.H7.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/in_plan_visits"
+            android:textColor="@color/sab_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/visit_tab_bar_button_out_of_plan_visits"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/visit_tab_bar_txt_out_of_plan_visits"
+            style="@style/Text.H2.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            tools:text="88/88"/>
+
+        <TextView
+            style="@style/Text.H7.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="@string/out_of_plan_visits"
+            android:textColor="@color/sab_gray"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/visit_tab_bar_button_filter"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:clickable="false"
+            android:padding="@dimen/space2"
+            android:src="@drawable/ic_filter_list"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/visit_tab_bar_button_add"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:clickable="false"
+            android:padding="@dimen/space2"
+            android:src="@drawable/ic_add"/>
+    </LinearLayout>
+</LinearLayout>

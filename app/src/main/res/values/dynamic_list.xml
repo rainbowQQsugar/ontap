@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="dynamic_list_item_table" type="id" />
+    <item name="dynamic_list_item_click_container" type="id" />
+    <item name="dynamic_list_item_row_label" type="id" />
+    <item name="dynamic_list_item_row_value" type="id" />
+
+</resources>

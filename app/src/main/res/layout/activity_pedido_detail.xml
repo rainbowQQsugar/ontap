@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.abinbev.dsa.activity.PedidoDetailActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/DetailsToolbarStyle">
+
+        <com.abinbev.dsa.ui.view.ShoppingCart
+            android:id="@+id/shopping_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end" />
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/pedido_status"
+        style="@style/Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:padding="@dimen/space2"
+        tools:text="" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/line_items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pedido_status" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_below="@+id/order_edit_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_products"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/popup_menu_anchor"
+        android:layout_width="1dp"
+        android:layout_height="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="132dp"
+        android:visibility="invisible"
+        android:layout_toStartOf="@+id/order_actions"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@id/order_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_horiz"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/space2"
+        android:layout_marginBottom="@dimen/space2"/>
+
+</RelativeLayout>

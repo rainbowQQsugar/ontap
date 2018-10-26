@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="@dimen/space_small">
+
+    <TextView android:id="@+id/item_type" style="@style/Text.H3.Bold" android:layout_width="0dp"
+        android:layout_weight="1" android:padding="@dimen/space" />
+    <TextView android:id="@+id/item_month_value" style="@style/Text.H3"
+        android:layout_width="0dp" android:layout_weight="1" android:padding="@dimen/space"
+        android:gravity="left"/>
+    <TextView android:id="@+id/item_quarter_value" style="@style/Text.H3"
+        android:layout_width="0dp" android:layout_weight="1" android:padding="@dimen/space" android:gravity="left"/>
+
+</TableRow>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NotifyMessageActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_with_logo" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_size"
+            android:background="@color/divider_color" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/account_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:clipToPadding="false"
+                android:divider="@color/white"
+                android:dividerHeight="6dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/no_such_message"
+                style="@style/Text.H4.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="string/no_such_message"
+                android:textColor="@color/white"
+                android:visibility="visible" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

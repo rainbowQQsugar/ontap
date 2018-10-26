@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="12dp"
+        android:gravity="center"
+        android:left="12dp"
+        android:right="12dp"
+        android:top="12dp">
+        <bitmap
+            android:src="@drawable/ic_place_black_24dp"
+            android:tint="@color/abi_blue" />
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <size
+                android:width="48dp"
+                android:height="48dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/abi_blue" />
+        </shape>
+    </item>
+</layer-list>

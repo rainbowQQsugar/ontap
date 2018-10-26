@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          style="?android:attr/actionMenuTextAppearance"
+          android:textColor="?attr/actionMenuTextColor"
+          android:textAppearance="?attr/actionMenuTextAppearance"
+          android:paddingStart="8dip"
+          android:gravity="center"
+          android:text="@string/select"
+          android:drawableRight="@drawable/ic_action_select"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:paddingEnd="8dip"
+          android:clickable="true"/>

@@ -1,0 +1,58 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        //leave at 22 until permissions are in
+        targetSdkVersion 22
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField "boolean", "CHINA_BUILD", "true"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        release {
+            minifyEnabled false
+            buildConfigField "boolean", "CHINA_BUILD", "true"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile project(':sync-engine-lib')
+    compile 'com.google.android.gms:play-services-location:12.0.1'
+    compile 'com.google.android.gms:play-services-maps:12.0.1'
+    compile 'com.amap.api:map2d:5.2.0'
+    compile 'com.amap.api:location:4.1.0'
+    compile 'com.salesforce.mobilesdk:SalesforceHybrid:6.0.0'
+
+    compile rootProject.ext.libraries.rxandroid
+    compile rootProject.ext.libraries.rxjava
+
+    testCompile 'com.android.support.test:runner:0.3'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+}

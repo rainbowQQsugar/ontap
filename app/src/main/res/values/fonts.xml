@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<string name="font_bauer">fonts/BauerBodoniStd-Bold.otf</string>-->
+    <!--<string name="font_lovelo">fonts/Lovelo Black.otf</string>-->
+    <!--<string name="font_roboto">fonts/Roboto-Regular.ttf</string>-->
+    <!--<string name="font_roboto_bold">fonts/Roboto-Bold.ttf</string>-->
+
+    <!--
+        font_bauer - BauerBodoinStd-Bold - sans-serif-thin - bold
+        font_lovelo - sans-serif-condensed - bold
+        font_robot - sans-serif - normal
+        font_roboto_bold - sans-serif - bold
+    -->
+</resources>

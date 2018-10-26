@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timeline_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_timeline_item_content"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <TextView
+        android:id="@+id/timeline_item_date"
+        style="@style/Text.H7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/sab_gray"
+        tools:text="10/10/2017" />
+
+    <TextView
+        android:id="@+id/timeline_item_title"
+        style="@style/Text.H7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:textAllCaps="true"
+        android:textColor="@color/sab_gray"
+        tools:text="Esteban Garcia Rasso" />
+
+    <TextView
+        android:id="@+id/timeline_item_content"
+        style="@style/Text.H5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:ellipsize="end"
+        android:maxLines="7"
+        android:textColor="@color/sab_dark_gray"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae massa sapien. Nunc eros nibh, finibus eu dolor sit amet, varius pellentesque tortor. Ut ac sapien dui. Donec sit amet eleifend augue. Donec quis varius ante, in euismod mi. In volutpat arcu a nisi dictum, ac faucibus dui cursus. Etiam sollicitudin mauris a tempus semper. Morbi ac nulla tempor, convallis risus a, rhoncus ipsum. Donec nec varius est. Nulla metus metus, aliquam et tincidunt id, egestas ac ante." />
+</LinearLayout>

@@ -1,0 +1,37 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/space">
+
+    <TextView
+        android:id="@+id/quiz_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space"/>
+
+    <TextView
+        android:id="@+id/quiz_state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/space" />
+
+    <TextView
+        android:id="@+id/quiz_total_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/space"/>
+
+    <TextView
+        android:id="@+id/quiz_creation_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:padding="@dimen/space"
+        tools:text="23/3/2016" />
+</LinearLayout>

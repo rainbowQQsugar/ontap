@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Text.H7.CondensedBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/page_inset_vertical_large"
+        android:text="@string/dialog_prospect_status" />
+
+    <Spinner
+        android:id="@+id/prospect_status"
+        style="@style/spinnerStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/form_label_margin" />
+
+    <TextView
+        style="@style/Text.H7.CondensedBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/form_margin_vertical"
+        android:text="@string/dialog_prospect_creation_date" />
+
+    <EditText
+        android:id="@+id/prospect_creation_date"
+        style="@style/Widget.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/form_label_margin"
+        android:drawableRight="@drawable/ic_date"
+        android:drawableEnd="@drawable/ic_date"
+        android:focusable="false"
+        android:longClickable="false"
+        android:inputType="date" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/page_inset_horizontal"
+        android:layout_marginRight="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/form_margin_vertical"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/page_inset_vertical_small">
+
+        <TextView
+            android:id="@+id/clear"
+            style="@style/Text.Action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space2"
+            android:text="@string/dialog_prospect_clear" />
+
+        <TextView
+            android:id="@+id/apply"
+            style="@style/Text.Action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space2"
+            android:text="@string/dialog_prospect_filter" />
+
+    </LinearLayout>
+
+</LinearLayout>

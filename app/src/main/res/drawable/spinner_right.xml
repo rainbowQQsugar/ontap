@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="false" android:state_pressed="false">
+        <layer-list>
+            <item android:drawable="@drawable/rounded_corners_right"/>
+            <item android:right="9dp">
+                <bitmap android:gravity="right" android:src="@drawable/spinner_arrow"/>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/rounded_corners_blue_right"/>
+            <item android:right="9dp">
+                <bitmap android:gravity="right" android:src="@drawable/spinner_arrow"/>
+            </item>
+        </layer-list>
+    </item>
+</selector>

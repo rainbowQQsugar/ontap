@@ -1,0 +1,37 @@
+{
+  "configuration": {
+    "manifestVersion":"1.2",
+    "enableLogging":true,
+    "allowBackup": true,
+    "syncFrequency": 10,
+    "shouldCheckForDeleted": true,
+    "backgroundSync": {
+      "wifi": true,
+      "edge": false,
+      "3G": false,
+      "4G": true,
+      "lte": true
+    }
+  },
+  "objects":[
+    {
+      "objectName": "Contact",
+      "syncDirection": "BOTH",
+      "fieldsToFetch": [
+        "Id",
+        "AccountId",
+        "LastName",
+        "FirstName",
+        "Title",
+        "Email",
+        "Phone"
+      ], 
+      "limit": 10,
+      "orderBy": [{ "FirstName": "DESC" }, { "LastName":  "ASC" }],
+      "filters": [{"field": "LastName", "op": "eq", "value": "Barr"}, 
+                  {"field": "LastName", "op": "eq", "value": "$current_user"}],
+      "fieldsToIndex": [{"name":"Id", "type":"string"},{"name":"LastName", "type":"string"}],
+      "localFields": ["localName"]
+    }
+  ]
+}

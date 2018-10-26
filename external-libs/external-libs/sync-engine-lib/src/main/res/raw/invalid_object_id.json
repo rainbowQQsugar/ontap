@@ -1,0 +1,60 @@
+{
+  "configuration": {
+    "manifestVersion":"1.2",
+    "enableLogging":true,
+    "allowBackup": true,
+    "backgroundSync": {
+      "wifi": true,
+      "edge": false,
+      "3G": false,
+      "4G": true,
+      "lte": true
+    },
+    "syncFrequency": 10
+  },
+  "objects":[
+    {
+      "objectName": "Contact",
+      "syncDirection": "BOTH",
+      "dependencies": [{
+        "name": "Account",
+        "ids": ["001xxxxxxxxxxxxxxx", "001xxxxxxxxxxxxxxx"]  
+      }],
+      "fieldsToIgnore":[
+        "LastName",
+        "FirstName"
+      ],
+      "filters": ["MailingState = 'CA'"],
+      "limit": 10,
+      "orderBy": [{ "Name": "ASC" }, { "Email":  "DESC" }]
+    },
+    {
+      "objectName": "Account",
+      "syncDirection": "BOTH",
+      "fieldsToFetch": [
+        "Id",
+        "Name",
+        "Phone",
+        "OwnerId",
+        "LastModifiedDate"
+      ],
+      "fieldsToIndex": [{"name":"Id", "type":"string"},{"name":"Name", "type":"string"}]
+    },    
+    {
+      "objectName": "CustomObject__c",
+      "fetchAllFields":true,
+      "dependencies": [{
+        "name": "Account",
+        "ids": []  
+      }]
+    },
+    {
+      "objectName": "CustomObject1__c",
+      "fetchAllFields":true,
+      "dependencies": [{
+        "name": "Account",
+        "ids": ["001xxxxxxxxxxxxx", "001xxxxxxxxxxxxxxx"]  
+      }]
+    }
+  ]
+}

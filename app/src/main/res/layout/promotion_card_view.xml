@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingBottom="4dp"
+    android:paddingLeft="@dimen/section_margin_horizontal"
+    android:paddingRight="@dimen/section_margin_horizontal"
+    android:paddingTop="4dp">
+
+    <android.support.v7.widget.CardView
+        style="@style/CardViewTile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-4dp"
+        android:layout_marginRight="-4dp"
+        app:contentPaddingBottom="10dp"
+        app:contentPaddingTop="10dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shrinkColumns="1"
+            android:stretchColumns="1">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/promotionNumber"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    android:text="@string/product_for_distribution_product_name"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/promotionNumberValue"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/abi_blue"
+                    tools:text="2 por 1 - Aguas"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/promotionType"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    android:text="@string/tipo"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/promotionTypeValue"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/sab_dark_gray"
+                    tools:text="BOGO"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/promotionDescription"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    android:text="@string/description"
+                    android:textAllCaps="true"
+                    android:textColor="@color/sab_gray"/>
+
+                <TextView
+                    android:id="@+id/promotionDescriptionValue"
+                    style="@style/Text.H7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:textColor="@color/sab_dark_gray"
+                    tools:text="BOGO"/>
+            </TableRow>
+
+        </TableLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

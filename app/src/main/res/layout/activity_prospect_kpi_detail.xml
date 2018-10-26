@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_with_logo" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/page_inset_vertical_large"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:layout_marginTop="@dimen/page_inset_vertical_large"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Text.H1.Condensed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/prospect_kpi"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/filter_status_text"
+                style="@style/Text.H7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="@dimen/space_small"
+                android:layout_marginTop="@dimen/space_small"
+                android:text="@string/prospect_kpi_all"
+                android:textColor="@color/sab_gray" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.abinbev.dsa.ui.view.KPIDetailChartView
+                    android:id="@+id/chart_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="1:1" />
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/kpi_items_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/item_margin_vertical"
+                android:layout_marginLeft="@dimen/item_margin_horizontal"
+                android:layout_marginRight="@dimen/item_margin_horizontal"
+                android:layout_marginTop="@dimen/item_margin_vertical"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Text.H7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:text="@string/prospect_kpi_description" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/filters_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/imgCloseFilters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:paddingBottom="@dimen/field_margin_half"
+        android:paddingLeft="@dimen/page_inset_horizontal"
+        android:paddingRight="@dimen/page_inset_horizontal"
+        android:paddingTop="@dimen/page_inset_horizontal"
+        android:src="@drawable/ic_close_black"/>
+
+    <LinearLayout
+        android:id="@+id/close_filters_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgCloseFilters"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txtFilterLabel"
+            style="@style/Text.H7.CondensedBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_small"
+            android:layout_marginEnd="@dimen/page_inset_horizontal"
+            android:layout_marginStart="@dimen/page_inset_horizontal"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/filter_results_label"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_dark_gray"/>
+
+        <Button
+            android:id="@+id/btnRemoveFilter"
+            style="?borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginBottom="@dimen/space"
+            android:layout_marginEnd="@dimen/page_inset_horizontal"
+            android:layout_marginStart="@dimen/page_inset_horizontal"
+            android:text="@string/btn_remove_filter"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_size"
+            android:background="@drawable/divider_horizontal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/apply_filters_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgCloseFilters"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/txtVisitStateLabel"
+            style="@style/Text.H7.CondensedBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/field_label_margin"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/visit_state_label"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_dark_gray"/>
+
+        <Spinner
+            android:id="@+id/spinnerVisitState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/field_margin"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"/>
+
+        <TextView
+            android:id="@+id/txtDateLabel"
+            style="@style/Text.H7.CondensedBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/field_label_margin"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/fecha"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_dark_gray"/>
+
+        <Spinner
+            android:id="@+id/spinnerDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/field_margin"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"/>
+
+        <TextView
+            android:id="@+id/txtTypeLabel"
+            style="@style/Text.H7.CondensedBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/field_label_margin"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/negociaciones"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_dark_gray"/>
+
+        <Spinner
+            android:id="@+id/spinnerType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/field_margin"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"/>
+
+        <TextView
+            android:id="@+id/txtClassificationLabel"
+            style="@style/Text.H7.CondensedBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/field_label_margin"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/clasificacíon"
+            android:textAllCaps="true"
+            android:textColor="@color/sab_dark_gray"/>
+
+        <Spinner
+            android:id="@+id/spinnerClassification"
+            style="?attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/field_margin_half"
+            android:layout_marginLeft="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/page_inset_horizontal"/>
+
+        <TextView
+            android:id="@+id/btnFilter"
+            style="@style/Text.H3.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingBottom="@dimen/field_margin"
+            android:paddingLeft="@dimen/page_inset_horizontal"
+            android:paddingRight="@dimen/page_inset_horizontal"
+            android:paddingTop="@dimen/field_margin_half"
+            android:text="@string/event_filter"
+            android:textColor="@color/abi_blue"/>
+    </LinearLayout>
+</RelativeLayout>

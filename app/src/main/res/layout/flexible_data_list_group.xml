@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:enabled="false"
+    android:padding="@dimen/space">
+
+    <TextView
+        style="@style/Text.H2"
+        android:id="@+id/lblListHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        tools:text="title"
+        android:clickable="false"
+        android:enabled="false"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/space" />
+
+</LinearLayout>

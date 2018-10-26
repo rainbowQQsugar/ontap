@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="dsa_app_name"><b>DSA</b></string>
+    <string name="logout">Logout</string>
+    <string name="refresh">Refresh</string>
+
+    <string name="account_type">com.salesforce.dsa.login</string>
+    <string name="content_authority">com.salesforce.dsa.content</string>
+    <string name="provider">com.salesforce.dsa.provider</string>
+
+    <string name="submit_button">Save</string>
+    <string name="delete_button">Delete</string>
+    <string name="duplicate_button">New from this</string>
+    <string name="create_account">Create account and associate this contact</string>
+    <string name="create_account_and_conatct">Create account and contact</string>
+
+    <string name="no_contacts">You do not have any contacts!</string>
+
+    <string name="account">Account</string>
+    <string name="email">Email</string>
+    <string name="title">Title</string>
+    <string name="phone">Phone</string>
+    <string name="localName">Local Name</string>
+
+    <string name="empty_value">-</string>
+
+    <string name="list_header_text">Category</string>
+    <string name="content_header_text">Content</string>
+
+    <string name="response_hint">Please enter your response here (up to 255 chars allowed)</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_checkin">Check In</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_spotlight">Spotlight</string>
+    <string name="menu_menu_browser__view">Menu Browser</string>
+    <string name="menu_visual_browser_view">Visual Browser</string>
+    <string name="menu_history">History</string>
+    <string name="menu_playlist">Playlist</string>
+
+    <!-- blank string -->
+    <string name="first_activity_name"></string>
+    <string name="background_image_contentDescription">background image</string>
+    <string name="image_contentDescription">image</string>
+    <string name="border_image_contentDescription">red border for internal mode</string>
+
+    <string name="menu_clear">Clear Offline Store</string>
+    <string name="menu_clear_errors">Clear Errors</string>
+    <string name="menu_log_errors">Log Errors</string>
+    <string name="menu_purge">Purge Deleted</string>
+    <string name="menu_clear_log">Clear Log</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_auto_sync_off">Auto Sync Off</string>
+    <string name="show_content">Show Content</string>
+    <string name="history_title">History</string>
+
+    <!-- checkin/checkout -->
+    <string name="select_contact">Select Contact</string>
+    <string name="all_contacts">All</string>
+    <string name="recent_contacts">Recent</string>
+    <string name="choose_at_checkout">Choose at Check Out</string>
+    <string name="mail_to_contact">Mail to Contact</string>
+    <string name="thumbnail_desc">thumnailIcon</string>
+    <string name="docType_desc">docTypeIcon</string>
+    <string name="done_button_title">Done</string>
+    <string name="review_materials">Review Materials</string>
+    <string name="locating_current_location">Locatiing current location…</string>
+    <string name="search">Search…</string>
+    <string name="email_subject">Documents you requested</string>
+    <string name="email_body">Here are the documents you requested during our meeting</string>
+    <string name="email_type">plain/text</string>
+
+    <!-- about dsa -->
+    <string name="about_title">About This App</string>
+    <string name="create_and_developed">Created and developed by</string>
+    <string name="about_desc">Salesforce Services Digital Sales Aid helps organizations efficiently deliver compelling sales presentations while on the go.</string>
+    <string name="privacy_note">© Salesforce Services, All Rights Reserved</string>
+    <string name="about_icon_desc">AboutSalesforce</string>
+
+    <!-- settings -->
+    <string name="utilities">Utilities</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="select_config">Select Configuration</string>
+    <string name="synchronization">Synchronize</string>
+    <string name="security">Security</string>
+    <string name="internal_mode">InternalMode</string>
+    <string name="support">Support</string>
+    <string name="help">Help</string>
+    <string name="report">Report a Problem</string>
+    <string name="html5_demo">HTML5 Demo</string>
+    <string name="about">About</string>
+    <string name="about_dsa">About DSA</string>
+    <string name="internal_mode_alert_msg">The information in this area is for internal personnel and authorized agent use only and may not be shown, printed or distributed (including email) outside of the company or used for sales or promotional purposes</string>
+    <string name="caution">Caution</string>
+    <string name="enable">Enable</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_playlists">Playlists</string>
+
+    <!--playlists-->
+    <string name="new_playlist_hint">Shelf name</string>
+    <string name="btn_new_playlist">Create playlist</string>
+    <string name="action_new_playlist">New playlist</string>
+    <string name="action_edit_playlists">Edit playlists</string>
+    <string name="personal_library_header_text">PERSONAL LIBRARY</string>
+    <string name="personal_library_italic_text">Permanent Shelf</string>
+    <string name="empty_content_item_title_text">NO CONTENT</string>
+    <string name="empty_content_item_message_text">Files can be added to your Personal Library in Salesforce by going to the Libraries tab and then Contribute</string>
+    <string name="create_new_playlist">Create New Playlist</string>
+    <string name="set_playlist">Set Playlist</string>
+    <string name="set">Set</string>
+    <string name="playlist_name_hint">Playlist Name</string>
+    <string name="create">Create</string>
+    <string name="delete">Delete</string>
+    <string name="select">Select</string>
+    <string name="select_all">Select all</string>
+    <string name="num_selected">%s selected</string>
+    <string name="error_create">"Problem creating "</string>
+    <string name="error_delete">"Problem deleting "</string>
+    <string name="error_update">"Problem updating "</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_empty_playlist_name">Shelf name cannot be empty</string>
+    <string name="edit_playlist_name">Edit Playlist Name</string>
+    <string name="save">Save</string>
+    <string name="filter">Filter</string>
+    <string name="dialog_library_copy_title">Copy from Library</string>
+    <string name="dialog_library_copy_text">Would you like to copy this content to the playlist?</string>
+    <string name="dialog_copy_button">Copy</string>
+    <string name="dialog_cancel_button">Cancel</string>
+    <string name="dialog_move_title">Edit Playlist</string>
+    <string name="dialog_move_text">Would you like to move or copy the item to this playlist?</string>
+    <string name="dialog_move_button">Move</string>
+    <string name="edit_action_mode_title">Drag content to move or copy. Tap on playlist names to edit.</string>
+    <string name="select_action_mode_title">Select content to delete.</string>
+    <string name="error_delete_library_items">Library items must be deleted from the web application.</string>
+    <string name="type">Type</string>
+    <string name="description">Description</string>
+    <string name="location">Location</string>
+    <string name="date_added">Date Added</string>
+</resources>

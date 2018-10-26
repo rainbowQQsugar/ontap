@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imgHero"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/txtName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/img_hero_desc"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_account_background" />
+
+    <ImageView
+        android:id="@+id/eventDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imgHero"
+        android:layout_marginBottom="-20dp"
+        android:layout_marginLeft="10dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_direction_fab" />
+
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/txtName"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/space"
+        android:src="@drawable/ic_close" />
+
+    <TextView
+        android:id="@+id/txtName"
+        style="@style/Text.H3.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtAccount"
+        android:layout_alignParentLeft="true"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:layout_toLeftOf="@+id/imgClose"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingBottom="@dimen/space_small"
+        android:paddingTop="@dimen/space3"
+        tools:text="Carlos Alberto Salsateca" />
+
+    <Button
+        android:id="@+id/txtAccount"
+        style="@style/Widget.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtContact"
+        android:layout_marginBottom="@dimen/space3"
+        android:layout_marginEnd="@dimen/space1"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/space3"
+        android:background="@color/abi_blue"
+        android:clickable="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/account_details"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/txtContact"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/address_container"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/space"
+        android:paddingTop="@dimen/space_small"
+        android:textAllCaps="true"
+        android:textColor="@color/dynamic_color_field"
+        tools:text="Giovanni Bernal Lopez" />
+
+    <LinearLayout
+        android:id="@+id/address_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imgPhone"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgMapMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/page_inset_horizontal"
+            android:src="@drawable/ic_place_black" />
+
+        <TextView
+            android:id="@+id/txtAddress"
+            style="@style/Text.H4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/page_inset_horizontal"
+            android:layout_marginRight="@dimen/space4"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="3"
+            android:paddingBottom="2dp"
+            android:paddingStart="@dimen/space"
+            android:paddingEnd="@dimen/space"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            tools:text="Victor Emilio Estrada 630" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/line"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:src="@drawable/ic_phone_black_24dp" />
+
+    <TextView
+        android:id="@+id/txtPhone"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imgPhone"
+        android:layout_alignTop="@+id/imgPhone"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_toEndOf="@+id/imgPhone"
+        android:ellipsize="end"
+        android:gravity="bottom"
+        android:lines="1"
+        android:paddingBottom="2dp"
+        android:paddingEnd="@dimen/space"
+        android:paddingStart="@dimen/space"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        tools:text="+593 4-2883190" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_size"
+        android:layout_above="@+id/txtNextVisitLabel"
+        android:layout_marginBottom="@dimen/space2"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:layout_marginTop="@dimen/space2"
+        android:background="@drawable/divider_vertical" />
+
+    <TextView
+        android:id="@+id/txtNextVisitLabel"
+        style="@style/Text.H6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtNextVisit"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/next_visit_label"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/txtNextVisit"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtLastVisitLabel"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingBottom="@dimen/space"
+        tools:text="7/10/2014" />
+
+    <TextView
+        android:id="@+id/txtLastVisitLabel"
+        style="@style/Text.H6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtLastVisit"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/last_visit_label"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/txtLastVisit"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtOwnerLabel"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingBottom="@dimen/space2"
+        tools:text="10/10/2015" />
+
+    <TextView
+        android:id="@+id/txtOwnerLabel"
+        style="@style/Text.H6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtOwner"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/propietario_de_registro"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/txtOwner"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtStateLabel"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingBottom="@dimen/space2"
+        tools:text="Mario Kaminishi" />
+
+    <TextView
+        android:id="@+id/txtStateLabel"
+        style="@style/Text.H6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtState"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/state"
+        android:textAllCaps="true" />
+
+    <TextView
+        android:id="@+id/txtState"
+        style="@style/Text.H4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginEnd="@dimen/page_inset_horizontal"
+        android:layout_marginStart="@dimen/page_inset_horizontal"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingBottom="@dimen/space2"
+        tools:text="Datos Adicionales Validados" />
+</RelativeLayout>
